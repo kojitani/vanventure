@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 * {
   box-sizing: border-box;
   margin: 0;
@@ -9,6 +9,12 @@
 /* #root {
   position: relative;
 } */
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 nav {
   display: flex;
   justify-content: space-between;
@@ -17,6 +23,7 @@ nav {
   height: 3rem;
   padding: 3rem;
   z-index: 2;
+  width: 100%;
 }
 nav > a {
   text-decoration: none;
@@ -33,10 +40,10 @@ nav > a {
 .nav-links > a {
   justify-content: center;
   align-items: center;
-  margin-right: 20px;
   color: black;
   text-decoration: none;
   font-size: 25px;
+  margin-left: 1.5rem;
 }
 .nav-links > a:hover {
   text-decoration: underline;
@@ -138,9 +145,6 @@ nav > a {
 .vans-container {
   min-height: calc(100vh - 96px);
 }
-.van-details-container {
-  min-height: calc(100vh - 96px);
-}
 .filter-container {
   display: flex;
   justify-content: center;
@@ -156,46 +160,45 @@ nav > a {
   cursor: pointer;
 }
 .van-list {
+  padding: 5% 10%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  padding: 2rem 8rem;
-  gap: 4rem 8rem;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 50%;
+  gap: 1rem;
 }
 .van-tile {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 5rem;
-  /* background-color: wheat; */
 }
 .van-tile img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left;
   border-radius: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
-.van-tile-info {
+/* .van-tile-info {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   position: relative;
   width: 100%;
-}
+} */
 .van-name {
-  position: absolute;
-  left: 0;
-  top: 0.5rem;
   margin-top: 0.3rem;
   font-size: 2rem;
   font-weight: 600;
 }
 .van-class {
-  position: absolute;
   left: 0;
   top: 3.5rem;
   font-size: 1.2rem;
 }
 .van-rating {
-  position: absolute;
   right: 2.2rem;
   top: 1.2rem;
   font-size: 1.2rem;
@@ -203,17 +206,15 @@ nav > a {
 }
 .van-reviews {
   font-weight: lighter;
-  position: absolute;
+
   right: 0rem;
   top: 1.45rem;
 }
 .van-pricing {
-  position: absolute;
   right: 0rem;
   top: 3.5rem;
 }
 #van-price {
-  position: absolute;
   right: 2.2rem;
   top: -0.8rem;
   font-size: 2rem;
@@ -223,8 +224,227 @@ nav > a {
   color: black;
   text-decoration: none;
 }
-.van-gallery {
+.van-details-container {
+  min-height: calc(100vh - 96px);
+  width: 80%;
+  /* padding: 3% 10%; */
   display: flex;
   justify-content: center;
+  flex-direction: column;
+}
+.van-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 50%;
+  gap: 0.5rem;
+  padding: 2rem 0rem;
+}
+.van-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.van-gallery img:hover {
+  filter: brightness(80%);
+}
+.wide-gallery-img {
+  grid-row: span 2;
+  grid-column: span 2;
+}
+
+.container-seperator {
+  display: flex;
+  justify-content: space-between;
+}
+.vandetails-info-container {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+.price-hover {
+  width: 35%;
+  border-left: 2px solid #b9b9b965;
+  padding: 1rem;
+  /* position: fixed; */
+  right: 0;
+  top: 0;
+}
+.vandetails-rating {
+  font-size: 1.5rem;
+}
+.vandetails-rating a {
+  color: black;
+}
+.vandetails-name {
+  font-size: 4rem;
+  margin: 1.5rem 0;
+  margin-top: 0;
+}
+.feature-preview-container {
+  display: flex;
   align-items: center;
+  border-bottom: 2px solid #b9b9b965;
+  /* padding: 1rem; */
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.feature-preview-container button {
+  margin-top: -1rem;
+  background-color: rgb(71, 71, 71);
+  border-style: none;
+  color: white;
+  font-size: 1.2rem;
+  padding: 0.3rem 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  white-space: nowrap;
+}
+.vandetails-description {
+  font-size: 1.5rem;
+  padding: 2rem 0;
+  border-bottom: 2px solid #b9b9b965;
+}
+.feature-title,
+.amenity-title,
+.rules-title,
+.host-info-title {
+  font-size: 2.5rem;
+  margin: 1rem;
+}
+.feature-container,
+.amenity-container,
+.rules-container {
+  /* margin-top: 1rem; */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid #b9b9b965;
+}
+.feature-item,
+.amenity-item,
+.rule-item {
+  display: flex;
+}
+.feature-item p,
+.amenity-item p,
+.rule-item p {
+  font-size: 1.5rem;
+  margin-left: 0.3rem;
+  white-space: nowrap;
+}
+
+.host-info-container {
+  padding-bottom: 2rem;
+  border-bottom: 2px solid #b9b9b965;
+  position: relative;
+}
+.host-name-container {
+  display: flex;
+  align-items: center;
+}
+.host-message {
+  font-size: 1.5rem;
+}
+@media screen and (max-width: 1400px) {
+  .van-list {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 50%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .van-list {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 33.333%;
+  }
+  .van-gallery {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 50%;
+  }
+  .medium-gallery-img {
+    grid-row: span 1;
+    grid-column: span 1;
+  }
+  .small-gallery-img {
+    display: none;
+  }
+  .price-hover {
+    display: none;
+  }
+  .vandetails-info-container {
+    width: 100%;
+  }
+  .container-seperator {
+    padding: 0;
+  }
+  .vandetails-name {
+    font-size: 3rem;
+  }
+  .nav-logo {
+    font-size: 2rem;
+  }
+  .nav-links > a {
+    font-size: 1.5rem;
+  }
+  .feature-title,
+  .amenity-title,
+  .rules-title,
+  .host-info-title {
+    font-size: 1.7rem;
+  }
+  .feature-item p,
+  .amenity-item p,
+  .rule-item p,
+  .host-message {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .van-list {
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: 16.6666%;
+  }
+  .van-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 150px;
+  }
+  .medium-gallery-img {
+    display: none;
+  }
+  .small-gallery-img {
+    display: none;
+  }
+  nav {
+    display: none;
+  }
+  .vandetails-name {
+    font-size: 2rem;
+  }
+  .vandetails-description {
+    font-size: 1.2rem;
+  }
+  .feature-title,
+  .amenity-title,
+  .rules-title,
+  .host-info-title {
+    font-size: 1.5rem;
+  }
+  .feature-item p,
+  .amenity-item p,
+  .rule-item p,
+  .host-message {
+    font-size: 1.2rem;
+  }
+  .vandetails-rating {
+    font-size: 1.2rem;
+  }
+
+  .feature-preview-container button {
+    font-size: 1rem;
+  }
 }

@@ -7,7 +7,7 @@ export function loader() {
 }
 export default function Vans() {
   const dataPromise = useLoaderData();
-  console.log(dataPromise);
+
   return (
     <div className="vans-container">
       <div className="filter-container">
@@ -41,7 +41,6 @@ export default function Vans() {
                   </>
                 );
               });
-              console.log(vanElements);
               return vanElements;
             }}
           </Await>

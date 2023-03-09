@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react';
 import { useLoaderData, Await, defer, Link } from 'react-router-dom';
 import { getVans } from '../../api';
+import VanDetailsInfo from './VanDetailsInfo';
 
 export function loader({ params }) {
   return defer({ vanDetails: getVans(params.id) });
@@ -15,19 +16,34 @@ export default function VanDetails() {
       <Suspense fallback={<h1>Loading van details...</h1>}>
         <Await resolve={loaderData.vanDetails}>
           {vanDetails => {
-            console.log(vanDetails);
-
             return (
               <div>
                 <div className="van-gallery">
-                  <img src={vanDetails.imageUrl} />
-                  <img src={vanDetails.imageUrl} />
-                  <img src={vanDetails.imageUrl} />
-                  <img src={vanDetails.imageUrl} />
-                  <img src={vanDetails.imageUrl} />
-                </div>
+                  <img src={vanDetails.imageUrl} className="wide-gallery-img" />
 
-                <h3>{vanDetails.description}</h3>
+                  <img
+                    className="medium-gallery-img"
+                    src={vanDetails.imageUrl}
+                  />
+                  <img
+                    className="medium-gallery-img "
+                    src={vanDetails.imageUrl}
+                  />
+                  <img
+                    className="small-gallery-img"
+                    src={vanDetails.imageUrl}
+                  />
+                  <img
+                    className="small-gallery-img"
+                    src={vanDetails.imageUrl}
+                  />
+                </div>
+                <div className="container-seperator">
+                  <VanDetailsInfo vanDetails={vanDetails} />
+                  <div className="price-hover">
+                    <img src="https://i.imgur.com/dXOtFE1.png"></img>
+                  </div>
+                </div>
               </div>
             );
           }}

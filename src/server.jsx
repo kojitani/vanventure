@@ -20,7 +20,34 @@ createServer({
       seat: 'Seats 2',
       rating: 4.6,
       reviews: 20,
-      hostId: '123',
+      host: {
+        name: 'dustin',
+        id: 123,
+        message: `Hello my name is Dustin. I am happily married to my wife Christina. We have 4 kids(three boys and a girl). We love to do tons of outdoor activities. We try to get out and camp as much as possible as that is how I grew up. It's one of our favorite things to do. We hope that you can enjoy our home away from home as much as we do!`,
+      },
+
+      features: [
+        { beds: 4 },
+        { fuel: '25 gal' },
+        { water: '21 gal' },
+        { propane: '8 gal' },
+      ],
+      amenities: [
+        'shower',
+        'heater',
+        'toilet',
+        'refrigerator',
+        'dining-table',
+        'stove',
+        'kitchen-sink',
+        'television',
+      ],
+      rules: [
+        'Pet friendly',
+        'No music festivals',
+        'No tailgating',
+        'No smoking',
+      ],
     });
     server.create('van', {
       id: '2',
@@ -35,7 +62,33 @@ createServer({
       seat: 'Seats 4',
       rating: 4.7,
       reviews: 35,
-      hostId: '123',
+      host: {
+        name: 'dustin',
+        id: 456,
+        message: `Hello my name is Dustin. I am happily married to my wife Christina. We have 4 kids(three boys and a girl). We love to do tons of outdoor activities. We try to get out and camp as much as possible as that is how I grew up. It's one of our favorite things to do. We hope that you can enjoy our home away from home as much as we do!`,
+      },
+      features: [
+        { beds: 4 },
+        { fuel: '25 gal' },
+        { water: '21 gal' },
+        { propane: '6 gal' },
+      ],
+      amenities: [
+        'shower',
+        'heater',
+        'toilet',
+        'refrigerator',
+        'dining-table',
+        'stove',
+        'kitchen-sink',
+        'television',
+      ],
+      rules: [
+        'Pet friendly',
+        'No music festivals',
+        'No tailgating',
+        'No smoking',
+      ],
     });
     server.create('van', {
       id: '3',
@@ -50,7 +103,33 @@ createServer({
       seat: 'Seats 4',
       rating: 4.9,
       reviews: 12,
-      hostId: '456',
+      host: {
+        name: 'dustin',
+        id: 456,
+        message: `Hello my name is Dustin. I am happily married to my wife Christina. We have 4 kids(three boys and a girl). We love to do tons of outdoor activities. We try to get out and camp as much as possible as that is how I grew up. It's one of our favorite things to do. We hope that you can enjoy our home away from home as much as we do!`,
+      },
+      features: [
+        { beds: 4 },
+        { fuel: '25 gal' },
+        { water: '21 gal' },
+        { propane: '6 gal' },
+      ],
+      amenities: [
+        'shower',
+        'heater',
+        'toilet',
+        'refrigerator',
+        'dining-table',
+        'stove',
+        'kitchen-sink',
+        'television',
+      ],
+      rules: [
+        'Pet friendly',
+        'No music festivals',
+        'No tailgating',
+        'No smoking',
+      ],
     });
     server.create('van', {
       id: '4',
@@ -65,7 +144,33 @@ createServer({
       seat: 'Seats 2',
       rating: 4.8,
       reviews: 23,
-      hostId: '789',
+      host: {
+        name: 'dustin',
+        id: 456,
+        message: `Hello my name is Dustin. I am happily married to my wife Christina. We have 4 kids(three boys and a girl). We love to do tons of outdoor activities. We try to get out and camp as much as possible as that is how I grew up. It's one of our favorite things to do. We hope that you can enjoy our home away from home as much as we do!`,
+      },
+      features: [
+        { beds: 4 },
+        { fuel: '25 gal' },
+        { water: '21 gal' },
+        { propane: '6 gal' },
+      ],
+      amenities: [
+        'shower',
+        'heater',
+        'toilet',
+        'refrigerator',
+        'dining-table',
+        'stove',
+        'kitchen-sink',
+        'television',
+      ],
+      rules: [
+        'Pet friendly',
+        'No music festivals',
+        'No tailgating',
+        'No smoking',
+      ],
     });
     server.create('van', {
       id: '5',
@@ -80,7 +185,33 @@ createServer({
       seat: 'Seats 2',
       rating: 5,
       reviews: 19,
-      hostId: '789',
+      host: {
+        name: 'dustin',
+        id: 123,
+        message: `Hello my name is Dustin. I am happily married to my wife Christina. We have 4 kids(three boys and a girl). We love to do tons of outdoor activities. We try to get out and camp as much as possible as that is how I grew up. It's one of our favorite things to do. We hope that you can enjoy our home away from home as much as we do!`,
+      },
+      features: [
+        { beds: 4 },
+        { fuel: '25 gal' },
+        { water: '21 gal' },
+        { propane: '6 gal' },
+      ],
+      amenities: [
+        'shower',
+        'heater',
+        'toilet',
+        'refrigerator',
+        'dining-table',
+        'stove',
+        'kitchen-sink',
+        'television',
+      ],
+      rules: [
+        'Pet friendly',
+        'No music festivals',
+        'No tailgating',
+        'No smoking',
+      ],
     });
     server.create('van', {
       id: '6',
@@ -95,7 +226,33 @@ createServer({
       seat: 'Seats 2',
       rating: 4.6,
       reviews: 35,
-      hostId: '123',
+      host: {
+        name: 'dustin',
+        id: 123,
+        message: `Hello my name is Dustin. I am happily married to my wife Christina. We have 4 kids(three boys and a girl). We love to do tons of outdoor activities. We try to get out and camp as much as possible as that is how I grew up. It's one of our favorite things to do. We hope that you can enjoy our home away from home as much as we do!`,
+      },
+      features: [
+        { beds: 4 },
+        { fuel: '25 gal' },
+        { water: '21 gal' },
+        { propane: '6 gal' },
+      ],
+      amenities: [
+        'shower',
+        'heater',
+        'toilet',
+        'refrigerator',
+        'dining-table',
+        'stove',
+        'kitchen-sink',
+        'television',
+      ],
+      rules: [
+        'Pet friendly',
+        'No music festivals',
+        'No tailgating',
+        'No smoking',
+      ],
     });
     server.create('user', {
       id: '123',
@@ -121,14 +278,14 @@ createServer({
     });
 
     this.get('/host/vans', (schema, request) => {
-      // Hard-code the hostId for now
-      return schema.vans.where({ hostId: '123' });
+      // Hard-code the
+      return schema.vans.where({});
     });
 
     this.get('/host/vans/:id', (schema, request) => {
-      // Hard-code the hostId for now
+      // Hard-code the
       const id = request.params.id;
-      return schema.vans.findBy({ id, hostId: '123' });
+      return schema.vans.findBy({ id });
     });
 
     this.post(
