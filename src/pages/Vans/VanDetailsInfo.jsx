@@ -7,18 +7,15 @@ export default function VanDetailsInfo(props) {
     const featureCase =
       String(Object.keys(feature)).slice(0, 1).toUpperCase() +
       String(Object.keys(feature)).slice(1);
-
     return (
-      <>
-        <div key={i} className="feature-item">
-          <img
-            className="features-svg"
-            src="https://styles.redditmedia.com/t5_3kn1qh/styles/profileIcon_snoo1bacb84e-936a-4878-9298-264c8a867d7b-headshot.png?width=256&height=256&frame=1&auto=webp&crop=256:256,smart&v=enabled&s=131a5fa32c85c6fdfc9e5abe03c7ad263a6c47dc"
-            width="30px"
-          ></img>
-          <p>{`${featureCase}: ${Object.values(feature)}`}</p>
-        </div>
-      </>
+      <div key={i} className="feature-item">
+        <img
+          className="features-svg"
+          src="https://styles.redditmedia.com/t5_3kn1qh/styles/profileIcon_snoo1bacb84e-936a-4878-9298-264c8a867d7b-headshot.png?width=256&height=256&frame=1&auto=webp&crop=256:256,smart&v=enabled&s=131a5fa32c85c6fdfc9e5abe03c7ad263a6c47dc"
+          width="30px"
+        ></img>
+        <p>{`${featureCase}: ${Object.values(feature)}`}</p>
+      </div>
     );
   });
 
@@ -27,16 +24,14 @@ export default function VanDetailsInfo(props) {
       amenity[0].toUpperCase() + amenity.slice(1).replace('-', ' ');
 
     return (
-      <>
-        <div key={i} className="amenity-item">
-          <img
-            className="features-svg"
-            src="https://styles.redditmedia.com/t5_3kn1qh/styles/profileIcon_snoo1bacb84e-936a-4878-9298-264c8a867d7b-headshot.png?width=256&height=256&frame=1&auto=webp&crop=256:256,smart&v=enabled&s=131a5fa32c85c6fdfc9e5abe03c7ad263a6c47dc"
-            width="30px"
-          ></img>
-          <p>{amenityCase}</p>
-        </div>
-      </>
+      <div key={i} className="amenity-item">
+        <img
+          className="features-svg"
+          src="https://styles.redditmedia.com/t5_3kn1qh/styles/profileIcon_snoo1bacb84e-936a-4878-9298-264c8a867d7b-headshot.png?width=256&height=256&frame=1&auto=webp&crop=256:256,smart&v=enabled&s=131a5fa32c85c6fdfc9e5abe03c7ad263a6c47dc"
+          width="30px"
+        ></img>
+        <p>{amenityCase}</p>
+      </div>
     );
   });
   const ruleElements = vanDetails.rules.map((rule, i) => {
