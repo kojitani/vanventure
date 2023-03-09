@@ -52,20 +52,20 @@ export default function VanDetailsInfo(props) {
     );
   });
   return (
-    <div className="vandetails-info-container">
-      <span className="vandetails-rating">
+    <div className="van-details-info-container">
+      <span className="van-details-rating">
         ★{vanDetails.rating}
         <span> · </span>
         <a href="#">{vanDetails.reviews} reviews</a>
       </span>
-      <p className="vandetails-name">{vanDetails.name}</p>
+      <p className="van-details-name">{vanDetails.name}</p>
       <div className="feature-preview-container">
         <button>6 guests</button>
         <button>Sleeps 4</button>
         <button>20 ft. long</button>
         <button>Pet friendly</button>
       </div>
-      <p className="vandetails-description">{vanDetails.description}</p>
+      <p className="van-details-description">{vanDetails.description}</p>
       <h2 className="feature-title">Features</h2>
       <div className="feature-container">{featureElements}</div>
       <h2 className="amenity-title">Amenities</h2>

@@ -2,22 +2,22 @@ import React, { Suspense } from 'react';
 import { useLoaderData, Await, defer, Link } from 'react-router-dom';
 import { getVans } from '../../api';
 import VanDetailsInfo from './VanDetailsInfo';
-
+import Loading from '../../components/Loading';
 export function loader({ params }) {
   return defer({ vanDetails: getVans(params.id) });
 }
 export default function VanDetails() {
   const loaderData = useLoaderData();
   return (
-    <div className="van-details-container">
-      <Link to="/vans">
-        <h3>← Back to all vans</h3>
+    <div className="fallback-container">
+      <Link className="van-details-back-btn" to="/vans">
+        <p>← Back to all vans</p>
       </Link>
-      <Suspense fallback={<h1>Loading van details...</h1>}>
+      <Suspense fallback={<Loading />}>
         <Await resolve={loaderData.vanDetails}>
           {vanDetails => {
             return (
-              <div>
+              <div className="van-details-container">
                 <div className="van-gallery">
                   <img src={vanDetails.imageUrl} className="wide-gallery-img" />
 
