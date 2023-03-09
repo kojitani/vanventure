@@ -1,5 +1,5 @@
 import React from 'react';
-
+import VanDetailsBooking from './VanDetailsBooking';
 export default function VanDetailsInfo(props) {
   const vanDetails = props.vanDetails;
 
@@ -48,11 +48,6 @@ export default function VanDetailsInfo(props) {
   });
   return (
     <div className="van-details-info-container">
-      <span className="van-details-rating">
-        ★{vanDetails.rating}
-        <span> · </span>
-        <a href="#">{vanDetails.reviews} reviews</a>
-      </span>
       <p className="van-details-name">{vanDetails.name}</p>
       <div className="feature-preview-container">
         <button>6 guests</button>

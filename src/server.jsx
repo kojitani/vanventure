@@ -14,8 +14,19 @@ createServer({
       description:
         'The Modest Explorer is a van designed to get you out of the house and into nature. This beauty is equipped with solar panels, a composting toilet, a water tank and kitchenette. The idea is that you can pack up your home and escape for a weekend or even longer!',
       class: '2020 Class B · 19ft',
-      imageUrl:
-        'https://assets.scrimba.com/advanced-react/react-router/modest-explorer.png',
+      imageUrl: [
+        'https://i.imgur.com/kP9VjQ9.jpg',
+        'https://i.imgur.com/gwwQccr.png',
+        'https://i.imgur.com/Nv1Lkqg.jpg',
+        'https://i.imgur.com/zFTLCMW.png',
+        'https://i.imgur.com/emzT9ty.jpg',
+        'https://i.imgur.com/n8381sX.jpg',
+        'https://i.imgur.com/rozEtsC.jpg',
+        'https://i.imgur.com/hW5VsgR.jpg',
+        'https://i.imgur.com/Tei5JES.jpg',
+        'https://i.imgur.com/7YaZNOX.jpg',
+        'https://i.imgur.com/L5mBVdh.jpg',
+      ],
       type: 'simple',
       seat: 'Seats 2',
       rating: 4.6,
