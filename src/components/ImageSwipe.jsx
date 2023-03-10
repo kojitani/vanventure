@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-
-export default function ImageSwipe(fullscreenImg) {
+import { Outlet } from 'react-router-dom';
+import ImageGallery from '../pages/Vans/ImageGallery';
+export function ImageSwipe(fullscreenImg) {
   const [touchStartX, setTouchStartX] = useState(null);
   const [touchStartY, setTouchStartY] = useState(null);
   const [touchEndX, setTouchEndX] = useState(null);
@@ -14,7 +15,7 @@ export default function ImageSwipe(fullscreenImg) {
     setTouchStartX(e.targetTouches[0].clientX);
     setTouchStartY(e.targetTouches[0].clientY);
   }
-
+  console.log(fullscreenImg);
   function onTouchMove(e) {
     setTouchEndX(e.targetTouches[0].clientX);
     setTouchEndY(e.targetTouches[0].clientY);
@@ -34,13 +35,8 @@ export default function ImageSwipe(fullscreenImg) {
     }
   }
   return (
-    <div
-      className="swipe-div"
-      onTouchStart={() => onTouchStart(event)}
-      onTouchMove={() => onTouchMove(event)}
-      onTouchEnd={() => onTouchEnd()}
-    >
-      TESTING THIS SHIT
-    </div>
+    <>
+      <Outlet />
+    </>
   );
 }

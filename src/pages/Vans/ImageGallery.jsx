@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import Loading from '../../components/Loading';
-import ImageSwipe from '../../components/ImageSwipe';
 
 export default function ImageGallery(props) {
   const galleryImages = props.vanDetails.imageUrl;
@@ -8,22 +7,29 @@ export default function ImageGallery(props) {
   const [openGallery, setOpenGallery] = useState(false);
   const [loading, setLoading] = useState(true);
   const [imageLoaded, setImageLoaded] = useState(0);
-
   useEffect(() => {
     if (imageLoaded === 5) {
       setLoading(false);
     }
   }, [imageLoaded]);
   function fullscreenImg(i) {
+    console.log(i);
     setSliderNumber(i);
+    console.log(sliderNumber);
+    goToSlide(sliderNumber);
     setOpenGallery(true);
   }
   function closeGallery() {
     setOpenGallery(false);
   }
+
+  function goToSlide() {
+    const slides = document.querySelectorAll('.fullscreen-img');
+    slides.forEach((slide, i) => {
+      slide.style.transform = `translateX(${100 * (i - sliderNumber)}%)`;
+    });
+  }
   function nextSlide() {
-    const currentImg = document.querySelector('#fullscreen-img');
-    currentImg;
     setSliderNumber(PrevSliderNumber => {
       if (PrevSliderNumber === galleryImages.length - 1) {
         return 0;
@@ -31,6 +37,8 @@ export default function ImageGallery(props) {
         return sliderNumber + 1;
       }
     });
+
+    goToSlide(sliderNumber);
   }
   function prevSlide() {
     setSliderNumber(PrevSliderNumber => {
@@ -40,13 +48,15 @@ export default function ImageGallery(props) {
         return PrevSliderNumber - 1;
       }
     });
+    goToSlide(sliderNumber);
   }
+
   const [touchStartX, setTouchStartX] = useState(null);
   const [touchStartY, setTouchStartY] = useState(null);
   const [touchEndX, setTouchEndX] = useState(null);
   const [touchEndY, setTouchEndY] = useState(null);
-  //   console.log(touchStartX, touchStartY, touchEndX, touchEndY);
-  const minSwipeDistance = 50;
+  // console.log(touchStartX, touchStartY, touchEndX, touchEndY);
+  const minSwipeDistance = 100;
   function onTouchStart(e) {
     setTouchEndX(null);
     setTouchEndX(null);
@@ -58,6 +68,15 @@ export default function ImageGallery(props) {
   function onTouchMove(e) {
     setTouchEndX(e.targetTouches[0].clientX);
     setTouchEndY(e.targetTouches[0].clientY);
+    const slides = document.querySelectorAll('.fullscreen-img');
+
+    slides.forEach((slide, i) => {
+      const distance = touchEndX - touchStartX;
+
+      slide.style.transform = `translateX(${
+        100 * (i - sliderNumber) + distance / 4
+      }%)`;
+    });
   }
   function onTouchEnd() {
     if (!touchStartX || !touchEndX) return;
@@ -65,6 +84,13 @@ export default function ImageGallery(props) {
     const distanceY = touchStartY - touchEndY;
     const isLeftSwipe = distanceX > minSwipeDistance;
     const isRightSwipe = distanceX < -minSwipeDistance;
+    const distance = touchEndX - touchStartX;
+    if (distance < minSwipeDistance && distance > -minSwipeDistance) {
+      const slides = document.querySelectorAll('.fullscreen-img');
+      slides.forEach((slide, i) => {
+        slide.style.transform = `translateX(${100 * (i - sliderNumber)}%)`;
+      });
+    }
 
     if (isRightSwipe && Math.abs(distanceX) > distanceY) {
       prevSlide();
@@ -73,6 +99,7 @@ export default function ImageGallery(props) {
       nextSlide();
     }
   }
+
   const imageElements = galleryImages.map((img, i) => {
     let className;
     if (i === 0) className = 'wide-gallery-img';
@@ -91,33 +118,49 @@ export default function ImageGallery(props) {
       />
     );
   });
-
+  const fullscreenElements = galleryImages.map((img, i) => {
+    return (
+      <img
+        className="fullscreen-img"
+        id={`slide-${i}`}
+        key={i}
+        src={img}
+        onTouchStart={() => onTouchStart(event)}
+        onTouchMove={() => onTouchMove(event)}
+        onTouchEnd={() => onTouchEnd()}
+        style={{
+          transform: `translateX(${100 * (i - sliderNumber)}%)`,
+        }}
+      ></img>
+    );
+  });
   return (
     <>
       {openGallery && (
         <div className="fullscreen-gallery">
-          <button className="close-btn" onClick={() => closeGallery()}>
-            CLOSE GALLERY
+          <button onClick={() => closeGallery()} className="close-btn">
+            Close
           </button>
-          <button className="next-btn" onClick={() => nextSlide()}>
-            NEXT SLIDE
+          <button onClick={() => nextSlide()} className="next-btn">
+            Next
           </button>
-          <button className="prev-btn" onClick={() => prevSlide()}>
-            PREV SLIDE
+          <button onClick={() => prevSlide()} className="prev-btn">
+            Prev
           </button>
-          <img
-            className="fullscreen-img"
-            id="fullscreen-img"
-            src={galleryImages[sliderNumber]}
-            onTouchStart={() => onTouchStart(event)}
-            onTouchMove={() => onTouchMove(event)}
-            onTouchEnd={() => onTouchEnd()}
-          ></img>{' '}
+          <p className="slide-number-prev">
+            {`Slide ${sliderNumber + 1}/${galleryImages.length}`}
+          </p>
+
+          {fullscreenElements}
         </div>
       )}
       {loading && <Loading />}
+
       <div className="van-gallery" id="van-gallery">
         {imageElements}
+        <button onClick={() => setOpenGallery(true)} className="show-gallery">
+          Show all photos
+        </button>
       </div>
     </>
   );

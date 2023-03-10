@@ -5,7 +5,7 @@ import VanDetailsInfo from './VanDetailsInfo';
 import Loading from '../../components/Loading';
 import VanDetailsBooking from './VanDetailsBooking';
 import ImageGallery from './ImageGallery';
-import ImageSwipe from '../../components/ImageSwipe';
+
 export function loader({ params }) {
   return defer({ vanDetails: getVans(params.id) });
 }

@@ -332,8 +332,8 @@ nav > a {
   flex-direction: column;
 }
 .fullscreen-gallery {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.637);
   z-index: 5;
   position: fixed;
@@ -344,20 +344,30 @@ nav > a {
   align-items: center;
 }
 .fullscreen-gallery img {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: absolute;
+  display: block;
   object-fit: contain;
   object-position: center;
   height: 90%;
-  transition: all 0.5s ease;
+  /* width: 300px; */
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border-radius: 1rem;
+}
+.slide-number-prev {
+  position: absolute;
+  font-size: 1.3rem;
+  font-family: 'Tilt Neon', sans-serif;
+  /* z-index: 822; */
+  top: 0.5rem;
+  color: white;
 }
 .close-btn,
 .next-btn,
 .prev-btn {
   position: absolute;
   cursor: pointer;
-  z-index: 5;
+  z-index: 8;
 }
 .close-btn {
   right: 1rem;
@@ -380,7 +390,8 @@ nav > a {
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: 50%;
   gap: 0.5rem;
-  padding-bottom: 4rem;
+  padding-bottom: 5%;
+  position: relative;
 }
 .van-gallery img {
   width: 100%;
@@ -393,6 +404,15 @@ nav > a {
 }
 .van-gallery img:hover {
   filter: brightness(80%);
+}
+.show-gallery {
+  position: absolute;
+  right: 5%;
+  bottom: 15%;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  border: 1px solid black;
 }
 .wide-gallery-img {
   grid-row: span 2;
@@ -576,6 +596,11 @@ nav > a {
   .feature-preview-container button {
     font-size: 1rem;
   }
+  .show-gallery {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.5rem;
+    bottom: 10%;
+  }
 }
 @media screen and (max-width: 400px) {
   .rules-container,
@@ -583,9 +608,4 @@ nav > a {
   .feature-container {
     grid-template-columns: 1fr;
   }
-}
-.swipe-div {
-  width: 1000px;
-  height: 500px;
-  background-color: black;
 }
