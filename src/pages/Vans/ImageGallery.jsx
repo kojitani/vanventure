@@ -56,7 +56,7 @@ export default function ImageGallery(props) {
   const [touchEndX, setTouchEndX] = useState(null);
   const [touchEndY, setTouchEndY] = useState(null);
   // console.log(touchStartX, touchStartY, touchEndX, touchEndY);
-  const minSwipeDistance = 100;
+  const minSwipeDistance = 50;
   function onTouchStart(e) {
     setTouchEndX(null);
     setTouchEndX(null);
