@@ -29,7 +29,11 @@ export default function ImageGallery(props) {
       slide.style.webkitTransform = `translate3d(${
         100 * (i - sliderNumber)
       }%,0px,0px)`;
-      slide.style.transition = 'transform 200ms ease 0ms';
+      slide.style.transform = `translate3d(${
+        100 * (i - sliderNumber)
+      }%,0px,0px)`;
+      slide.style.webkitTransition = 'transform 300ms ease 0ms';
+      slide.style.transition = 'transform 300ms ease 0ms';
     });
   }
   function nextSlide() {
@@ -79,7 +83,11 @@ export default function ImageGallery(props) {
       slide.style.webkitTransform = `translate3d(${
         100 * (i - sliderNumber) + distance / 3
       }%,0px,0px)`;
-      slide.style.transition = 'transform 200ms ease 0ms';
+      slide.style.transform = `translate3d(${
+        100 * (i - sliderNumber) + distance / 3
+      }%,0px,0px)`;
+      slide.style.webkitTransition = 'transform 300ms ease 0ms';
+      slide.style.transition = 'transform 300ms ease 0ms';
     });
   }
   // transform: translate3d(-1450.8px, 0px, 0px);
@@ -96,7 +104,11 @@ export default function ImageGallery(props) {
         slide.style.webkitTransform = `translate3d(${
           100 * (i - sliderNumber)
         }%,0px,0px)`;
-        slide.style.transition = 'transform 200ms ease 0ms';
+        slide.style.transform = `translate3d(${
+          100 * (i - sliderNumber)
+        }%,0px,0px)`;
+        slide.style.transition = 'transform 300ms ease 0ms';
+        slide.style.webkitTransition = 'transform 300ms ease 0ms';
       });
     }
 
