@@ -584,3 +584,8 @@ nav > a {
     grid-template-columns: 1fr;
   }
 }
+.swipe-div {
+  width: 1000px;
+  height: 500px;
+  background-color: black;
+}

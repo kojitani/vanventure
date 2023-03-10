@@ -1,5 +1,6 @@
 import React from 'react';
 // import Icons from '../../assets/svg/beds.svg';
+
 export default function VanDetailsInfo(props) {
   const vanDetails = props.vanDetails;
 

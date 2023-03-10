@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
-
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 export default function VanDetailsBooking() {
   const [fixed, setFixed] = useState(false);
+  const [params, setParams] = useState(useParams());
 
+  console.log(params);
   let observer = new IntersectionObserver(entries => {
     if (entries[0].isIntersecting) {
       setFixed(false);
@@ -10,9 +12,15 @@ export default function VanDetailsBooking() {
       setFixed(true);
     }
   });
-  setTimeout(() => {
-    observer.observe(document.querySelector('#van-gallery'));
-  }, 1000);
+  useEffect(() => {
+    if (!params) {
+      observer.disconnect();
+      console.log('disconnected');
+    } else {
+      observer.observe(document.querySelector('#van-gallery'));
+      console.log('observing');
+    }
+  }, [params]);
 
   return (
     <div className={`booking-container ${fixed ? 'fixed' : ''}`}>

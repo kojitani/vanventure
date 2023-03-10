@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Loading from '../../components/Loading';
+import ImageSwipe from '../../components/ImageSwipe';
 
 export default function ImageGallery(props) {
   const galleryImages = props.vanDetails.imageUrl;
@@ -40,7 +41,38 @@ export default function ImageGallery(props) {
       }
     });
   }
+  const [touchStartX, setTouchStartX] = useState(null);
+  const [touchStartY, setTouchStartY] = useState(null);
+  const [touchEndX, setTouchEndX] = useState(null);
+  const [touchEndY, setTouchEndY] = useState(null);
+  //   console.log(touchStartX, touchStartY, touchEndX, touchEndY);
+  const minSwipeDistance = 50;
+  function onTouchStart(e) {
+    setTouchEndX(null);
+    setTouchEndX(null);
+    setTouchEndY(null);
+    setTouchStartX(e.targetTouches[0].clientX);
+    setTouchStartY(e.targetTouches[0].clientY);
+  }
 
+  function onTouchMove(e) {
+    setTouchEndX(e.targetTouches[0].clientX);
+    setTouchEndY(e.targetTouches[0].clientY);
+  }
+  function onTouchEnd() {
+    if (!touchStartX || !touchEndX) return;
+    const distanceX = touchStartX - touchEndX;
+    const distanceY = touchStartY - touchEndY;
+    const isLeftSwipe = distanceX > minSwipeDistance;
+    const isRightSwipe = distanceX < -minSwipeDistance;
+
+    if (isRightSwipe && Math.abs(distanceX) > distanceY) {
+      prevSlide();
+    }
+    if (isLeftSwipe && distanceX > distanceY) {
+      nextSlide();
+    }
+  }
   const imageElements = galleryImages.map((img, i) => {
     let className;
     if (i === 0) className = 'wide-gallery-img';
@@ -77,6 +109,9 @@ export default function ImageGallery(props) {
             className="fullscreen-img"
             id="fullscreen-img"
             src={galleryImages[sliderNumber]}
+            onTouchStart={() => onTouchStart(event)}
+            onTouchMove={() => onTouchMove(event)}
+            onTouchEnd={() => onTouchEnd()}
           ></img>{' '}
         </div>
       )}
