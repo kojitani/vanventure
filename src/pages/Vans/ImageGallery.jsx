@@ -74,7 +74,7 @@ export default function ImageGallery(props) {
       const distance = touchEndX - touchStartX;
       slide.style.transition = 'transition: transform 0ms ease 0ms';
       slide.style.transform = `translate3d(${
-        100 * (i - sliderNumber) + distance
+        100 * (i - sliderNumber) + distance / 4
       }%,0px,0px)`;
     });
   }
@@ -89,7 +89,9 @@ export default function ImageGallery(props) {
     if (distance < minSwipeDistance && distance > -minSwipeDistance) {
       const slides = document.querySelectorAll('.fullscreen-img');
       slides.forEach((slide, i) => {
-        slide.style.transform = `translateX(${100 * (i - sliderNumber)}%)`;
+        slide.style.transform = `translate3d(${
+          100 * (i - sliderNumber)
+        }%,0px,0px)`;
       });
     }
 
@@ -130,11 +132,12 @@ export default function ImageGallery(props) {
         onTouchMove={() => onTouchMove(event)}
         onTouchEnd={() => onTouchEnd()}
         style={{
-          transform: `translateX(${100 * (i - sliderNumber)}%)`,
+          transform: `translate3d(${100 * (i - sliderNumber)}%,0px,0px)`,
         }}
       ></img>
     );
   });
+
   return (
     <>
       {openGallery && (
