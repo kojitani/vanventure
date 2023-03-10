@@ -357,7 +357,7 @@ nav > a {
   width: 100%;
   border-radius: 1rem;
   transition: all 0.5s ease 0s;
-  /* -webkit-transition: all 0.5s ease 0s; */
+  -webkit-transition: all 0.5s ease 0s;
 }
 .slide-number-prev {
   position: absolute;

@@ -13,9 +13,7 @@ export default function ImageGallery(props) {
     }
   }, [imageLoaded]);
   function fullscreenImg(i) {
-    console.log(i);
     setSliderNumber(i);
-    console.log(sliderNumber);
     goToSlide(sliderNumber);
     setOpenGallery(true);
   }
@@ -60,9 +58,10 @@ export default function ImageGallery(props) {
   // console.log(touchStartX, touchStartY, touchEndX, touchEndY);
   const minSwipeDistance = 50;
   function onTouchStart(e) {
-    setTouchEndX(null);
-    setTouchEndX(null);
-    setTouchEndY(null);
+    setTouchStartX(0);
+    setTouchEndX(0);
+    setTouchStartY(0);
+    setTouchEndY(0);
     setTouchStartX(e.targetTouches[0].clientX);
     setTouchStartY(e.targetTouches[0].clientY);
   }
@@ -73,10 +72,12 @@ export default function ImageGallery(props) {
     const slides = document.querySelectorAll('.fullscreen-img');
 
     slides.forEach((slide, i) => {
+      //touchEndX bugs on touch start on low end mobile phoness
+      if (touchEndX < 10) return;
       const distance = touchEndX - touchStartX;
-
+      console.log(touchEndX, touchStartX);
       slide.style.transform = `translate3d(${
-        100 * (i - sliderNumber) + distance / 3
+        100 * (i - sliderNumber) + distance
       }%,0px,0px)`;
     });
   }
@@ -88,6 +89,7 @@ export default function ImageGallery(props) {
     const isLeftSwipe = distanceX > minSwipeDistance;
     const isRightSwipe = distanceX < -minSwipeDistance;
     const distance = touchEndX - touchStartX;
+
     if (distance < minSwipeDistance && distance > -minSwipeDistance) {
       const slides = document.querySelectorAll('.fullscreen-img');
       slides.forEach((slide, i) => {
