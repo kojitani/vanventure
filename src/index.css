@@ -560,8 +560,11 @@ nav > a {
   .small-gallery-img {
     display: none;
   }
-  nav {
-    display: none;
+  .nav-logo {
+    font-size: 1rem;
+  }
+  .nav-links a {
+    font-size: 1rem;
   }
   .van-details-info-container {
     width: 100%;
