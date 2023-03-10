@@ -26,9 +26,7 @@ export default function ImageGallery(props) {
   function goToSlide() {
     const slides = document.querySelectorAll('.fullscreen-img');
     slides.forEach((slide, i) => {
-      // slide.style.transition = 'transform 500ms ease 0ms';
-      slide.style.webkitTransition = 'transform 500ms ease 0s';
-      slide.style.webkitTransition = '-webkit-transform 500ms ease 0s';
+      slide.style.webkitTransition = '-webkit-transform 300ms ease 0ms';
       slide.style.transform = `translate3d(${
         100 * (i - sliderNumber)
       }%,0px,0px)`;
@@ -77,11 +75,10 @@ export default function ImageGallery(props) {
 
     slides.forEach((slide, i) => {
       const distance = touchEndX - touchStartX;
-      // slide.style.transition = 'transform 500ms ease 0ms';
-      slide.style.webkitTransition = 'transform 500ms ease 0s';
-      slide.style.webkitTransition = '-webkit-transform 500ms ease 0s';
+
+      slide.style.webkitTransition = '-webkit-transform 300ms ease 0ms';
       slide.style.transform = `translate3d(${
-        100 * (i - sliderNumber) + distance / 2
+        100 * (i - sliderNumber) + distance
       }%,0px,0px)`;
     });
   }
@@ -96,9 +93,7 @@ export default function ImageGallery(props) {
     if (distance < minSwipeDistance && distance > -minSwipeDistance) {
       const slides = document.querySelectorAll('.fullscreen-img');
       slides.forEach((slide, i) => {
-        // slide.style.transition = ' transform 500ms ease 0ms';
-        slide.style.webkitTransition = 'transform 500ms ease 0s';
-        slide.style.webkitTransition = '-webkit-transform 500ms ease 0s';
+        slide.style.webkitTransition = '-webkit-transform 300ms ease 0ms';
         slide.style.transform = `translate3d(${
           100 * (i - sliderNumber)
         }%,0px,0px)`;
