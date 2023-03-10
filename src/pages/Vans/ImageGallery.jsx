@@ -74,7 +74,7 @@ export default function ImageGallery(props) {
       const distance = touchEndX - touchStartX;
 
       slide.style.transform = `translateX(${
-        100 * (i - sliderNumber) + distance / 4
+        100 * (i - sliderNumber) + distance
       }%)`;
     });
   }
@@ -158,7 +158,11 @@ export default function ImageGallery(props) {
 
       <div className="van-gallery" id="van-gallery">
         {imageElements}
-        <button onClick={() => setOpenGallery(true)} className="show-gallery">
+        <button
+          style={loading ? { display: 'none' } : {}}
+          onClick={() => setOpenGallery(true)}
+          className="show-gallery"
+        >
           Show all photos
         </button>
       </div>
