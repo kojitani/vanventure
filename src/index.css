@@ -350,8 +350,10 @@ nav > a {
   object-position: center;
   height: 90%;
   /* width: 300px; */
-  transition: transform 500ms ease 0s;
-  -webkit-transition: -webkit-transform 500ms ease 0s;
+
+  -webkit-transition: transform 300ms ease 0s;
+  -webkit-transition: -webkit-transform 300ms ease 0s;
+  transition: transform 300ms ease 0s;
   cursor: pointer;
   border-radius: 1rem;
 }
