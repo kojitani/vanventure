@@ -5,13 +5,13 @@ export default function ImageGallery(props) {
   const galleryImages = props.vanDetails.imageUrl;
   const [sliderNumber, setSliderNumber] = useState(0);
   const [openGallery, setOpenGallery] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [imageLoaded, setImageLoaded] = useState(0);
-  // useEffect(() => {
-  //   if (imageLoaded === 5) {
-  //     setLoading(false);
-  //   }
-  // }, [imageLoaded]);
+  useEffect(() => {
+    if (imageLoaded === 5) {
+      setLoading(false);
+    }
+  }, [imageLoaded]);
   function fullscreenImg(i) {
     setSliderNumber(i);
     goToSlide(sliderNumber);

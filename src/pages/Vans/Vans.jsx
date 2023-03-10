@@ -23,7 +23,7 @@ export default function Vans() {
                 return (
                   <Link key={van.id} className="van-tile-link" to={van.id}>
                     <div className="van-tile">
-                      <img src={van.imageUrl} loading="lazy" />
+                      <img src={van.imageUrl[0]} loading="lazy" />
                       <div className="van-tile-info">
                         <span className="van-name">{van.name}</span>{' '}
                         <p className="van-class">
