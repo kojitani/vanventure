@@ -26,14 +26,9 @@ export default function ImageGallery(props) {
   function goToSlide() {
     const slides = document.querySelectorAll('.fullscreen-img');
     slides.forEach((slide, i) => {
-      slide.style.webkitTransform = `translate3d(${
-        100 * (i - sliderNumber)
-      }%,0px,0px)`;
       slide.style.transform = `translate3d(${
         100 * (i - sliderNumber)
       }%,0px,0px)`;
-      slide.style.webkitTransition = 'transform 300ms ease 0ms';
-      slide.style.transition = 'transform 300ms ease 0ms';
     });
   }
   function nextSlide() {
@@ -80,14 +75,9 @@ export default function ImageGallery(props) {
     slides.forEach((slide, i) => {
       const distance = touchEndX - touchStartX;
 
-      slide.style.webkitTransform = `translate3d(${
-        100 * (i - sliderNumber) + distance / 3
-      }%,0px,0px)`;
       slide.style.transform = `translate3d(${
         100 * (i - sliderNumber) + distance / 3
       }%,0px,0px)`;
-      slide.style.webkitTransition = 'transform 300ms ease 0ms';
-      slide.style.transition = 'transform 300ms ease 0ms';
     });
   }
   // transform: translate3d(-1450.8px, 0px, 0px);
@@ -101,14 +91,9 @@ export default function ImageGallery(props) {
     if (distance < minSwipeDistance && distance > -minSwipeDistance) {
       const slides = document.querySelectorAll('.fullscreen-img');
       slides.forEach((slide, i) => {
-        slide.style.webkitTransform = `translate3d(${
-          100 * (i - sliderNumber)
-        }%,0px,0px)`;
         slide.style.transform = `translate3d(${
           100 * (i - sliderNumber)
         }%,0px,0px)`;
-        slide.style.transition = 'transform 300ms ease 0ms';
-        slide.style.webkitTransition = 'transform 300ms ease 0ms';
       });
     }
 
@@ -149,7 +134,7 @@ export default function ImageGallery(props) {
         onTouchMove={() => onTouchMove(event)}
         onTouchEnd={() => onTouchEnd()}
         style={{
-          webkitTransform: `translate3d(${100 * (i - sliderNumber)}%,0px,0px)`,
+          transform: `translate3d(${100 * (i - sliderNumber)}%,0px,0px)`,
         }}
       ></img>
     );
