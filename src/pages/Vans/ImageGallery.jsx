@@ -5,13 +5,13 @@ export default function ImageGallery(props) {
   const galleryImages = props.vanDetails.imageUrl;
   const [sliderNumber, setSliderNumber] = useState(0);
   const [openGallery, setOpenGallery] = useState(false);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(0);
-  useEffect(() => {
-    if (imageLoaded === 5) {
-      setLoading(false);
-    }
-  }, [imageLoaded]);
+  // useEffect(() => {
+  //   if (imageLoaded === 5) {
+  //     setLoading(false);
+  //   }
+  // }, [imageLoaded]);
   function fullscreenImg(i) {
     setSliderNumber(i);
     goToSlide(sliderNumber);
@@ -24,7 +24,7 @@ export default function ImageGallery(props) {
   function goToSlide() {
     const slides = document.querySelectorAll('.fullscreen-img');
     slides.forEach((slide, i) => {
-      slide.style.transform = `translate3d(${
+      slide.style.WebkitTransform = `translate3d(${
         100 * (i - sliderNumber)
       }%,0px,0px)`;
     });
@@ -69,19 +69,18 @@ export default function ImageGallery(props) {
   function onTouchMove(e) {
     setTouchEndX(e.targetTouches[0].clientX);
     setTouchEndY(e.targetTouches[0].clientY);
-    const slides = document.querySelectorAll('.fullscreen-img');
 
+    const slides = document.querySelectorAll('.fullscreen-img');
     slides.forEach((slide, i) => {
       //touchEndX bugs on touch start on low end mobile phoness
       if (touchEndX < 10) return;
       const distance = touchEndX - touchStartX;
       console.log(touchEndX, touchStartX);
-      slide.style.transform = `translate3d(${
+      slide.style.WebkitTransform = `translate3d(${
         100 * (i - sliderNumber) + distance
       }%,0px,0px)`;
     });
   }
-  // transform: translate3d(-1450.8px, 0px, 0px);
   function onTouchEnd() {
     if (!touchStartX || !touchEndX) return;
     const distanceX = touchStartX - touchEndX;
@@ -89,11 +88,12 @@ export default function ImageGallery(props) {
     const isLeftSwipe = distanceX > minSwipeDistance;
     const isRightSwipe = distanceX < -minSwipeDistance;
     const distance = touchEndX - touchStartX;
+    console.log(distance);
 
     if (distance < minSwipeDistance && distance > -minSwipeDistance) {
       const slides = document.querySelectorAll('.fullscreen-img');
       slides.forEach((slide, i) => {
-        slide.style.transform = `translate3d(${
+        slide.style.WebkitTransform = `translate3d(${
           100 * (i - sliderNumber)
         }%,0px,0px)`;
       });
@@ -136,7 +136,7 @@ export default function ImageGallery(props) {
         onTouchMove={() => onTouchMove(event)}
         onTouchEnd={() => onTouchEnd()}
         style={{
-          transform: `translate3d(${100 * (i - sliderNumber)}%,0px,0px)`,
+          WebkitTransform: `translate3d(${100 * (i - sliderNumber)}%,0px,0px)`,
         }}
       ></img>
     );
