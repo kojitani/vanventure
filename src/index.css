@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Open+Sans&family=Ubuntu&display=swap');
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Tilt Neon', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
 }
 /* #root {
   position: relative;
@@ -167,7 +167,7 @@ nav > a {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: 50%;
-  gap: 1rem;
+  gap: 2rem;
   position: relative;
 }
 .van-tile {
@@ -177,9 +177,10 @@ nav > a {
 }
 .van-tile img {
   width: 100%;
-  height: 100%;
+  /* min-height: 100%; */
+  aspect-ratio: 1/1;
   object-fit: cover;
-  object-position: left;
+  object-position: center;
   border-radius: 1rem;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -448,8 +449,7 @@ nav > a {
 }
 .feature-title,
 .amenity-title,
-.rules-title,
-.host-info-title {
+.rules-title {
   font-size: 2.5rem;
   margin: 1rem 0;
 }
@@ -471,23 +471,12 @@ nav > a {
 .feature-item p,
 .amenity-item p,
 .rule-item p {
+  line-height: 2rem;
   font-size: 1.5rem;
   margin-left: 0.3rem;
   white-space: nowrap;
 }
 
-.host-info-container {
-  padding-bottom: 2rem;
-  border-bottom: 2px solid #b9b9b965;
-  position: relative;
-}
-.host-name-container {
-  display: flex;
-  align-items: center;
-}
-.host-message {
-  font-size: 1.5rem;
-}
 @media screen and (max-width: 1400px) {
   .van-list {
     grid-template-columns: repeat(3, 1fr);
@@ -495,10 +484,6 @@ nav > a {
   }
 }
 @media screen and (max-width: 1200px) {
-  .van-list {
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 33.333%;
-  }
   .van-gallery {
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: 50%;
@@ -530,18 +515,21 @@ nav > a {
   }
   .feature-title,
   .amenity-title,
-  .rules-title,
-  .host-info-title {
+  .rules-title {
     font-size: 1.7rem;
   }
   .feature-item p,
   .amenity-item p,
-  .rule-item p,
-  .host-message {
+  .rule-item p {
     font-size: 1.3rem;
   }
 }
-
+@media screen and (max-width: 900px) {
+  .van-list {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 33.333%;
+  }
+}
 @media screen and (max-width: 600px) {
   .van-list {
     grid-template-columns: repeat(1, 1fr);
@@ -573,14 +561,12 @@ nav > a {
 
   .feature-title,
   .amenity-title,
-  .rules-title,
-  .host-info-title {
+  .rules-title {
     font-size: 1.5rem;
   }
   .feature-item p,
   .amenity-item p,
-  .rule-item p,
-  .host-message {
+  .rule-item p {
     font-size: 1.2rem;
   }
   .van-details-rating {

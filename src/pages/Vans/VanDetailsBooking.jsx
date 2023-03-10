@@ -10,9 +10,9 @@ export default function VanDetailsBooking() {
       setFixed(true);
     }
   });
-  // setTimeout(() => {
-  //   observer.observe(document.querySelector('#van-gallery'));
-  // }, 1000);
+  setTimeout(() => {
+    observer.observe(document.querySelector('#van-gallery'));
+  }, 1000);
 
   return (
     <div className={`booking-container ${fixed ? 'fixed' : ''}`}>

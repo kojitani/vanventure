@@ -3,7 +3,7 @@ function sleep(ms) {
 }
 
 export async function getVans(id) {
-  await sleep(2000);
+  // await sleep(2000);
   // throw new Error('dada');
   const url = id ? `/api/vans/${id}` : '/api/vans';
   const res = await fetch(url);

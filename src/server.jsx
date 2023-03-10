@@ -16,7 +16,7 @@ createServer({
       class: '2020 Class B · 19ft',
       imageUrl: [
         'https://i.imgur.com/kP9VjQ9.jpg',
-        'https://i.imgur.com/gwwQccr.png',
+        'https://i.imgur.com/L5mBVdh.jpg',
         'https://i.imgur.com/Nv1Lkqg.jpg',
         'https://i.imgur.com/zFTLCMW.png',
         'https://i.imgur.com/emzT9ty.jpg',
@@ -25,7 +25,7 @@ createServer({
         'https://i.imgur.com/hW5VsgR.jpg',
         'https://i.imgur.com/Tei5JES.jpg',
         'https://i.imgur.com/7YaZNOX.jpg',
-        'https://i.imgur.com/L5mBVdh.jpg',
+        'https://i.imgur.com/gwwQccr.png',
       ],
       type: 'simple',
       seat: 'Seats 2',
@@ -54,10 +54,10 @@ createServer({
         'television',
       ],
       rules: [
-        'Pet friendly',
-        'No music festivals',
-        'No tailgating',
-        'No smoking',
+        'pet-friendly',
+        'no-music-festivals',
+        'no-tailgating',
+        'no-smoking',
       ],
     });
     server.create('van', {
@@ -67,8 +67,15 @@ createServer({
       description:
         "Beach Bum is a van inspired by surfers and travelers. It was created to be a portable home away from home, but with some cool features in it you won't find in an ordinary camper.",
       class: '2015 Class B · 21ft',
-      imageUrl:
-        'https://assets.scrimba.com/advanced-react/react-router/beach-bum.png',
+      imageUrl: [
+        'https://i.imgur.com/MbH92La.jpg',
+        'https://i.imgur.com/pIyrIkY.jpg',
+        'https://i.imgur.com/sMiOuWB.jpg',
+        'https://i.imgur.com/hASLlRv.jpg',
+        'https://i.imgur.com/T7U075W.jpg',
+        'https://i.imgur.com/FRIKxGb.jpg',
+        'https://i.imgur.com/qdfkxQt.jpg',
+      ],
       type: 'rugged',
       seat: 'Seats 4',
       rating: 4.7,
@@ -95,10 +102,10 @@ createServer({
         'television',
       ],
       rules: [
-        'Pet friendly',
-        'No music festivals',
-        'No tailgating',
-        'No smoking',
+        'pet-friendly',
+        'no-music-festivals',
+        'no-tailgating',
+        'no-smoking',
       ],
     });
     server.create('van', {
@@ -108,8 +115,16 @@ createServer({
       description:
         "Reliable Red is a van that was made for travelling. The inside is comfortable and cozy, with plenty of space to stretch out in. There's a small kitchen, so you can cook if you need to. You'll feel like home as soon as you step out of it.",
       class: '2022 Class B · 21ft',
-      imageUrl:
-        'https://assets.scrimba.com/advanced-react/react-router/reliable-red.png',
+      imageUrl: [
+        'https://i.imgur.com/30lekFi.jpg',
+        'https://i.imgur.com/2rwF1x6.jpg',
+        'https://i.imgur.com/T1TbihS.jpg',
+        'https://i.imgur.com/LXlrlj9.jpg',
+        'https://i.imgur.com/sWoGua0.jpg',
+        'https://i.imgur.com/Wr9BNww.jpg',
+        'https://i.imgur.com/iqjpH1V.jpg',
+        'https://i.imgur.com/ezFbUIA.jpg',
+      ],
       type: 'luxury',
       seat: 'Seats 4',
       rating: 4.9,
@@ -136,10 +151,10 @@ createServer({
         'television',
       ],
       rules: [
-        'Pet friendly',
-        'No music festivals',
-        'No tailgating',
-        'No smoking',
+        'pet-friendly',
+        'no-music-festivals',
+        'no-tailgating',
+        'no-smoking',
       ],
     });
     server.create('van', {
@@ -149,8 +164,15 @@ createServer({
       description:
         'Dreamfinder is the perfect van to travel in and experience. With a ceiling height of 2.1m, you can stand up in this van and there is great head room. The floor is a beautiful glass-reinforced plastic (GRP) which is easy to clean and very hard wearing. A large rear window and large side windows make it really light inside and keep it well ventilated.',
       class: '2009 Class B · 18ft',
-      imageUrl:
-        'https://assets.scrimba.com/advanced-react/react-router/dreamfinder.png',
+      imageUrl: [
+        'https://i.imgur.com/s4eMJa4.jpeg',
+        'https://i.imgur.com/ZLwPzyB.jpg',
+        'https://i.imgur.com/EPQNpVj.jpg',
+        'https://i.imgur.com/720vu09.jpg',
+        'https://i.imgur.com/2k9FnCN.jpg',
+        'https://i.imgur.com/SLfF39W.jpg',
+        'https://i.imgur.com/SZt7tyd.jpg',
+      ],
       type: 'simple',
       seat: 'Seats 2',
       rating: 4.8,
@@ -177,10 +199,10 @@ createServer({
         'television',
       ],
       rules: [
-        'Pet friendly',
-        'No music festivals',
-        'No tailgating',
-        'No smoking',
+        'pet-friendly',
+        'no-music-festivals',
+        'no-tailgating',
+        'no-smoking',
       ],
     });
     server.create('van', {
@@ -190,8 +212,13 @@ createServer({
       description:
         'The Cruiser is a van for those who love to travel in comfort and luxury. With its many windows, spacious interior and ample storage space, the Cruiser offers a beautiful view wherever you go.',
       class: '2021 Class B · 19ft',
-      imageUrl:
-        'https://assets.scrimba.com/advanced-react/react-router/the-cruiser.png',
+      imageUrl: [
+        'https://i.imgur.com/C9F4sq2.jpeg',
+        'https://i.imgur.com/L7WgW3F.png',
+        'https://i.imgur.com/l8PgK4Q.png',
+        'https://i.imgur.com/01cwhh2.png',
+        'https://i.imgur.com/ROeno5g.png',
+      ],
       type: 'luxury',
       seat: 'Seats 2',
       rating: 5,
@@ -218,10 +245,10 @@ createServer({
         'television',
       ],
       rules: [
-        'Pet friendly',
-        'No music festivals',
-        'No tailgating',
-        'No smoking',
+        'pet-friendly',
+        'no-music-festivals',
+        'no-tailgating',
+        'no-smoking',
       ],
     });
     server.create('van', {
@@ -231,8 +258,14 @@ createServer({
       description:
         "With this van, you can take your travel life to the next level. The Green Wonder is a sustainable vehicle that's perfect for people who are looking for a stylish, eco-friendly mode of transport that can go anywhere.",
       class: '2018 Class B · 20ft',
-      imageUrl:
-        'https://assets.scrimba.com/advanced-react/react-router/green-wonder.png',
+      imageUrl: [
+        'https://i.imgur.com/HYsmvij.jpg',
+        'https://i.imgur.com/uLwNSvS.jpg',
+        'https://i.imgur.com/rJEXv9b.jpg',
+        'https://i.imgur.com/HsZBWMb.jpg',
+        'https://i.imgur.com/oR6D8iK.jpg',
+        'https://i.imgur.com/WH1nWaF.jpg',
+      ],
       type: 'rugged',
       seat: 'Seats 2',
       rating: 4.6,
@@ -259,10 +292,10 @@ createServer({
         'television',
       ],
       rules: [
-        'Pet friendly',
-        'No music festivals',
-        'No tailgating',
-        'No smoking',
+        'pet-friendly',
+        'no-music-festivals',
+        'no-tailgating',
+        'no-smoking',
       ],
     });
     server.create('user', {

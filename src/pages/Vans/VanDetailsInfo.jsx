@@ -1,5 +1,5 @@
 import React from 'react';
-import VanDetailsBooking from './VanDetailsBooking';
+// import Icons from '../../assets/svg/beds.svg';
 export default function VanDetailsInfo(props) {
   const vanDetails = props.vanDetails;
 
@@ -11,7 +11,7 @@ export default function VanDetailsInfo(props) {
       <div key={i} className="feature-item">
         <img
           className="features-svg"
-          src="https://styles.redditmedia.com/t5_3kn1qh/styles/profileIcon_snoo1bacb84e-936a-4878-9298-264c8a867d7b-headshot.png?width=256&height=256&frame=1&auto=webp&crop=256:256,smart&v=enabled&s=131a5fa32c85c6fdfc9e5abe03c7ad263a6c47dc"
+          src={`/public/svg/${Object.keys(feature)}.svg`}
           width="30px"
         ></img>
         <p>{`${featureCase}: ${Object.values(feature)}`}</p>
@@ -27,7 +27,7 @@ export default function VanDetailsInfo(props) {
       <div key={i} className="amenity-item">
         <img
           className="features-svg"
-          src="https://styles.redditmedia.com/t5_3kn1qh/styles/profileIcon_snoo1bacb84e-936a-4878-9298-264c8a867d7b-headshot.png?width=256&height=256&frame=1&auto=webp&crop=256:256,smart&v=enabled&s=131a5fa32c85c6fdfc9e5abe03c7ad263a6c47dc"
+          src={`/public/svg/${amenity}.svg`}
           width="30px"
         ></img>
         <p>{amenityCase}</p>
@@ -35,14 +35,15 @@ export default function VanDetailsInfo(props) {
     );
   });
   const ruleElements = vanDetails.rules.map((rule, i) => {
+    const ruleCase = rule[0].toUpperCase() + rule.slice(1).replaceAll('-', ' ');
     return (
       <div key={i} className="rule-item">
         <img
           className="features-svg"
-          src="https://styles.redditmedia.com/t5_3kn1qh/styles/profileIcon_snoo1bacb84e-936a-4878-9298-264c8a867d7b-headshot.png?width=256&height=256&frame=1&auto=webp&crop=256:256,smart&v=enabled&s=131a5fa32c85c6fdfc9e5abe03c7ad263a6c47dc"
+          src={`/public/svg/${rule}.svg`}
           width={30}
         ></img>
-        <p>{rule}</p>
+        <p>{ruleCase}</p>
       </div>
     );
   });
@@ -62,20 +63,7 @@ export default function VanDetailsInfo(props) {
       <div className="amenity-container">{amenityElements}</div>
       <h1 className="rules-title">Rules and policies</h1>
       <div className="rules-container">{ruleElements}</div>
-      <div className="host-info-container">
-        <div className="host-name-container">
-          <img
-            src="https://styles.redditmedia.com/t5_3kn1qh/styles/profileIcon_snoo1bacb84e-936a-4878-9298-264c8a867d7b-headshot.png?width=256&height=256&frame=1&auto=webp&crop=256:256,smart&v=enabled&s=131a5fa32c85c6fdfc9e5abe03c7ad263a6c47dc"
-            width={40}
-          />
-          <h1 className="host-info-title">
-            Meet your host,{' '}
-            {vanDetails.host.name[0].toUpperCase() +
-              vanDetails.host.name.slice(1)}
-          </h1>
-        </div>
-        <p className="host-message">{vanDetails.host.message}</p>
-      </div>
+
       <div className="calendar">
         <h1>CALENDAR WILL GO HERE WOO</h1>
         <h1>CALENDAR WILL GO HERE WOO</h1>
