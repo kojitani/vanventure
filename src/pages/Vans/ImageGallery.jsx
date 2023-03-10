@@ -77,7 +77,7 @@ export default function ImageGallery(props) {
       const distance = touchEndX - touchStartX;
       // slide.style.transition = 'transform 500ms ease 0ms';
       slide.style.transform = `translate3d(${
-        100 * (i - sliderNumber) + distance / 4
+        100 * (i - sliderNumber) + distance / 2
       }%,0px,0px)`;
     });
   }
