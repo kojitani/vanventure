@@ -92,7 +92,7 @@ export default function ImageGallery(props) {
       const distance = touchEndX - touchStartX;
       console.log(touchEndX, touchStartX);
       slide.style.WebkitTransform = `translate3d(${
-        100 * (i - sliderNumber) + distance
+        100 * (i - sliderNumber) + distance / 3
       }%,0px,0px)`;
     });
   }
