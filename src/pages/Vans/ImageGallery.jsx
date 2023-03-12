@@ -29,6 +29,8 @@ export default function ImageGallery(props) {
       slide.style.WebkitTransform = `translate3d(${
         100 * (i - sliderNumber)
       }%,0px,0px)`;
+      slide.style.transition = 'all 0.5s ease 0s';
+      slide.style.WebkitTransition = 'all 0.5s ease 0s';
     });
   }
   function nextSlide() {
@@ -91,6 +93,8 @@ export default function ImageGallery(props) {
       if (touchEndX < 10) return;
       const distance = touchEndX - touchStartX;
       console.log(touchEndX, touchStartX);
+      slide.style.transition = 'all 0s ease 0s';
+      slide.style.WebkitTransition = 'all 0s ease 0s';
       slide.style.WebkitTransform = `translate3d(${
         100 * (i - sliderNumber) + distance / 3
       }%,0px,0px)`;
@@ -111,6 +115,8 @@ export default function ImageGallery(props) {
         slide.style.WebkitTransform = `translate3d(${
           100 * (i - sliderNumber)
         }%,0px,0px)`;
+        slide.style.transition = 'all 0.5s ease 0s';
+        slide.style.WebkitTransition = 'all 0.5s ease 0s';
       });
     }
 
