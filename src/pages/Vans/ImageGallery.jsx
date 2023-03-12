@@ -36,10 +36,9 @@ export default function ImageGallery(props) {
       if (PrevSliderNumber === galleryImages.length - 1) {
         return 0;
       } else {
-        return sliderNumber + 1;
+        return PrevSliderNumber + 1;
       }
     });
-
     goToSlide(sliderNumber);
   }
   function prevSlide() {
@@ -50,7 +49,6 @@ export default function ImageGallery(props) {
         return PrevSliderNumber - 1;
       }
     });
-
     goToSlide(sliderNumber);
   }
   console.log(sliderNumber);
