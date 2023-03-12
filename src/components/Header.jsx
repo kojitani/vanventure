@@ -57,7 +57,7 @@ const useStyles = createStyles(theme => ({
 export default function HeaderMegaMenu() {
   const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] =
     useDisclosure(false);
-  const { classes, theme } = useStyles();
+  const { classes } = useStyles();
 
   return (
     <Box>
@@ -97,14 +97,17 @@ export default function HeaderMegaMenu() {
         opened={drawerOpened}
         onClose={closeDrawer}
         size="100%"
-        padding="md"
+        padding="xl"
         title="Navigation"
         className={classes.hiddenDesktop}
         zIndex={1000000}
       >
         <ScrollArea h={`calc(100vh - ${rem(60)})`} mx="-md">
           <Divider my="sm" color="gray.1" />
-
+          <Link to="/" className={classes.link} onClick={closeDrawer}>
+            Home
+          </Link>
+          <Divider my="sm" color="gray.1" />
           <Link to="host" className={classes.link} onClick={closeDrawer}>
             Host
           </Link>

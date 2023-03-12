@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Loading from '../../components/Loading';
 import { IconChevronLeft, IconChevronRight, IconX } from '@tabler/icons-react';
+
 export default function ImageGallery(props) {
   const galleryImages = props.vanDetails.imageUrl;
   const [sliderNumber, setSliderNumber] = useState(0);
@@ -185,7 +186,11 @@ export default function ImageGallery(props) {
       )}
       {loading && <Loading />}
 
-      <div className="van-gallery" id="van-gallery">
+      <div
+        style={loading ? { margin: '5rem 0rem' } : {}}
+        className="van-gallery"
+        id="van-gallery"
+      >
         {imageElements}
         <button
           style={loading ? { display: 'none' } : {}}

@@ -245,6 +245,7 @@ nav > a {
   height: 80px;
   left: calc(50% - 40px);
   top: 5rem;
+  margin: 2rem 0;
 }
 .lds-ellipsis div {
   position: absolute;

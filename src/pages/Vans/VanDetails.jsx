@@ -21,13 +21,15 @@ export default function VanDetails() {
         <Await resolve={loaderData.vanDetails}>
           {vanDetails => {
             return (
-              <div className="van-details-container">
+              <>
                 <ImageGallery vanDetails={vanDetails} />
-                <div className="container-seperator">
-                  <VanDetailsInfo vanDetails={vanDetails} />
-                  <VanDetailsBooking vanDetails={vanDetails} />
+                <div className="van-details-container">
+                  <div className="container-seperator">
+                    <VanDetailsInfo vanDetails={vanDetails} />
+                    <VanDetailsBooking vanDetails={vanDetails} />
+                  </div>
                 </div>
-              </div>
+              </>
             );
           }}
         </Await>
