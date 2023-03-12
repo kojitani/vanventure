@@ -16,9 +16,11 @@ export default function ImageGallery(props) {
     setSliderNumber(i);
     goToSlide(sliderNumber);
     setOpenGallery(true);
+    document.querySelector('body').classList.add('body-hide-overflow');
   }
   function closeGallery() {
     setOpenGallery(false);
+    document.querySelector('body').classList.remove('body-hide-overflow');
   }
 
   function goToSlide() {
@@ -48,9 +50,24 @@ export default function ImageGallery(props) {
         return PrevSliderNumber - 1;
       }
     });
+
     goToSlide(sliderNumber);
   }
+  console.log(sliderNumber);
 
+  useEffect(() => {
+    console.log(sliderNumber);
+    if (!openGallery) return;
+    function handleKeyEvent(e) {
+      console.log(e.key, 'line 57');
+      if (e.key === 'ArrowRight') nextSlide();
+      if (e.key === 'ArrowLeft') prevSlide();
+      if (e.key === 'Escape') closeGallery();
+    }
+    document.addEventListener('keydown', handleKeyEvent);
+
+    return () => document.removeEventListener('keydown', handleKeyEvent);
+  }, [openGallery]);
   const [touchStartX, setTouchStartX] = useState(null);
   const [touchStartY, setTouchStartY] = useState(null);
   const [touchEndX, setTouchEndX] = useState(null);
@@ -147,13 +164,13 @@ export default function ImageGallery(props) {
       {openGallery && (
         <div className="fullscreen-gallery">
           <button onClick={() => closeGallery()} className="close-btn">
-            Close
+            <img src="/public/svg/close.svg" />
           </button>
           <button onClick={() => nextSlide()} className="next-btn">
-            Next
+            <img src="/public/svg/next.svg" />
           </button>
           <button onClick={() => prevSlide()} className="prev-btn">
-            Prev
+            <img src="/public/svg/prev.svg" />
           </button>
           <p className="slide-number-prev">
             {`Slide ${sliderNumber + 1}/${galleryImages.length}`}
