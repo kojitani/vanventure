@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Loading from '../../components/Loading';
-
+import { IconChevronLeft, IconChevronRight, IconX } from '@tabler/icons-react';
 export default function ImageGallery(props) {
   const galleryImages = props.vanDetails.imageUrl;
   const [sliderNumber, setSliderNumber] = useState(0);
@@ -168,16 +168,16 @@ export default function ImageGallery(props) {
       {openGallery && (
         <div className="fullscreen-gallery">
           <button onClick={() => closeGallery()} className="close-btn">
-            <img src="/public/svg/close.svg" />
+            <IconX />
           </button>
           <button onClick={() => nextSlide()} className="next-btn">
-            <img src="/public/svg/next.svg" />
+            <IconChevronRight />
           </button>
           <button onClick={() => prevSlide()} className="prev-btn">
-            <img src="/public/svg/prev.svg" />
+            <IconChevronLeft />
           </button>
           <p className="slide-number-prev">
-            {`Slide ${sliderNumber + 1}/${galleryImages.length}`}
+            {`${sliderNumber + 1}/${galleryImages.length}`}
           </p>
 
           {fullscreenElements}
