@@ -13,7 +13,7 @@ export default function VanDetails() {
   const loaderData = useLoaderData();
 
   return (
-    <div className="fallback-container">
+    <div className="fallback-container" id="fallback-container">
       <Link className="van-details-back-btn" to="/vans">
         <p>← Back to all vans</p>
       </Link>
@@ -23,6 +23,7 @@ export default function VanDetails() {
             return (
               <>
                 <ImageGallery vanDetails={vanDetails} />
+
                 <div className="van-details-container">
                   <div className="container-seperator">
                     <VanDetailsInfo vanDetails={vanDetails} />

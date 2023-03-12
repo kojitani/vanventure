@@ -117,7 +117,7 @@ createServer({
         'https://res.cloudinary.com/dxwwpwlqc/image/upload/v1678474077/van-3/dvowcvtgxvsmswtxancm_p8nkam.webp',
         'https://res.cloudinary.com/dxwwpwlqc/image/upload/v1678474077/van-3/g3pqipemhh6ohjktrgcq_oqg70m.webp',
         'https://res.cloudinary.com/dxwwpwlqc/image/upload/v1678474076/van-3/cwheeu5jwgxrech4yaw0_hgntyz.webp',
-        'https://res.cloudinary.com/dxwwpwlqc/image/upload/v1678474077/van-3/ln64tpzcgf2cxakqe0m7_rzz3tc.webp',
+        'https://res.cloudinary.com/dxwwpwlqc/image/upload/v1678474079/van-3/roeafcyetebq7il3ymhe_kgo4bq.webp',
       ],
       type: 'luxury',
       seat: 'Seats 4',

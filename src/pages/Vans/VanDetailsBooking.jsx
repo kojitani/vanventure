@@ -1,15 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-export default function VanDetailsBooking() {
-  const [fixed, setFixed] = useState(false);
-  const [params, setParams] = useState(useParams());
+import { Group } from '@mantine/core';
+import { DatePicker } from '@mantine/dates';
+import { IconCalendarQuestion } from '@tabler/icons-react';
 
-  console.log(params);
+export default function VanDetailsBooking(props) {
+  const [sticky, setSticky] = useState(false);
+  const [params, setParams] = useState(useParams());
+  const [dateValue, setDateValue] = useState([(new Date(), new Date())]);
+  const [calendarState, setCalendarState] = useState(false);
+
   let observer = new IntersectionObserver(entries => {
     if (entries[0].isIntersecting) {
-      setFixed(false);
+      setSticky(false);
     } else {
-      setFixed(true);
+      setSticky(true);
     }
   });
   useEffect(() => {
@@ -22,24 +27,84 @@ export default function VanDetailsBooking() {
     }
   }, [params]);
 
-  return (
-    <div className={`booking-container ${fixed ? 'fixed' : ''}`}>
-      <div className="booking-price">
-        <p>$150 night</p>
-        <span>★4.6 20 reviews</span>
-      </div>
+  const calendar = (
+    <Group position="center">
+      <DatePicker
+        numberOfColumns={2}
+        maxLevel="month"
+        minDate={new Date()}
+        maxDate={
+          new Date(
+            new Date().getFullYear(),
+            new Date().getMonth() + 3,
+            new Date().getDate()
+          )
+        }
+        type="range"
+        size="md"
+        value={dateValue}
+        onChange={setDateValue}
+      />
+    </Group>
+  );
+  function showCalendar() {
+    setCalendarState(true);
+  }
+  function clearDates() {
+    setDateValue([]);
+  }
+  function closeCalendar() {
+    setCalendarState(false);
+  }
 
-      <h2>MAY 5, 2023 - MAY 10, 2023</h2>
-      <h2>PICK UPanels, a composting toi </h2>
-      <button className="booking-btn">RENT NOW</button>
-      <div className="booking-calc">
-        <h3>$150 X 6 NIGHTS</h3>
-        <h3>$900 </h3>
+  function calendarOverlayClose(e) {
+    if (
+      e.target.className === 'calendar-overlay' ||
+      e.target.className === 'van-details-container'
+    )
+      closeCalendar();
+  }
+  window.addEventListener('click', calendarOverlayClose);
+  return (
+    <>
+      {calendarState && <div className="calendar-overlay"></div>}
+      <div className="booking-container">
+        <div className="booking-price">
+          <p>{`$${props.vanDetails.price} night`} </p>
+          <span>{`★${props.vanDetails.rating} (${props.vanDetails.reviews})`}</span>
+        </div>
+
+        <button onClick={() => showCalendar()} className="choose-date">
+          Select your dates
+        </button>
+        {calendarState && (
+          <div className="calendar-container">
+            {calendar}
+            <div className="calendar-btns">
+              <button className="calendar-clear" onClick={() => clearDates()}>
+                Clear dates
+              </button>
+              <button
+                className="calendar-close"
+                onClick={() => closeCalendar()}
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        )}
+
+        <h2>PICK UPanels, a composting toi </h2>
+        <button className="booking-btn">RENT NOW</button>
+        <div className="booking-calc">
+          <h3>{}</h3>
+          <h3>$900 </h3>
+        </div>
+        <div className="booking-total">
+          <h1>TOTAL BEFORE TAXES </h1>
+          <h1>$8948934</h1>
+        </div>
       </div>
-      <div className="booking-total">
-        <h1>TOTAL BEFORE TAXES </h1>
-        <h1>$8948934</h1>
-      </div>
-    </div>
+    </>
   );
 }
