@@ -1,11 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useOutletContext } from 'react-router-dom';
 export default function HostVansListing() {
-  return (
-    <div>
-      <Link to="1">
-        <div>IMAGE LISTINGS HERE...</div>
-      </Link>
-    </div>
-  );
+  const hostData = useOutletContext();
+
+  const vanElements = hostData
+    .filter(item => (item.host.id === 123 ? item : ''))
+    .map(van => {
+      return (
+        <Link key={van.id} to={van.id}>
+          <p>{van.name}</p>
+        </Link>
+      );
+    });
+
+  return <div>{vanElements}</div>;
 }

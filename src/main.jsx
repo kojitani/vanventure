@@ -14,15 +14,17 @@ import Vans, { loader as vansLoader } from './pages/Vans/Vans';
 import VanDetails, {
   loader as vanDetailsLoader,
 } from './pages/Vans/VanDetails';
-import HostLayout from './components/HostLayout';
+import HostLayout, { loader as hostLoader } from './components/HostLayout';
 import Income from './pages/Host/Income';
 import Reviews from './pages/Host/Reviews';
 import Dashboard from './pages/Host/Dashboard';
 import HostVans from './pages/Host/HostVans';
-import HostVansLayout from './pages/Host/HostVansLayout';
+import HostVansLayout, {
+  loader as hostVansLayoutLoader,
+} from './pages/Host/HostVansLayout';
 import HostVansDetails from './pages/Host/HostVansDetails';
 import HostVansPhotos from './pages/Host/HostVansPhotos';
-import HostVansPricing from './pages/Host/HostVansPricing';
+import HostVansFeatures from './pages/Host/HostVansFeatures';
 import Error from './components/Error';
 import './server';
 const router = createBrowserRouter(
@@ -37,14 +39,18 @@ const router = createBrowserRouter(
         loader={vanDetailsLoader}
       />
 
-      <Route path="host" element={<HostLayout />}>
-        <Route index element={<Dashboard />} />
+      <Route path="host" element={<HostLayout />} loader={hostLoader}>
+        <Route path="dashboard" element={<Dashboard />} />
         <Route path="income" element={<Income />} />
         <Route path="reviews" element={<Reviews />} />
         <Route path="vans" element={<HostVans />} />
-        <Route path="vans/:id" element={<HostVansLayout />}>
+        <Route
+          path="vans/:id"
+          element={<HostVansLayout />}
+          loader={hostVansLayoutLoader}
+        >
           <Route index element={<HostVansDetails />} />
-          <Route path="pricing" element={<HostVansPricing />} />
+          <Route path="features" element={<HostVansFeatures />} />
           <Route path="photos" element={<HostVansPhotos />} />
         </Route>
       </Route>

@@ -1,5 +1,12 @@
 import React from 'react';
-
+import { useOutlet, useOutletContext } from 'react-router-dom';
 export default function HostDashboard() {
-  return <div>host dashboard page</div>;
+  const [hostData, setHostData] = useOutletContext();
+
+  console.log(useOutletContext());
+  return (
+    <div className="host-dashboard">
+      <h1>Welcome!{}</h1>
+    </div>
+  );
 }

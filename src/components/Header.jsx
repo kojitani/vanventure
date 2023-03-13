@@ -12,8 +12,10 @@ import {
 } from '@mantine/core';
 import { MantineLogo } from '@mantine/ds';
 import { useDisclosure } from '@mantine/hooks';
+import { useLocation, Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Avatar, Tooltip } from '@mantine/core';
 
-import { Link } from 'react-router-dom';
 const useStyles = createStyles(theme => ({
   link: {
     display: 'flex',
@@ -60,10 +62,11 @@ const useStyles = createStyles(theme => ({
 }));
 
 export default function HeaderMegaMenu() {
+  const [loginStatus, setLoginStatus] = useState(true);
   const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] =
     useDisclosure(false);
   const { classes } = useStyles();
-
+  // console.log(location.pathname);
   return (
     <Box>
       <Header height={60} px="md">
@@ -82,7 +85,7 @@ export default function HeaderMegaMenu() {
             spacing={5}
             className={classes.hiddenMobile}
           >
-            <Link to="host" className={classes.link}>
+            <Link to="/host/dashboard" className={classes.link}>
               Host
             </Link>
             <Link to="about" className={classes.link}>
@@ -91,8 +94,20 @@ export default function HeaderMegaMenu() {
             <Link to="vans" className={classes.link}>
               Vans
             </Link>
-            <Button variant="default">Log in</Button>
-            <Button color="lime.9">Sign up</Button>
+            {!loginStatus && <Button variant="default">Log in</Button>}
+            {!loginStatus && <Button color="lime.9">Sign up</Button>}
+            {loginStatus && (
+              <Link to="/host/dashboard">
+                <Tooltip label="My Page" withArrow>
+                  <Avatar
+                    variant="filled"
+                    color="lime.9"
+                    size={40}
+                    radius="xl"
+                  />
+                </Tooltip>
+              </Link>
+            )}
           </Group>
 
           <Burger
@@ -132,10 +147,12 @@ export default function HeaderMegaMenu() {
 
           <Divider my="sm" color="gray.1" />
 
-          <Group position="center" grow pb="xl" px="md">
-            <Button variant="default">Log in</Button>
-            <Button color="lime.9">Sign up</Button>
-          </Group>
+          {!loginStatus && (
+            <Group position="center" grow pb="xl" px="md">
+              <Button variant="default">Log in</Button>
+              <Button color="lime.9">Sign up</Button>
+            </Group>
+          )}
         </ScrollArea>
       </Drawer>
     </Box>
