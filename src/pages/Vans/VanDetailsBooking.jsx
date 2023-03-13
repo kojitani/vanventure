@@ -1,32 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
 import { Group } from '@mantine/core';
 import { DatePicker } from '@mantine/dates';
-import { IconCalendarQuestion, IconChefHat } from '@tabler/icons-react';
-import { IconChevronRight } from '@tabler/icons-react';
 export default function VanDetailsBooking(props) {
-  const [sticky, setSticky] = useState(false);
-  const [params, setParams] = useState(useParams());
   const [dateValue, setDateValue] = useState([(null, null)]);
   const [numDays, setNumDays] = useState(0);
   const [calendarState, setCalendarState] = useState(false);
-
-  let observer = new IntersectionObserver(entries => {
-    if (entries[0].isIntersecting) {
-      setSticky(false);
-    } else {
-      setSticky(true);
-    }
-  });
-  useEffect(() => {
-    if (!params) {
-      observer.disconnect();
-      console.log('disconnected');
-    } else {
-      observer.observe(document.querySelector('#van-gallery'));
-      console.log('observing');
-    }
-  }, [params]);
 
   const calendar = (
     <Group position="center">
@@ -87,9 +65,9 @@ export default function VanDetailsBooking(props) {
             <p>
               <span className="booking-rating">★{props.vanDetails.rating}</span>{' '}
               ·{' '}
-              <span className="booking-reviews">
+              <a href="#reviews-container" className="booking-reviews">
                 {props.vanDetails.reviews} reviews
-              </span>
+              </a>
             </p>
           </div>
         </div>
@@ -125,12 +103,18 @@ export default function VanDetailsBooking(props) {
             </div>
           </div>
         )}
-        <button className="booking-btn" onClick={() => showCalendar()}>
-          {dateValue[1] ? 'Reserve' : 'Check availability'}
-        </button>
+        {!dateValue[1] && (
+          <button
+            className="booking-availability"
+            onClick={() => showCalendar()}
+          >
+            Check availability
+          </button>
+        )}
 
         {dateValue[1] && (
           <>
+            <button className="booking-reserve">Reserve</button>
             <p className="booking-warning">You won't be charged yet</p>
             <div className="booking-calc">
               <p>
@@ -140,6 +124,10 @@ export default function VanDetailsBooking(props) {
               <p>
                 ${(numDays * props.vanDetails.price).toLocaleString('en-US')}
               </p>
+            </div>
+            <div className="booking-cleaning">
+              <p>Cleaning fee</p>
+              <p>$200</p>
             </div>
             <div className="booking-insurance">
               <p>Insurance Coverage</p>
@@ -156,7 +144,8 @@ export default function VanDetailsBooking(props) {
                 {(
                   numDays * props.vanDetails.price +
                   numDays * props.vanDetails.price * 0.21 +
-                  numDays * props.vanDetails.price * 0.09
+                  numDays * props.vanDetails.price * 0.09 +
+                  200
                 )
                   .toFixed(2)
                   .toLocaleString('en-US')}

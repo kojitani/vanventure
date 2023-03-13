@@ -30,6 +30,12 @@ export default function VanDetails() {
                     <VanDetailsInfo vanDetails={vanDetails} />
                     <VanDetailsBooking vanDetails={vanDetails} />
                   </div>
+                  <div id="reviews-container">
+                    <h1>
+                      reviews hereeereviews hereeereviews hereeereviews
+                      hereeereviews hereee
+                    </h1>
+                  </div>
                 </div>
               </>
             );

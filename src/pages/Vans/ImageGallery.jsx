@@ -54,13 +54,10 @@ export default function ImageGallery(props) {
     });
     goToSlide(sliderNumber);
   }
-  console.log(sliderNumber);
 
   useEffect(() => {
-    console.log(sliderNumber);
     if (!openGallery) return;
     function handleKeyEvent(e) {
-      console.log(e.key, 'line 57');
       if (e.key === 'ArrowRight') nextSlide();
       if (e.key === 'ArrowLeft') prevSlide();
       if (e.key === 'Escape') closeGallery();
@@ -73,7 +70,7 @@ export default function ImageGallery(props) {
   const [touchStartY, setTouchStartY] = useState(null);
   const [touchEndX, setTouchEndX] = useState(null);
   const [touchEndY, setTouchEndY] = useState(null);
-  // console.log(touchStartX, touchStartY, touchEndX, touchEndY);
+
   const minSwipeDistance = 50;
   function onTouchStart(e) {
     setTouchStartX(0);
@@ -93,7 +90,6 @@ export default function ImageGallery(props) {
       //touchEndX bugs on touch start on low end mobile phoness
       if (touchEndX < 10) return;
       const distance = touchEndX - touchStartX;
-      console.log(touchEndX, touchStartX);
       slide.style.transition = 'all 0s ease 0s';
       slide.style.WebkitTransition = 'all 0s ease 0s';
       slide.style.WebkitTransform = `translate3d(${
@@ -108,7 +104,6 @@ export default function ImageGallery(props) {
     const isLeftSwipe = distanceX > minSwipeDistance;
     const isRightSwipe = distanceX < -minSwipeDistance;
     const distance = touchEndX - touchStartX;
-    console.log(distance);
 
     if (distance < minSwipeDistance && distance > -minSwipeDistance) {
       const slides = document.querySelectorAll('.fullscreen-img');
@@ -194,7 +189,10 @@ export default function ImageGallery(props) {
         {imageElements}
         <button
           style={loading ? { display: 'none' } : {}}
-          onClick={() => setOpenGallery(true)}
+          onClick={() => {
+            setOpenGallery(true);
+            document.querySelector('body').classList.add('body-hide-overflow');
+          }}
           className="show-gallery"
         >
           Show all photos

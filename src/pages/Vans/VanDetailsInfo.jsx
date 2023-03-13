@@ -14,6 +14,7 @@ export default function VanDetailsInfo(props) {
           className="features-svg"
           src={`/svg/${Object.keys(feature)}.svg`}
           width="30px"
+          height={30}
         ></img>
         <p>{`${featureCase}: ${Object.values(feature)}`}</p>
       </div>
@@ -30,6 +31,7 @@ export default function VanDetailsInfo(props) {
           className="features-svg"
           src={`/svg/${amenity}.svg`}
           width="30px"
+          height={30}
         ></img>
         <p>{amenityCase}</p>
       </div>
@@ -39,7 +41,12 @@ export default function VanDetailsInfo(props) {
     const ruleCase = rule[0].toUpperCase() + rule.slice(1).replaceAll('-', ' ');
     return (
       <div key={i} className="rule-item">
-        <img className="features-svg" src={`/svg/${rule}.svg`} width={30}></img>
+        <img
+          className="features-svg"
+          src={`/svg/${rule}.svg`}
+          width={30}
+          height={30}
+        ></img>
         <p>{ruleCase}</p>
       </div>
     );
@@ -61,42 +68,8 @@ export default function VanDetailsInfo(props) {
       <h1 className="rules-title">Rules and policies</h1>
       <div className="rules-container">{ruleElements}</div>
 
-      <div className="calendar">
-        <h1>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
-          accusantium, quod voluptatem asperiores ducimus in inventore, debitis
-          culpa reiciendis, nulla placeat quidem ea soluta iure magnam. Nisi,
-          sequi ipsam non voluptatibus aspernatur itaque dicta obcaecati, et
-          provident officia voluptas libero rem reprehenderit! Repellat soluta
-          eaque voluptatem ullam sunt quos, tempora id beatae. Ipsum maiores
-          quis maxime commodi nam omnis animi temporibus eum neque deleniti non
-          inventore ipsa dolore amet itaque in praesentium, nostrum quos
-          quisquam ex corrupti debitis esse! Quam dolore esse velit praesentium
-          aliquid, molestiae ipsum quasi voluptatibus, officiis deserunt id.
-          Necessitatibus omnis nemo inventore nesciunt fugit. Tenetur, autem.
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit id
-          maxime ullam dolores molestias illum amet. Impedit, quidem? Quod sunt
-          voluptates est nobis facilis doloribus earum? Quasi laudantium, ex est
-          id corporis saepe possimus? Quibusdam eum ratione molestias velit
-          assumenda sequi nesciunt excepturi temporibus, deserunt perferendis
-          iste consectetur qui maxime eaque libero repellat? Accusamus nisi,
-          exercitationem at pariatur culpa consectetur nihil ab expedita
-          repellendus amet minima rem enim cum maiores cupiditate aliquid
-          consequuntur, totam libero sit adipisci excepturi. Tenetur magnam
-          dolore eum autem et, doloremque, culpa quod commodi quis est labore,
-          tempora unde dolores ex ullam fuga totam saepe voluptatem? Lorem ipsum
-          dolor sit amet consectetur adipisicing elit. Odit optio laudantium
-          officiis? Non atque ex enim? Amet fugit maxime, quae a nisi sed vitae
-          dignissimos explicabo nesciunt iusto nobis, beatae est? Odit, eos
-          exercitationem. Eos libero voluptate, reiciendis repellendus ea
-          quaerat quisquam laborum est molestiae at inventore eligendi labore
-          impedit, quo perspiciatis fuga? Ab, libero sint. Qui nisi cum id
-          commodi ea dignissimos ducimus ab in vel magni repellendus expedita
-          tempore earum provident debitis numquam aliquid, dolore fugit
-          nesciunt! Porro, nulla recusandae excepturi aliquam corrupti illum
-          harum cum praesentium tempora dolorum esse facilis cupiditate officiis
-          eos repellat itaque dicta nemo!
-        </h1>
+      <div className="availability-container">
+        <h1 className="availability-title">Availability and rates</h1>
       </div>
     </div>
   );

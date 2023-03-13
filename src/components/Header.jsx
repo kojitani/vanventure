@@ -52,6 +52,11 @@ const useStyles = createStyles(theme => ({
       display: 'none',
     },
   },
+  headerMargin: {
+    [theme.fn.smallerThan('2000')]: {
+      padding: '0 10%',
+    },
+  },
 }));
 
 export default function HeaderMegaMenu() {
@@ -62,7 +67,12 @@ export default function HeaderMegaMenu() {
   return (
     <Box>
       <Header height={60} px="md">
-        <Group position="apart" sx={{ height: '100%' }}>
+        <Group
+          position="apart"
+          sx={{ height: '100%' }}
+          px={'15%'}
+          className={classes.headerMargin}
+        >
           <Link to="/">
             <MantineLogo size={30} />
           </Link>
