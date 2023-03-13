@@ -50,7 +50,14 @@ export default function VanDetailsBooking(props) {
     if (e.target.className === 'calendar-overlay') closeCalendar();
   }
   window.addEventListener('click', calendarOverlayClose);
-  console.log(numDays);
+
+  function featureUnavailable() {
+    const btn = document.querySelector('.booking-reserve');
+    btn.textContent = 'Sorry, this feature is currently under progress.';
+    btn.disabled = true;
+    btn.style.backgroundColor = '#4e5752';
+    btn.style.cursor = 'default';
+  }
   return (
     <>
       <div className="booking-container">
@@ -114,7 +121,12 @@ export default function VanDetailsBooking(props) {
 
         {dateValue[1] && (
           <>
-            <button className="booking-reserve">Reserve</button>
+            <button
+              className="booking-reserve"
+              onClick={() => featureUnavailable()}
+            >
+              Reserve
+            </button>
             <p className="booking-warning">You won't be charged yet</p>
             <div className="booking-calc">
               <p>

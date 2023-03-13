@@ -92,7 +92,7 @@ export default function HeaderMegaMenu() {
               Vans
             </Link>
             <Button variant="default">Log in</Button>
-            <Button>Sign up</Button>
+            <Button color="lime.9">Sign up</Button>
           </Group>
 
           <Burger
@@ -134,7 +134,7 @@ export default function HeaderMegaMenu() {
 
           <Group position="center" grow pb="xl" px="md">
             <Button variant="default">Log in</Button>
-            <Button>Sign up</Button>
+            <Button color="lime.9">Sign up</Button>
           </Group>
         </ScrollArea>
       </Drawer>

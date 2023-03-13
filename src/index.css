@@ -340,7 +340,7 @@ nav > a {
   margin-top: 1rem;
   font-size: 1.3rem;
   cursor: pointer;
-  background-color: #228be6;
+  background-color: #5c940d;
   color: white;
   font-weight: bold;
 }
@@ -424,6 +424,10 @@ nav > a {
   align-items: center;
   width: 2rem;
   height: 2rem;
+}
+.next-btn:active,
+.prev-btn:active {
+  transform: translateY(5%);
 }
 .close-btn img,
 .next-btn img,
@@ -563,6 +567,97 @@ nav > a {
   margin-left: 0.3rem;
   white-space: nowrap;
 }
+
+.calendar-overlay {
+  position: absolute;
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  display: none;
+}
+
+.calendar-container {
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 1rem;
+  padding: 1rem;
+  padding-bottom: 5rem;
+  position: absolute;
+  top: 30%;
+  right: 10%;
+}
+.calendar-btns {
+  position: absolute;
+  right: 1.5rem;
+  bottom: 0.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+}
+.calendar-clear,
+.calendar-close {
+  font-family: 'Tilt Neon', sans-serif;
+  border-style: none;
+  background-color: transparent;
+  padding: 0.3rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.calendar-clear {
+  text-decoration: underline;
+}
+.calendar-clear:hover {
+  background-color: rgba(199, 199, 199, 0.349);
+}
+.calendar-close {
+  background-color: black;
+  color: white;
+}
+.mantine-CalendarHeader-calendarHeaderLevel,
+.mantine-Day-day {
+  font-family: 'Tilt Neon', sans-serif;
+  font-size: 1.2rem;
+}
+.calendar-date {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 350px;
+  border-radius: 0.5rem;
+  font-size: 1.1rem;
+  font-family: 'Tilt Neon', sans-serif;
+  border: 1px solid black;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+.pickup-date,
+.dropoff-date {
+  display: flex;
+  flex-direction: column;
+}
+.pickup-date p,
+.dropoff-date p {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.selected-date {
+  font-size: 1rem;
+}
+#reviews-container {
+  padding: 10px;
+  border-top: 5px solid black;
+}
+.host-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 @media screen and (max-width: 2000px) {
   .van-list {
     grid-template-columns: repeat(4, 1fr);
@@ -703,88 +798,4 @@ nav > a {
   .prev-btn {
     left: 0.5rem;
   }
-}
-
-.calendar-overlay {
-  position: absolute;
-  background-color: transparent;
-  width: 100%;
-  height: 100%;
-  z-index: 3;
-  display: none;
-}
-
-.calendar-container {
-  background-color: white;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  border-radius: 1rem;
-  padding: 1rem;
-  padding-bottom: 5rem;
-  position: absolute;
-  top: 30%;
-  right: 10%;
-}
-.calendar-btns {
-  position: absolute;
-  right: 1.5rem;
-  bottom: 0.75rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.4rem;
-}
-.calendar-clear,
-.calendar-close {
-  font-family: 'Tilt Neon', sans-serif;
-  border-style: none;
-  background-color: transparent;
-  padding: 0.3rem 1rem;
-  border-radius: 0.5rem;
-  font-size: 1.2rem;
-  cursor: pointer;
-}
-.calendar-clear {
-  text-decoration: underline;
-}
-.calendar-clear:hover {
-  background-color: rgba(199, 199, 199, 0.349);
-}
-.calendar-close {
-  background-color: black;
-  color: white;
-}
-.mantine-CalendarHeader-calendarHeaderLevel,
-.mantine-Day-day {
-  font-family: 'Tilt Neon', sans-serif;
-  font-size: 1.2rem;
-}
-.calendar-date {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 350px;
-  border-radius: 0.5rem;
-  font-size: 1.1rem;
-  font-family: 'Tilt Neon', sans-serif;
-  border: 1px solid black;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  margin-top: 1rem;
-}
-.pickup-date,
-.dropoff-date {
-  display: flex;
-  flex-direction: column;
-}
-.pickup-date p,
-.dropoff-date p {
-  text-transform: uppercase;
-  font-weight: 600;
-}
-.selected-date {
-  font-size: 1rem;
-}
-#reviews-container {
-  padding: 10px;
-  border-top: 5px solid black;
 }
