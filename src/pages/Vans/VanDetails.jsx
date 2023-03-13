@@ -13,7 +13,8 @@ export default function VanDetails() {
   const loaderData = useLoaderData();
 
   return (
-    <div className="fallback-container" id="fallback-container">
+    <div className="fallback-container hidden" id="fallback-container">
+      <div className="calendar-overlay"></div>
       <Link className="van-details-back-btn" to="/vans">
         <p>← Back to all vans</p>
       </Link>

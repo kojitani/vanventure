@@ -299,38 +299,70 @@ nav > a {
 }
 .booking-container {
   position: sticky;
-  top: 0;
-  width: 40%;
+  top: 2rem;
+  width: 400px;
   height: 100%;
   display: flex;
   align-items: center;
   flex-direction: column;
   padding: 1rem;
   gap: 0.5rem;
-  /* border-left: 2px solid #b9b9b965; */
   transition: all 0.3s ease;
+  z-index: 3;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 1rem;
 }
 
-.booking-price {
+.booking-info {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  width: 65%;
+  align-items: center;
+  width: 350px;
   font-size: 1.5rem;
+}
+.booking-reviews-container {
+  font-size: 1.2rem;
+}
+.booking-reviews {
+  text-decoration: underline;
+  cursor: pointer;
 }
 .booking-btn {
-  width: 65%;
+  width: 350px;
   font-size: 1.5rem;
+  border-radius: 0.5rem;
+  border-style: none;
+  padding: 1rem;
+  margin-top: 1rem;
+  font-size: 1.3rem;
+  cursor: pointer;
+  background-color: #228be6;
+  color: white;
+  font-weight: bold;
 }
-.booking-calc {
+.booking-warning {
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+.booking-calc,
+.booking-total,
+.booking-insurance,
+.booking-tax {
   display: flex;
   justify-content: space-between;
-  width: 65%;
+  width: 350px;
+  font-size: 1.2rem;
+}
+.booking-tax {
+  border-bottom: 2px solid #b9b9b965;
+  padding-bottom: 1rem;
 }
 .booking-total {
-  width: 65%;
-  display: flex;
-  justify-content: space-between;
+  padding: 0.5rem 0;
+  font-weight: bold;
 }
 .van-details-container {
   min-height: calc(100vh - 96px);
@@ -417,7 +449,8 @@ nav > a {
   margin-left: 10%;
   gap: 0.5rem;
   overflow: hidden;
-  padding: 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 .van-gallery img {
   width: 100%;
@@ -659,14 +692,19 @@ nav > a {
   background-color: transparent;
   width: 100%;
   height: 100%;
+  z-index: 3;
+  display: none;
 }
+
 .calendar-container {
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 1rem;
   padding: 1rem;
   padding-bottom: 5rem;
-  position: relative;
+  position: absolute;
+  top: 30%;
+  right: 10%;
 }
 .calendar-btns {
   position: absolute;
@@ -701,4 +739,30 @@ nav > a {
 .mantine-Day-day {
   font-family: 'Tilt Neon', sans-serif;
   font-size: 1.2rem;
+}
+.calendar-date {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 350px;
+  border-radius: 0.5rem;
+  font-size: 1.1rem;
+  font-family: 'Tilt Neon', sans-serif;
+  border: 1px solid black;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+.pickup-date,
+.dropoff-date {
+  display: flex;
+  flex-direction: column;
+}
+.pickup-date p,
+.dropoff-date p {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.selected-date {
+  font-size: 1rem;
 }
