@@ -54,7 +54,6 @@ export default function VanDetailsReviews(props) {
         <Text className={classes.body} size="lg">
           {review.body}
         </Text>
-        <Divider size="xs" variant="dashed" mt="1.5rem" />
       </div>
     );
   });

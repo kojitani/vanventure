@@ -545,6 +545,7 @@ nav > a {
   /* margin-top: 1rem; */
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
   gap: 1rem;
   padding-bottom: 2rem;
   border-bottom: 2px solid #b9b9b965;
