@@ -554,6 +554,7 @@ nav > a {
 .amenity-item,
 .rule-item {
   display: flex;
+  height: 32px;
 }
 .feature-item p,
 .amenity-item p,
