@@ -1,12 +1,12 @@
 import React from 'react';
 import { useOutlet, useOutletContext } from 'react-router-dom';
 export default function HostDashboard() {
-  const [hostData, setHostData] = useOutletContext();
+  const user = JSON.parse(localStorage.getItem('user'));
 
-  console.log(useOutletContext());
+  const nameCase = user.name[0]?.toUpperCase() + user.name.slice(1);
   return (
     <div className="host-dashboard">
-      <h1>Welcome!{}</h1>
+      <h1>Welcome back, {nameCase === 'undefined' ? 'User' : nameCase}!</h1>
     </div>
   );
 }

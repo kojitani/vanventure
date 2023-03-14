@@ -9,11 +9,21 @@ import {
   Drawer,
   ScrollArea,
   rem,
+  Menu,
+  Text,
 } from '@mantine/core';
+import {
+  IconSettings,
+  IconSearch,
+  IconPhoto,
+  IconMessageCircle,
+  IconTrash,
+  IconArrowsLeftRight,
+} from '@tabler/icons-react';
 import { MantineLogo } from '@mantine/ds';
 import { useDisclosure } from '@mantine/hooks';
 import { useLocation, Link } from 'react-router-dom';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Avatar, Tooltip } from '@mantine/core';
 
 const useStyles = createStyles(theme => ({
@@ -62,11 +72,20 @@ const useStyles = createStyles(theme => ({
 }));
 
 export default function HeaderMegaMenu() {
-  const [loginStatus, setLoginStatus] = useState(true);
+  const [loginStatus, setLoginStatus] = useState(false);
+  const location = useLocation();
   const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] =
     useDisclosure(false);
   const { classes } = useStyles();
-  // console.log(location.pathname);
+
+  useEffect(() => {
+    setLoginStatus(localStorage.getItem('loggedin'));
+  }, [location]);
+  function logOut() {
+    console.log('testing');
+    localStorage.removeItem('loggedin');
+    window.location.reload();
+  }
   return (
     <Box>
       <Header height={60} px="md">
@@ -94,20 +113,49 @@ export default function HeaderMegaMenu() {
             <Link to="vans" className={classes.link}>
               Vans
             </Link>
-            {!loginStatus && <Button variant="default">Log in</Button>}
-            {!loginStatus && <Button color="lime.9">Sign up</Button>}
-            {loginStatus && (
-              <Link to="/host/dashboard">
-                <Tooltip label="My Page" withArrow>
-                  <Avatar
-                    variant="filled"
-                    color="lime.9"
-                    size={40}
-                    radius="xl"
-                  />
-                </Tooltip>
-              </Link>
-            )}
+
+            <Menu shadow="md" width={200}>
+              <Menu.Target>
+                <Avatar
+                  variant="filled"
+                  color="lime.9"
+                  size={40}
+                  radius="xl"
+                  style={{ cursor: 'pointer' }}
+                />
+              </Menu.Target>
+
+              <Menu.Dropdown>
+                {!loginStatus && (
+                  <Link
+                    to="login"
+                    state={{ type: 'login' }}
+                    style={{ textDecoration: 'none' }}
+                  >
+                    <Menu.Item style={{ fontSize: '1.2rem' }}>Log in</Menu.Item>
+                  </Link>
+                )}
+                {!loginStatus && (
+                  <Link
+                    to="login"
+                    state={{ type: 'register' }}
+                    style={{ textDecoration: 'none' }}
+                  >
+                    <Menu.Item style={{ fontSize: '1.2rem' }}>
+                      Sign up
+                    </Menu.Item>
+                  </Link>
+                )}
+                {loginStatus && (
+                  <Menu.Item
+                    style={{ fontSize: '1.2rem' }}
+                    onClick={() => logOut()}
+                  >
+                    Sign out
+                  </Menu.Item>
+                )}
+              </Menu.Dropdown>
+            </Menu>
           </Group>
 
           <Burger
@@ -148,9 +196,28 @@ export default function HeaderMegaMenu() {
           <Divider my="sm" color="gray.1" />
 
           {!loginStatus && (
+            <Link
+              style={{ textDecoration: 'none' }}
+              to="/login"
+              onClick={closeDrawer}
+            >
+              <Group position="center" grow pb="xl" px="md">
+                <Button color="lime.9">Log in</Button>
+              </Group>
+            </Link>
+          )}
+          {loginStatus && (
             <Group position="center" grow pb="xl" px="md">
-              <Button variant="default">Log in</Button>
-              <Button color="lime.9">Sign up</Button>
+              <Link to="/host/dashboard">
+                <Tooltip label="My Page" withArrow>
+                  <Avatar
+                    variant="filled"
+                    color="lime.9"
+                    size={40}
+                    radius="xl"
+                  />
+                </Tooltip>
+              </Link>
             </Group>
           )}
         </ScrollArea>

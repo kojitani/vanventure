@@ -7,8 +7,19 @@ export default function HostVansListing() {
     .filter(item => (item.host.id === 123 ? item : ''))
     .map(van => {
       return (
-        <Link key={van.id} to={van.id}>
-          <p>{van.name}</p>
+        <Link
+          key={van.id}
+          to={`${van.id}/details`}
+          style={{ textDecoration: 'none' }}
+        >
+          <div className="host-listing">
+            <img src={van.imageUrl[0]}></img>
+            <div className="host-listing-info">
+              <p style={{ fontWeight: 'bold' }}>{van.name}</p>
+              <p>${van.price}/night</p>
+              <p>Visibility: Public</p>
+            </div>
+          </div>
         </Link>
       );
     });

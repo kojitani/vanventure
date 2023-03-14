@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Outlet, useLocation, useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Outlet, useLocation, useNavigate, useParams } from 'react-router-dom';
 import { Tabs } from '@mantine/core';
 import { getHostVans } from '../api';
 import { useLoaderData } from 'react-router-dom';
@@ -9,14 +9,14 @@ export function loader() {
 }
 export default function HostLayout() {
   const hostDetails = useLoaderData();
-
   const navigate = useNavigate();
-  const location = useLocation();
-  const urlGetter = location.pathname.lastIndexOf('/') + 1;
-  const [activeTab, setActiveTab] = useState(
-    location.pathname.slice(urlGetter)
-  );
+  const [pathName, setPathName] = useState(window.location.pathname);
+  const [activeTab, setActiveTab] = useState(pathName.slice(6));
 
+  useEffect(() => {
+    const path = window.location.pathname;
+    setActiveTab(path.includes('/host/vans') ? 'vans' : path.slice(6));
+  }, [window.location.pathname]);
   return (
     <div className="host-container">
       <Tabs

@@ -652,7 +652,48 @@ nav > a {
   justify-content: center;
   padding: 0 15%;
 }
-.host-dashboard {
+.host-listing {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  background-color: rgba(228, 228, 228, 0.616);
+  padding: 1rem;
+  border-radius: 0.3rem;
+}
+.host-listing img {
+  border-radius: 0.5rem;
+  width: 300px;
+}
+.host-listing-info {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.host-listing-info p {
+  color: black;
+  font-size: 1.3rem;
+}
+.host-photos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-row: 50%;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+.host-photos img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 3/2;
+  border-radius: 0.3rem;
+  border: 2px solid rgb(107, 107, 107);
+  object-fit: cover;
+  object-position: center;
+}
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem 0;
 }
 @media screen and (max-width: 2000px) {
   .van-list {

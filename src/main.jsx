@@ -10,6 +10,7 @@ import './index.css';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import About from './pages/About';
+import Login from './pages/Login';
 import Vans, { loader as vansLoader } from './pages/Vans/Vans';
 import VanDetails, {
   loader as vanDetailsLoader,
@@ -26,32 +27,36 @@ import HostVansDetails from './pages/Host/HostVansDetails';
 import HostVansPhotos from './pages/Host/HostVansPhotos';
 import HostVansFeatures from './pages/Host/HostVansFeatures';
 import Error from './components/Error';
+import AuthRequired from './components/AuthRequired';
+
 import './server';
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />} errorElement={<Error />}>
       <Route index element={<Home />} />
       <Route path="about" element={<About />} />
+      <Route path="login" element={<Login />} />
       <Route path="vans" element={<Vans />} loader={vansLoader} />
       <Route
         path="vans/:id"
         element={<VanDetails />}
         loader={vanDetailsLoader}
       />
-
-      <Route path="host" element={<HostLayout />} loader={hostLoader}>
-        <Route path="dashboard" element={<Dashboard />} />
-        <Route path="income" element={<Income />} />
-        <Route path="reviews" element={<Reviews />} />
-        <Route path="vans" element={<HostVans />} />
-        <Route
-          path="vans/:id"
-          element={<HostVansLayout />}
-          loader={hostVansLayoutLoader}
-        >
-          <Route index element={<HostVansDetails />} />
-          <Route path="features" element={<HostVansFeatures />} />
-          <Route path="photos" element={<HostVansPhotos />} />
+      <Route element={<AuthRequired />}>
+        <Route path="/host" element={<HostLayout />} loader={hostLoader}>
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="income" element={<Income />} />
+          <Route path="reviews" element={<Reviews />} />
+          <Route path="vans" element={<HostVans />} />
+          <Route
+            path="vans/:id"
+            element={<HostVansLayout />}
+            loader={hostVansLayoutLoader}
+          >
+            <Route path="details" element={<HostVansDetails />} />
+            <Route path="features" element={<HostVansFeatures />} />
+            <Route path="photos" element={<HostVansPhotos />} />
+          </Route>
         </Route>
       </Route>
     </Route>
