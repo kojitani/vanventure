@@ -43,7 +43,16 @@ export default function FooterSocial() {
   return (
     <div className={classes.footer}>
       <Container className={classes.inner} m="0 15%" size={'100%'}>
-        <MantineLogo size={28} />
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          <img src="/logo.png" height={34}></img>
+          <p style={{ fontWeight: '600' }}>VanVenture</p>
+        </div>
         <Group spacing={0} className={classes.links} position="right" noWrap>
           <ActionIcon size="lg">
             <IconBrandTwitter size="1.05rem" stroke={1.5} />

@@ -30,8 +30,8 @@ export default function Vans() {
                           {van.class} · {van.seat}
                         </p>
                         <p>
-                          <span className="van-rating">★ {van.rating}</span>
-                          <span className="van-reviews">({van.reviews})</span>
+                          <span className="van-rating">fix later</span>
+                          <span className="van-reviews">fix later</span>
                         </p>
                         <span className="van-pricing">
                           <span id="van-price">${van.price}</span>/day

@@ -5,7 +5,11 @@ export default function VanDetailsBooking(props) {
   const [dateValue, setDateValue] = useState([(null, null)]);
   const [numDays, setNumDays] = useState(0);
   const [calendarState, setCalendarState] = useState(false);
-
+  const ratingArr = [];
+  props.vanDetails.reviews.forEach(review => ratingArr.push(review.rating));
+  const ratingTotal =
+    ratingArr.reduce((accRating, curRating) => accRating + curRating, 0) /
+    ratingArr.length;
   const calendar = (
     <Group position="center">
       <DatePicker
@@ -70,10 +74,12 @@ export default function VanDetailsBooking(props) {
           </div>
           <div className="booking-reviews-container">
             <p>
-              <span className="booking-rating">★{props.vanDetails.rating}</span>{' '}
+              <span style={{ fontWeight: 'bold' }}>
+                ★ {ratingTotal.toFixed(2)}
+              </span>{' '}
               ·{' '}
               <a href="#reviews-container" className="booking-reviews">
-                {props.vanDetails.reviews} reviews
+                {ratingArr.length} reviews
               </a>
             </p>
           </div>

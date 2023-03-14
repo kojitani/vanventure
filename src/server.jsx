@@ -27,8 +27,32 @@ createServer({
       ],
       type: 'simple',
       seat: 'Seats 2',
-      rating: 4.6,
-      reviews: 20,
+      reviews: [
+        {
+          author: 'Ryan H.',
+          body: 'The camper was great but it was not cleaned thoroughly before we arrived. We swept up and wiped the inside down. Other than that it was awesome. Zant was very helpful and communicated back and forth very well.',
+          rating: 4,
+          postedAt: 'Nov 2022',
+        },
+        {
+          author: 'Kevin B.',
+          body: 'Exellent experience. Would definitely use again. Very easy to work with',
+          rating: 5,
+          postedAt: 'Nov 2022',
+        },
+        {
+          author: 'Grady F.',
+          body: 'This was our 2nd time renting from Zant & we had another great experience. Very gracious & helpful host. Easy to communicate with before, during & after trip. Camper is clean & well stocked. Perfect option for family time!',
+          rating: 5,
+          postedAt: 'Oct 2022',
+        },
+        {
+          author: 'Kristy M.',
+          body: 'We’ve used this camper two years in a row now and Zant has been super great to work with. He goes above and beyond to make sure we have a pleasant and easy stay. This camper has every possible feature to make us feel we’ve hardly left home (large fridge, stove, oven, greystone, awning, 4 beds, etc) Zant responds immediately to any questions. Cannot recommend highly enough!          ',
+          rating: 5,
+          postedAt: 'Sep 2022',
+        },
+      ],
       host: {
         name: 'dustin',
         id: 123,
@@ -75,8 +99,44 @@ createServer({
       ],
       type: 'rugged',
       seat: 'Seats 4',
-      rating: 4.7,
-      reviews: 35,
+      reviews: [
+        {
+          author: 'Dawn F.',
+          body: 'I was camping at Coneross campground with my daughter and my husband. Great friendly service. Trailer was delivered on time. Just a note to renters to bring your own plates, cups bowls and pillows. Overall we had a great stay!          ',
+          rating: 4,
+          postedAt: 'Dec 2022',
+        },
+        {
+          author: 'Keith W.',
+          body: 'Great camper that fit our needs and delivery was on time and convenient.          ',
+          rating: 5,
+          postedAt: 'Nov 2022',
+        },
+        {
+          author: 'Josh G.',
+          body: 'This whole experience was great. From the start communication with the camper owner was amazing and that carried through until the very end when they picked up the camper. The camper was exactly as advertised and served our purposes well. We would definitely rent from them again.          ',
+          rating: 5,
+          postedAt: 'Oct 2022',
+        },
+        {
+          author: 'Sarah C.',
+          body: 'Great experience and would definitely recommend! Would rent again!!          ',
+          rating: 5,
+          postedAt: 'Oct 2022',
+        },
+        {
+          author: 'Heather C.',
+          body: 'Wonderful camper! All the comforts we needed for a great trip. Zant was a pleasure to work w/, and he was graciously accommodating when we arrived late for check-in and such. We highly recommend Zant and his camper for your next trip!',
+          rating: 5,
+          postedAt: 'June 2022',
+        },
+        {
+          author: 'Scott C.',
+          body: 'Zant was a great host! He did everything he promised and more. Setup trailer exactly where we wanted and provided everything we needed. He was very responsive before, during and after our trip and made sure we never went without knowing how to operate all the RV features. It was a great experience all the way around',
+          rating: 5,
+          postedAt: 'March 2022',
+        },
+      ],
       host: {
         name: 'dustin',
         id: 456,
@@ -121,8 +181,38 @@ createServer({
       ],
       type: 'luxury',
       seat: 'Seats 4',
-      rating: 4.9,
-      reviews: 12,
+      reviews: [
+        {
+          author: 'William C.',
+          body: 'Alex has a great camper RV here. It had everything we required for a road trip from Atlanta to Savannah and back via the Blue Ridge Mountains. Alex was there when we picked the RV up to show us how it all worked. Everything worked well, , the camper layout had been very well designed and was very comfortable for the two of us.',
+          rating: 5,
+          postedAt: 'Dec 2022',
+        },
+        {
+          author: 'Adam H.',
+          body: `My wife and I (from Brighton, UK) rented Alex's camper for a 3 week tour of the deep south of the USA and had an absolutely brilliant time. The camper is comfy, homely and well equipped - lots of fun to use - and the truck drives great.We had quite a varied trip, staying at times in remote rural areas, and in busy cities at other times, and the camper served us well in both.`,
+          rating: 5,
+          postedAt: 'Nov 2022',
+        },
+        {
+          author: 'Chad S.',
+          body: 'We rented the truck camper for a two week trip to GA to visit family and friends. The camper is great, and Alex really does keep it well stocked. We had a fluke mechanical issue at the end of the trip, and Alex bent over backwards, even meeting with us on New Year’s Eve to make sure everything was taken care of and we got to our hotel at the airport on time. Good rig, but great owner!',
+          rating: 5,
+          postedAt: 'Oct 2022',
+        },
+        {
+          author: 'Chris J.',
+          body: 'Alex just gave us the best rental experience we’ve ever had on Outdoorsy!Alex was Super Fast to answer messages, with thoughtful and considerate answers to our (admittedly sometimes silly) questions.Camper is well equipped throughout, very clean, and reliable. Camp Chairs are comfy, and the table was a lovely addition. The leveling blocks were clutch!',
+          rating: 5,
+          postedAt: 'Jun 2022',
+        },
+        {
+          author: 'Michael L.',
+          body: 'I rented this rig to get around in and have a easy place to overnight while visiting friends and family around Georgia and Florida. I could easily park this rig on the driveway or in front of the house. This was the perfect size and is very dependable. Can transport up to 6 people in the spacious cab of the truck. Alex was always available for any questions I had. Will rent from Alex again for my trip next year.',
+          rating: 5,
+          postedAt: 'Oct 2021',
+        },
+      ],
       host: {
         name: 'dustin',
         id: 456,
@@ -167,8 +257,32 @@ createServer({
       ],
       type: 'simple',
       seat: 'Seats 2',
-      rating: 4.8,
-      reviews: 23,
+      reviews: [
+        {
+          author: 'Daniel L.',
+          body: 'We had an amazing trip in Alex’s truck camper! The truck is fairly old as described in the listing and it had a few quirks I had to get used to, but I imagine anyone who has driven a diesel truck before knows what to expect. Communication with Alex was easy and he was always responsive with any questions I had. The camper itself makes great use of its space and was quite comfortable, especially because of the propane heater. Expect to empty the tanks a few times and to manage your water and you’ll be happy with this rental.',
+          rating: 5,
+          postedAt: 'Nov 2022',
+        },
+        {
+          author: 'Nicholas H.',
+          body: 'Alex was very helpful with all the information I needed and questions I had. He went above and beyond to make sure I had great experience. I would definitely rent from him again.',
+          rating: 5,
+          postedAt: 'Nov 2022',
+        },
+        {
+          author: 'Scott T.',
+          body: 'Easy pickup and drop off. We didn’t use many of the entertainment items onboard, but the van was as described and we enjoyed it.',
+          rating: 5,
+          postedAt: 'Oct 2022',
+        },
+        {
+          author: 'Nikki B.',
+          body: 'We love this sprinter for road trips! Drives great and is in excellent condition. Very spacious with all the fun upgrades.!          ',
+          rating: 5,
+          postedAt: 'Sep 2022',
+        },
+      ],
       host: {
         name: 'dustin',
         id: 456,
@@ -216,8 +330,32 @@ createServer({
       ],
       type: 'luxury',
       seat: 'Seats 2',
-      rating: 5,
-      reviews: 19,
+      reviews: [
+        {
+          author: 'Marissa M',
+          body: 'Dan was awesome. He answered questions and texts very quickly and was waiting for us when we got to the camp ground. Everything was set up, and he showed us around. The camper was clean and ready to go. The camp ground had told him to choose whatever spot for us he thought would be good, and he did a great and thoughtful job. Really good to work with overall. A pleasure.',
+          rating: 5,
+          postedAt: 'Nov 2022',
+        },
+        {
+          author: 'Mark C.',
+          body: 'Took this trailer on a trip to the Rocky Mountains, had a tire blow and Dan was great in communicating and resolving the issue. Camper was great!',
+          rating: 5,
+          postedAt: 'Nov 2022',
+        },
+        {
+          author: 'Julie H.',
+          body: 'The camper was very nice and just as described. We requested delivery and setup and when we arrived, it was setup and ready for us to move in for our weekend getaway. It had adequate space for of our supplies we brought during our stay. The air conditioner works very well and stayed very cool and pleasant throughout the day and night. The beds are a little harder than I’m use to, so may want to bring some form of memory foam mattress for personal comfort. Dan contacted us the day we arrived to be sure everything was to our liking and made sure we knew he was available if any issues were to arise with the camper. Overall, we had an excellent time and so enjoyed the use of the pop-up camper. I would definitely reach out to Dan again for another trip down the road.',
+          rating: 5,
+          postedAt: 'Oct 2022',
+        },
+        {
+          author: 'Courtney H.',
+          body: 'Dan was wonderful! He met with us to explain how to use the pop up camper and was always available if we needed him. The toy hauler pop up camper is so cute and it was such a fun experience. We would definitely rent it again!          ',
+          rating: 5,
+          postedAt: 'Sep 2022',
+        },
+      ],
       host: {
         name: 'dustin',
         id: 123,
@@ -262,8 +400,38 @@ createServer({
       ],
       type: 'rugged',
       seat: 'Seats 2',
-      rating: 4.6,
-      reviews: 35,
+      reviews: [
+        {
+          author: 'Andrew L.',
+          body: 'Leslie was great and a very gracious host. The camper was pretty good but needs some maintenance.',
+          rating: 3,
+          postedAt: 'Nov 2022',
+        },
+        {
+          author: 'Stacie V.',
+          body: 'Leslie was great! This was an easy process. She was very responsive and she answered all of my questions accurately and quickly! We had delivery and she was on time. The camper was set up and she showed us how to use everything. This was an awesome experience and we will be going again soon! Thank you!',
+          rating: 5,
+          postedAt: 'Nov 2022',
+        },
+        {
+          author: 'Misti D.',
+          body: 'This camper was perfect for our family’s first camper experience! Everything was delivered, set up, cleaned, and ready for us to use. I was excited about all the “extras” that were already provided. Communication was also prompt with any questions that we had. We will definitely recommend to anyone and will use in the future!',
+          rating: 5,
+          postedAt: 'Oct 2022',
+        },
+        {
+          author: 'Sheena B.',
+          body: 'Leslie was fantastic to communicate with. We were so thankful to be nice & dry in the RV as each day of our trip had a ton of rain. All details of the listing were accurate.          ',
+          rating: 4,
+          postedAt: 'Sep 2022',
+        },
+        {
+          author: 'Bethany H.',
+          body: 'Everything was perfect except for some missing amenities',
+          rating: 4,
+          postedAt: 'Jun 2022',
+        },
+      ],
       host: {
         name: 'dustin',
         id: 123,

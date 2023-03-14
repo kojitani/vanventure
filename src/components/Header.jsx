@@ -22,7 +22,7 @@ import {
 } from '@tabler/icons-react';
 import { MantineLogo } from '@mantine/ds';
 import { useDisclosure } from '@mantine/hooks';
-import { useLocation, Link } from 'react-router-dom';
+import { useLocation, Link, useNavigate } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import { Avatar, Tooltip } from '@mantine/core';
 
@@ -74,6 +74,7 @@ const useStyles = createStyles(theme => ({
 export default function HeaderMegaMenu() {
   const [loginStatus, setLoginStatus] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] =
     useDisclosure(false);
   const { classes } = useStyles();
@@ -95,8 +96,25 @@ export default function HeaderMegaMenu() {
           px={'15%'}
           className={classes.headerMargin}
         >
-          <Link to="/">
-            <MantineLogo size={30} />
+          <Link
+            style={{
+              textDecoration: 'none',
+              color: 'black',
+              fontWeight: '600',
+            }}
+            alt="Homepage"
+            to="/"
+          >
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}
+            >
+              <img src="/logo.png" height={34} alt="Home.logo"></img>
+              <p>VanVenture</p>
+            </div>
           </Link>
 
           <Group
@@ -181,7 +199,11 @@ export default function HeaderMegaMenu() {
             Home
           </Link>
           <Divider my="sm" color="gray.1" />
-          <Link to="host" className={classes.link} onClick={closeDrawer}>
+          <Link
+            to="host/dashboard"
+            className={classes.link}
+            onClick={closeDrawer}
+          >
             Host
           </Link>
           <Divider my="sm" color="gray.1" />
@@ -196,28 +218,38 @@ export default function HeaderMegaMenu() {
           <Divider my="sm" color="gray.1" />
 
           {!loginStatus && (
-            <Link
-              style={{ textDecoration: 'none' }}
-              to="/login"
-              onClick={closeDrawer}
-            >
-              <Group position="center" grow pb="xl" px="md">
-                <Button color="lime.9">Log in</Button>
-              </Group>
-            </Link>
+            <Group position="center" grow pb="xl" px="md">
+              <Button
+                onClick={() => {
+                  navigate('/login', { state: { type: 'login' } });
+                  closeDrawer();
+                }}
+                variant="default"
+              >
+                Log in
+              </Button>
+              <Button
+                onClick={() => {
+                  navigate('/login', { state: { type: 'register' } });
+                  closeDrawer();
+                }}
+                color="lime.9"
+              >
+                Sign up
+              </Button>
+            </Group>
           )}
           {loginStatus && (
             <Group position="center" grow pb="xl" px="md">
-              <Link to="/host/dashboard">
-                <Tooltip label="My Page" withArrow>
-                  <Avatar
-                    variant="filled"
-                    color="lime.9"
-                    size={40}
-                    radius="xl"
-                  />
-                </Tooltip>
-              </Link>
+              <Button
+                variant="default"
+                onClick={() => {
+                  localStorage.removeItem('loggedin');
+                  window.location.reload();
+                }}
+              >
+                Sign out
+              </Button>
             </Group>
           )}
         </ScrollArea>

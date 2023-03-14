@@ -4,6 +4,7 @@ import { getVans } from '../../api';
 import VanDetailsInfo from './VanDetailsInfo';
 import Loading from '../../components/Loading';
 import VanDetailsBooking from './VanDetailsBooking';
+import VanDetailsReviews from './VanDetailsReviews';
 import ImageGallery from './ImageGallery';
 
 export function loader({ params }) {
@@ -30,12 +31,8 @@ export default function VanDetails() {
                     <VanDetailsInfo vanDetails={vanDetails} />
                     <VanDetailsBooking vanDetails={vanDetails} />
                   </div>
-                  <div id="reviews-container">
-                    <h1>
-                      reviews hereeereviews hereeereviews hereeereviews
-                      hereeereviews hereee
-                    </h1>
-                  </div>
+
+                  <VanDetailsReviews vanDetails={vanDetails} />
                 </div>
               </>
             );

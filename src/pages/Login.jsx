@@ -87,7 +87,7 @@ export default function AuthRequired() {
             weight={500}
             m="2rem 0rem"
           >
-            Welcome to Mantine,{' '}
+            Welcome to VanVenture,{' '}
             {type === 'login'
               ? 'sign in to continue.'
               : 'register your information below.'}
@@ -124,7 +124,7 @@ export default function AuthRequired() {
                 required
                 label="Email"
                 size="md"
-                placeholder="hello@mantine.dev"
+                placeholder="hello@vanventure.com"
                 value={form.values.email}
                 onChange={event =>
                   form.setFieldValue('email', event.currentTarget.value)
