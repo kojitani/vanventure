@@ -70,106 +70,132 @@ export default function AuthRequired() {
   }
   return (
     <div className="login-container">
-      <Paper radius="md" p="xl" shadow="lg">
-        <h2 style={{ textAlign: 'center', margin: '0.5rem' }}>
-          {location.state?.message}
-        </h2>
+      <Paper
+        radius="md"
+        p="xl"
+        shadow="lg"
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <div>
+          <Text
+            style={{ textAlign: 'center' }}
+            size="xl"
+            weight={500}
+            m="2rem 0rem"
+          >
+            Welcome to Mantine,{' '}
+            {type === 'login'
+              ? 'sign in to continue.'
+              : 'register your information below.'}
+          </Text>
+          {loginError && (
+            <h3
+              style={{ color: 'red', textAlign: 'center', margin: '0.5rem 0' }}
+            >
+              Incorrect email or password. Please try again.
+            </h3>
+          )}
+          <form
+            onSubmit={form.onSubmit(() => {
+              type === 'register'
+                ? saveUserLocalStorage()
+                : checkLoginDetails();
+            })}
+          >
+            <Stack>
+              {type === 'register' && (
+                <TextInput
+                  label="Name"
+                  size="md"
+                  placeholder="Your name"
+                  value={form.values.name}
+                  onChange={event =>
+                    form.setFieldValue('name', event.currentTarget.value)
+                  }
+                  radius="md"
+                />
+              )}
 
-        <Text
-          style={{ textAlign: 'center' }}
-          size="xl"
-          weight={500}
-          m="2rem 0rem"
-        >
-          Welcome to Mantine, {type} below
-        </Text>
-        {loginError && (
-          <h3 style={{ color: 'red', textAlign: 'center', margin: '0.5rem 0' }}>
-            Incorrect email or password. Please try again.
-          </h3>
-        )}
-        <form
-          onSubmit={form.onSubmit(() => {
-            type === 'register' ? saveUserLocalStorage() : checkLoginDetails();
-          })}
-        >
-          <Stack>
-            {type === 'register' && (
               <TextInput
-                label="Name"
-                placeholder="Your name"
-                value={form.values.name}
+                required
+                label="Email"
+                size="md"
+                placeholder="hello@mantine.dev"
+                value={form.values.email}
                 onChange={event =>
-                  form.setFieldValue('name', event.currentTarget.value)
+                  form.setFieldValue('email', event.currentTarget.value)
+                }
+                error={form.errors.email && 'Invalid email'}
+                radius="md"
+              />
+
+              <PasswordInput
+                required
+                label="Password"
+                size="md"
+                placeholder="Your password"
+                value={form.values.password}
+                onChange={event =>
+                  form.setFieldValue('password', event.currentTarget.value)
+                }
+                error={
+                  form.errors.password &&
+                  'Password should include at least 6 characters'
                 }
                 radius="md"
               />
-            )}
 
-            <TextInput
-              required
-              label="Email"
-              placeholder="hello@mantine.dev"
-              value={form.values.email}
-              onChange={event =>
-                form.setFieldValue('email', event.currentTarget.value)
+              {type === 'register' && (
+                <Checkbox required label="I accept terms and conditions" />
+              )}
+            </Stack>
+
+            <Group position="apart" mt="xl">
+              {
+                <Anchor
+                  component="button"
+                  type="button"
+                  color="dimmed"
+                  onClick={() => toggle()}
+                  size="md"
+                  disabled={loginState || registerState}
+                >
+                  {type === 'register'
+                    ? 'Already have an account? Login'
+                    : "Don't have an account? Register"}
+                </Anchor>
               }
-              error={form.errors.email && 'Invalid email'}
-              radius="md"
-            />
-
-            <PasswordInput
-              required
-              label="Password"
-              placeholder="Your password"
-              value={form.values.password}
-              onChange={event =>
-                form.setFieldValue('password', event.currentTarget.value)
-              }
-              error={
-                form.errors.password &&
-                'Password should include at least 6 characters'
-              }
-              radius="md"
-            />
-
-            {type === 'register' && (
-              <Checkbox required label="I accept terms and conditions" />
-            )}
-          </Stack>
-
-          <Group position="apart" mt="xl">
-            {
-              <Anchor
-                component="button"
-                type="button"
-                color="dimmed"
-                onClick={() => toggle()}
-                size="xs"
-                disabled={loginState || registerState}
-              >
-                {type === 'register'
-                  ? 'Already have an account? Login'
-                  : "Don't have an account? Register"}
-              </Anchor>
-            }
-            {type === 'login' && (
-              <Button type="submit" radius="xl" loading={loginState} size="md">
-                {loginState ? 'Logging in...' : 'Login'}
-              </Button>
-            )}
-            {type === 'register' && (
-              <Button
-                type="submit"
-                radius="xl"
-                loading={registerState}
-                size="md"
-              >
-                {registerState ? 'Registering...' : 'Register'}
-              </Button>
-            )}
-          </Group>
-        </form>
+              {type === 'login' && (
+                <Button
+                  type="submit"
+                  radius="xl"
+                  loading={loginState}
+                  size="md"
+                >
+                  {loginState ? 'Logging in...' : 'Login'}
+                </Button>
+              )}
+              {type === 'register' && (
+                <Button
+                  type="submit"
+                  radius="xl"
+                  loading={registerState}
+                  size="md"
+                >
+                  {registerState ? 'Registering...' : 'Register'}
+                </Button>
+              )}
+            </Group>
+          </form>
+        </div>
+        <img
+          className="login-img"
+          src="https://images.pexels.com/photos/4553618/pexels-photo-4553618.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        ></img>
       </Paper>
     </div>
   );
