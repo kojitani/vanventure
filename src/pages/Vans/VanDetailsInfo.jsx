@@ -64,7 +64,7 @@ export default function VanDetailsInfo(props) {
       <p className="van-details-description">{vanDetails.description}</p>
       <h2 className="feature-title">Features</h2>
       <SimpleGrid
-        style={{ height: 'auto' }}
+        style={{ gridAutoRows: '1fr' }}
         cols={2}
         spacing="sm"
         breakpoints={[{ maxWidth: '36rem', cols: 1, spacing: 'sm' }]}
@@ -73,7 +73,7 @@ export default function VanDetailsInfo(props) {
       </SimpleGrid>
       <h2 className="amenity-title">Amenities</h2>
       <SimpleGrid
-        style={{ height: 'auto' }}
+        style={{ gridAutoRows: '1fr' }}
         cols={2}
         spacing="sm"
         breakpoints={[{ maxWidth: '36rem', cols: 1, spacing: 'sm' }]}
@@ -82,7 +82,7 @@ export default function VanDetailsInfo(props) {
       </SimpleGrid>
       <h1 className="rules-title">Rules and policies</h1>
       <SimpleGrid
-        style={{ height: 'auto' }}
+        style={{ gridAutoRows: '1fr' }}
         cols={2}
         spacing="sm"
         breakpoints={[{ maxWidth: '36rem', cols: 1, spacing: 'sm' }]}
