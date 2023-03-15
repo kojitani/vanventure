@@ -19,7 +19,6 @@ const useStyles = createStyles(theme => ({
 
 export default function VanDetailsReviews(props) {
   const { classes } = useStyles();
-  console.log(props.vanDetails.reviews);
   const ratingArr = [];
   props.vanDetails.reviews.forEach(review => ratingArr.push(review.rating));
   const ratingTotal =

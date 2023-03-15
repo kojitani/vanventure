@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Group } from '@mantine/core';
+import { Divider, Group, Rating } from '@mantine/core';
 import { DatePicker } from '@mantine/dates';
 export default function VanDetailsBooking(props) {
   const [dateValue, setDateValue] = useState([(null, null)]);
@@ -73,15 +73,12 @@ export default function VanDetailsBooking(props) {
             <span>night</span>
           </div>
           <div className="booking-reviews-container">
-            <p>
-              <span style={{ fontWeight: 'bold' }}>
-                ★ {ratingTotal.toFixed(2)}
-              </span>{' '}
-              ·{' '}
-              <a href="#reviews-container" className="booking-reviews">
-                {ratingArr.length} reviews
-              </a>
-            </p>
+            <Rating readOnly value={1} color="dark" count={1} />
+            <span style={{ fontWeight: 'bold' }}>{ratingTotal.toFixed(2)}</span>
+            <Divider size="xs" orientation="vertical" m="0 0.3rem" />
+            <a href="#reviews-container" className="booking-reviews">
+              {ratingArr.length} reviews
+            </a>
           </div>
         </div>
 

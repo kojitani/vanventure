@@ -26,7 +26,6 @@ export default function AuthRequired() {
   const [loginError, setLoginError] = useState(false);
   const navigate = useNavigate();
   const prevURL = location.state?.from;
-  console.log(type);
   const form = useForm({
     initialValues: {
       email: '',
@@ -56,7 +55,7 @@ export default function AuthRequired() {
     setLoginError(false);
     const user = JSON.parse(localStorage.getItem('user'));
     if (
-      user.email === form.values.email &&
+      user.email.toLowerCase() === form.values.email.toLowerCase() &&
       user.password === form.values.password
     ) {
       setLoginState(true);

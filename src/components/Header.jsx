@@ -125,7 +125,7 @@ export default function HeaderMegaMenu() {
             <Link to="/host/dashboard" className={classes.link}>
               Host
             </Link>
-            <Link to="about" className={classes.link}>
+            <Link to="/about" className={classes.link}>
               About
             </Link>
             <Link to="vans" className={classes.link}>
