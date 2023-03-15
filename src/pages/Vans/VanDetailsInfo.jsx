@@ -1,4 +1,5 @@
 import React from 'react';
+import { SimpleGrid } from '@mantine/core';
 // import Icons from '../../assets/svg/beds.svg';
 
 export default function VanDetailsInfo(props) {
@@ -62,11 +63,29 @@ export default function VanDetailsInfo(props) {
       </div>
       <p className="van-details-description">{vanDetails.description}</p>
       <h2 className="feature-title">Features</h2>
-      <div className="feature-container">{featureElements}</div>
+      <SimpleGrid
+        cols={2}
+        spacing="sm"
+        breakpoints={[{ maxWidth: '36rem', cols: 1, spacing: 'sm' }]}
+      >
+        {featureElements}
+      </SimpleGrid>
       <h2 className="amenity-title">Amenities</h2>
-      <div className="amenity-container">{amenityElements}</div>
+      <SimpleGrid
+        cols={2}
+        spacing="sm"
+        breakpoints={[{ maxWidth: '36rem', cols: 1, spacing: 'sm' }]}
+      >
+        {amenityElements}
+      </SimpleGrid>
       <h1 className="rules-title">Rules and policies</h1>
-      <div className="rules-container">{ruleElements}</div>
+      <SimpleGrid
+        cols={2}
+        spacing="sm"
+        breakpoints={[{ maxWidth: '36rem', cols: 1, spacing: 'sm' }]}
+      >
+        {ruleElements}
+      </SimpleGrid>
 
       <div className="availability-container">
         <h1 className="availability-title">Availability and rates</h1>
