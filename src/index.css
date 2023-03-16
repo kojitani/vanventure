@@ -9,7 +9,9 @@
   backface-visibility: hidden;
   scroll-behavior: smooth;
 }
-
+body {
+  overflow-x: hidden;
+}
 .body-hide-overflow {
   overflow: hidden;
   position: fixed;
@@ -73,6 +75,7 @@ nav > a {
   padding: 0 25%;
   text-align: left;
   position: relative;
+  /* overflow: hidden; */
 }
 .home-background {
   position: absolute;
