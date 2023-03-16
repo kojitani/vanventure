@@ -2,6 +2,8 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Contact from './Contact';
 import Feature from './Feature';
+import HostOffer from './HostOffer';
+import About from './About';
 export default function Home() {
   const navigate = useNavigate();
   return (
@@ -21,12 +23,9 @@ export default function Home() {
       </div>
       <div className="home-content-container">
         <Feature />
+        <About />
+        <HostOffer />
         <Contact />
-        <h1>
-          Have an RV? Make some extra income on days you're not using your
-          adventure mobile. We will take care of the hard stuff, you just sit
-          back and enjoy the passive income.
-        </h1>
       </div>
     </div>
   );

@@ -125,9 +125,6 @@ export default function HeaderMegaMenu() {
             <Link to="/host/dashboard" className={classes.link}>
               Host
             </Link>
-            <Link to="/about" className={classes.link}>
-              About
-            </Link>
             <Link to="vans" className={classes.link}>
               Vans
             </Link>
@@ -205,10 +202,6 @@ export default function HeaderMegaMenu() {
             onClick={closeDrawer}
           >
             Host
-          </Link>
-          <Divider my="sm" color="gray.1" />
-          <Link to="about" className={classes.link} onClick={closeDrawer}>
-            About
           </Link>
           <Divider my="sm" color="gray.1" />
           <Link to="vans" className={classes.link} onClick={closeDrawer}>

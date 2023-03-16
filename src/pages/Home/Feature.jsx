@@ -14,9 +14,11 @@ import { IconTruck, IconCertificate, IconCoin } from '@tabler/icons-react';
 const mockdata = [
   {
     title: '#VANLIFE IN A BOX',
-    description: 'Everything you need to hit the road and start camping.',
+    description: `Everything you need to hit the road and start camping. Our vans are recertified before each trip to ensure your travel plans
+    can go off without a hitch.`,
     icon: IconTruck,
   },
+
   {
     title: 'EASY TO HANDLE',
     description:

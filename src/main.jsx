@@ -9,7 +9,6 @@ import {
 import './index.css';
 import Layout from './components/Layout';
 import Home from './pages/Home/Home';
-import About from './pages/About';
 import Login from './pages/Login';
 import Vans, { loader as vansLoader } from './pages/Vans/Vans';
 import VanDetails, {
@@ -34,7 +33,6 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />} errorElement={<Error />}>
       <Route index element={<Home />} />
-      <Route path="about" element={<About />} />
       <Route path="login" element={<Login />} />
       <Route path="vans" element={<Vans />} loader={vansLoader} />
       <Route

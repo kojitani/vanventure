@@ -12,7 +12,7 @@ import {
   Box,
   Stack,
 } from '@mantine/core';
-import bg from './contact-bg.svg';
+import bg from '/public/contact-bg.svg';
 import { IconSun, IconPhone, IconMapPin, IconAt } from '@tabler/icons-react';
 const useStyles = createStyles(theme => {
   const BREAKPOINT = theme.fn.smallerThan('sm');
