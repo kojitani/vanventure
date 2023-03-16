@@ -54,6 +54,7 @@ export default function AuthRequired() {
   function checkLoginDetails() {
     setLoginError(false);
     const user = JSON.parse(localStorage.getItem('user'));
+    if (!user) setLoginError(true);
     if (
       user.email.toLowerCase() === form.values.email.toLowerCase() &&
       user.password === form.values.password
@@ -92,11 +93,11 @@ export default function AuthRequired() {
               : 'register your information below.'}
           </Text>
           {loginError && (
-            <h3
+            <h4
               style={{ color: 'red', textAlign: 'center', margin: '0.5rem 0' }}
             >
               Incorrect email or password. Please try again.
-            </h3>
+            </h4>
           )}
           <form
             onSubmit={form.onSubmit(() => {
