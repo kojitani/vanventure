@@ -12,7 +12,10 @@
 
 .body-hide-overflow {
   overflow: hidden;
-  z-index: -1;
+  position: fixed;
+  touch-action: none;
+  -webkit-overflow-scrolling: none;
+  overscroll-behavior: none;
 }
 #root {
   position: relative;
