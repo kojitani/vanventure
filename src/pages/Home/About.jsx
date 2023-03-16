@@ -65,7 +65,7 @@ export default function HostOffer() {
 
         <Text c="dimmed" fz="xl" mb={5}>
           Our mission is to enliven your road trip with the perfect travel van
-          rental. Our team is full of vanlife enthusiasts who know firsthand the
+          rental. ur team is full of vanlife enthusiasts who know firsthand the
           magic of touring the world on 4 wheels.
         </Text>
       </div>

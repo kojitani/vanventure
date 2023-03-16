@@ -1,10 +1,5 @@
 import { createStyles, Container, Group, ActionIcon, rem } from '@mantine/core';
-import {
-  IconBrandTwitter,
-  IconBrandYoutube,
-  IconBrandInstagram,
-} from '@tabler/icons-react';
-import { MantineLogo } from '@mantine/ds';
+import { IconBrandGithub } from '@tabler/icons-react';
 
 const useStyles = createStyles(theme => ({
   footer: {
@@ -55,15 +50,11 @@ export default function FooterSocial() {
           <p style={{ fontWeight: '600' }}>VanVenture</p>
         </div>
         <Group spacing={0} className={classes.links} position="right" noWrap>
-          <ActionIcon size="lg">
-            <IconBrandTwitter size="1.05rem" stroke={1.5} />
-          </ActionIcon>
-          <ActionIcon size="lg">
-            <IconBrandYoutube size="1.05rem" stroke={1.5} />
-          </ActionIcon>
-          <ActionIcon size="lg">
-            <IconBrandInstagram size="1.05rem" stroke={1.5} />
-          </ActionIcon>
+          <a href="https://github.com/kojitani/vanventure" target="_blank">
+            <ActionIcon size="lg">
+              <IconBrandGithub size="1.05rem" stroke={1.5} />
+            </ActionIcon>
+          </a>
         </Group>
       </Container>
     </div>
