@@ -11,10 +11,12 @@ export default function VanDetailsBooking(props) {
   const ratingTotal =
     ratingArr.reduce((accRating, curRating) => accRating + curRating, 0) /
     ratingArr.length;
+  document.querySelector('.mantine-1avyp1d').style.display = 'none';
+  document.querySelector('body').classList.add('body-hide-overflow');
   const calendar = (
-    <Group position="center">
+    <Group>
       <DatePicker
-        numberOfColumns={2}
+        numberOfColumns={1}
         maxLevel="month"
         minDate={new Date()}
         maxDate={
@@ -65,24 +67,22 @@ export default function VanDetailsBooking(props) {
   }
   return (
     <>
-      <div className="booking-container">
-        <div className="booking-info">
-          <div className="booking-price">
-            <span style={{ fontWeight: 'bold', fontSize: '2rem' }}>
-              ${props.vanDetails.price}
-            </span>{' '}
-            <span>night</span>
-          </div>
-          <div className="booking-reviews-container">
-            <Rating readOnly value={1} color="dark" count={1} />
-            <span style={{ fontWeight: 'bold' }}>{ratingTotal.toFixed(2)}</span>
-            <Divider size="xs" orientation="vertical" m="0 0.3rem" />
-            <a href="#reviews-container" className="booking-reviews">
-              {ratingArr.length} reviews
-            </a>
+      <div className="mobile-booking-modal">
+        <div className="mobile-booking-header">
+          <img
+            className="mobile-booking-img"
+            src={props.vanDetails.imageUrl[0]}
+          ></img>
+          <div>
+            <h1>{props.vanDetails.name}</h1>{' '}
+            <div className="booking-price">
+              <span style={{ fontWeight: 'bold', fontSize: '2rem' }}>
+                ${props.vanDetails.price}
+              </span>{' '}
+              <span>/night</span>
+            </div>
           </div>
         </div>
-
         <div onClick={() => showCalendar()} className="calendar-date">
           <div className="pickup-date">
             <p>Pickup date</p>
@@ -97,11 +97,10 @@ export default function VanDetailsBooking(props) {
             </span>
           </div>
         </div>
-
         {calendarState && (
-          <div className="calendar-container">
+          <div className="mobile-calendar">
             {calendar}
-            <div className="calendar-btns">
+            <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
               <button className="calendar-clear" onClick={() => clearDates()}>
                 Clear dates
               </button>
@@ -114,6 +113,7 @@ export default function VanDetailsBooking(props) {
             </div>
           </div>
         )}
+
         {!dateValue[1] && (
           <button
             className="booking-availability"

@@ -5,8 +5,9 @@ import Feature from './Feature';
 export default function Home() {
   const navigate = useNavigate();
   return (
-    <>
+    <div style={{ overflow: 'hidden' }}>
       <div className="home-container">
+        <img className="home-background"></img>
         <div className="home-header">
           <span>You got the travel plans,</span>
           <span>we got the travel vans.</span>
@@ -29,6 +30,6 @@ export default function Home() {
         <Feature />
         <Contact />
       </div>
-    </>
+    </div>
   );
 }
