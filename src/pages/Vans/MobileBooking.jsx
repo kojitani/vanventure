@@ -6,17 +6,11 @@ export default function VanDetailsBooking(props) {
   const [dateValue, setDateValue] = useState([(null, null)]);
   const [numDays, setNumDays] = useState(0);
   const [calendarState, setCalendarState] = useState(false);
-  const ratingArr = [];
-  props.vanDetails.reviews.forEach(review => ratingArr.push(review.rating));
-  const ratingTotal =
-    ratingArr.reduce((accRating, curRating) => accRating + curRating, 0) /
-    ratingArr.length;
-  document.querySelector('.mantine-1avyp1d').style.display = 'none';
-  document.querySelector('body').classList.add('body-hide-overflow');
+
   const calendar = (
     <Group>
       <DatePicker
-        numberOfColumns={1}
+        numberOfColumns={window.screen.width >= 700 ? 2 : 1}
         maxLevel="month"
         minDate={new Date()}
         maxDate={
@@ -35,14 +29,12 @@ export default function VanDetailsBooking(props) {
   );
   function showCalendar() {
     setCalendarState(true);
-    document.querySelector('.calendar-overlay').style.display = 'block';
   }
   function clearDates() {
     setDateValue([]);
   }
   function closeCalendar() {
     setCalendarState(false);
-    document.querySelector('.calendar-overlay').style.display = 'none';
   }
   useEffect(() => {
     if (dateValue[1]) {
@@ -69,7 +61,7 @@ export default function VanDetailsBooking(props) {
     document.querySelector('.mobile-booking-modal').style.display = 'none';
     document.querySelector('.mantine-1avyp1d').style.display = 'block';
     document.querySelector('body').classList.remove('body-hide-overflow');
-    document.querySelector('.mobile.booking-container').style.display = 'flex';
+    document.querySelector('.mobile-booking-container').style.display = 'flex';
   }
   return (
     <>
@@ -108,7 +100,7 @@ export default function VanDetailsBooking(props) {
           </div>
         </div>
         {calendarState && (
-          <div className="mobile-calendar">
+          <div className="mobile-calendar" id="mobile-calendar">
             {calendar}
             <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
               <button className="calendar-clear" onClick={() => clearDates()}>

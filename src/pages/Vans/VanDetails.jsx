@@ -16,6 +16,12 @@ export default function VanDetails() {
   function showMobileBooking() {
     console.log('clicked');
   }
+  function openMobileBooking() {
+    document.querySelector('.mantine-1avyp1d').style.display = 'none';
+    document.querySelector('body').classList.add('body-hide-overflow');
+    document.querySelector('.mobile-booking-modal').style.display = 'flex';
+    document.querySelector('.mobile-booking-container').style.display = 'none';
+  }
   return (
     <div className="fallback-container hidden" id="fallback-container">
       <div className="calendar-overlay"></div>
@@ -38,18 +44,20 @@ export default function VanDetails() {
 
                   <VanDetailsReviews vanDetails={vanDetails} />
                 </div>
-                {/* <div className="mobile-booking-container">
-                  <h1>{vanDetails.price}/night</h1>
+                <div className="mobile-booking-container">
+                  <div style={{ display: 'flex', alignItems: 'center' }}>
+                    <p style={{ fontSize: '1.5rem', fontWeight: 'bolder' }}>
+                      ${vanDetails.price}
+                    </p>
+                    <span>/night</span>
+                  </div>
                   <button
-                    onClick={() => {
-                      document
-                        .querySelector('body')
-                        .classList.add('body-hide-overflow');
-                    }}
+                    className="mobile-bottom-btn"
+                    onClick={() => openMobileBooking()}
                   >
-                    reserve
+                    Check availability
                   </button>
-                </div> */}
+                </div>
                 <div>
                   <MobileBooking vanDetails={vanDetails} />
                 </div>

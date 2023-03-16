@@ -12,7 +12,7 @@ export default function Home() {
           <span>You got the travel plans,</span>
           <span>we got the travel vans.</span>
         </div>
-        <span style={{ fontWeight: 'bold', fontSize: '1.2rem' }}>
+        <span className="home-header-slogan">
           Add adventure to your life with VanVenture.
         </span>
         <button onClick={() => navigate('vans')} className="home-btn">
