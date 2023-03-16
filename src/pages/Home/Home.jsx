@@ -22,6 +22,11 @@ export default function Home() {
       <div className="home-content-container">
         <Feature />
         <Contact />
+        <h1>
+          Have an RV? Make some extra income on days you're not using your
+          adventure mobile. We will take care of the hard stuff, you just sit
+          back and enjoy the passive income.
+        </h1>
       </div>
     </div>
   );
