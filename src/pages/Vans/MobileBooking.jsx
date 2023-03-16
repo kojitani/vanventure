@@ -1,7 +1,7 @@
 import React, { ReactDOM, useEffect, useState } from 'react';
 import { Divider, Group, Rating } from '@mantine/core';
 import { DatePicker } from '@mantine/dates';
-
+import { IconX } from '@tabler/icons-react';
 export default function VanDetailsBooking(props) {
   const [dateValue, setDateValue] = useState([(null, null)]);
   const [numDays, setNumDays] = useState(0);
@@ -65,9 +65,19 @@ export default function VanDetailsBooking(props) {
     btn.style.backgroundColor = '#4e5752';
     btn.style.cursor = 'default';
   }
+  function closeBookingModal() {
+    document.querySelector('.mobile-booking-modal').style.display = 'none';
+    document.querySelector('.mantine-1avyp1d').style.display = 'block';
+    document.querySelector('body').classList.remove('body-hide-overflow');
+    document.querySelector('.mobile.booking-container').style.display = 'flex';
+  }
   return (
     <>
       <div className="mobile-booking-modal">
+        <IconX
+          className="mobile-booking-close"
+          onClick={() => closeBookingModal()}
+        />
         <div className="mobile-booking-header">
           <img
             className="mobile-booking-img"

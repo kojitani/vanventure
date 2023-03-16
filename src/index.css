@@ -301,22 +301,30 @@ nav > a {
   }
 }
 .mobile-booking-modal {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   background-color: white;
-  min-height: 100vh;
-  max-height: fit-content;
-  width: 100vw;
+  width: 100%;
+  height: 100%;
   z-index: 5;
   display: flex;
   align-items: center;
   flex-direction: column;
   padding: 5% 5%;
   gap: 1rem;
-  overflow: hidden;
+  overflow-y: scroll;
   /* display: none; */
   /* background-color: antiquewhite; */
+}
+.mobile-booking-close {
+  box-sizing: content-box;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  border-radius: 50%;
+  background-color: rgb(192, 192, 192);
+  padding: 0.3rem;
 }
 .mobile-booking-container {
   display: flex;
@@ -895,6 +903,7 @@ nav > a {
   .booking-availability,
   .booking-reserve {
     width: 100%;
+    margin: 0;
   }
 }
 @media screen and (max-width: 600px) {
