@@ -18,9 +18,9 @@ export default function VanDetails() {
   }
   function openMobileBooking() {
     document.querySelector('.mantine-1avyp1d').style.display = 'none';
-    document.querySelector('body').classList.add('body-hide-overflow');
     document.querySelector('.mobile-booking-modal').style.display = 'flex';
     document.querySelector('.mobile-booking-container').style.display = 'none';
+    document.querySelector('body').classList.add('body-hide-overflow');
   }
   return (
     <div className="fallback-container hidden" id="fallback-container">
