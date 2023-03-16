@@ -90,7 +90,7 @@ export default function FeaturesCards() {
   ));
 
   return (
-    <Container size="lg" py="xl">
+    <Container fluid py="xl">
       <Title order={2} className={classes.title} ta="center" mt="sm">
         Why VanVenture?
       </Title>

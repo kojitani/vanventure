@@ -19,14 +19,7 @@ export default function Home() {
           Explore our vans
         </button>
       </div>
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: '3rem',
-        }}
-      >
+      <div className="home-content-container">
         <Feature />
         <Contact />
       </div>

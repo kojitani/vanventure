@@ -114,93 +114,100 @@ export default function GetInTouch() {
   const { classes } = useStyles();
 
   return (
-    <Paper shadow="md" radius="lg">
-      <div className={classes.wrapper}>
-        <div className={classes.contacts}>
-          <Text fz="lg" fw={700} className={classes.title} c="#fff">
-            Contact information
-          </Text>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-            <IconAt size="2rem" color="white" />
-            <div style={{ textAlign: 'left' }}>
-              <Text fz="lg" fw={300} c="#fff">
-                Email{' '}
-              </Text>
-              <Text fz="md" fw={500} c="#fff">
-                fake@email.com
-              </Text>
+    <div style={{ width: '100%' }}>
+      <Paper shadow="md" radius="lg">
+        <div className={classes.wrapper}>
+          <div className={classes.contacts}>
+            <Text fz="lg" fw={700} className={classes.title} c="#fff">
+              Contact information
+            </Text>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+              <IconAt size="2rem" color="white" />
+              <div style={{ textAlign: 'left' }}>
+                <Text fz="lg" fw={300} c="#fff">
+                  Email{' '}
+                </Text>
+                <Text fz="md" fw={500} c="#fff">
+                  fake@email.com
+                </Text>
+              </div>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+              <IconPhone size="2rem" color="white" />
+              <div style={{ textAlign: 'left' }}>
+                <Text fz="lg" fw={300} c="#fff">
+                  Phone
+                </Text>
+                <Text fz="md" fw={500} c="#fff">
+                  +49 (800) 335 35 35
+                </Text>
+              </div>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+              <IconMapPin size="2rem" color="white" />
+              <div style={{ textAlign: 'left' }}>
+                <Text fz="lg" fw={300} c="#fff">
+                  Address
+                </Text>
+                <Text fz="md" fw={500} c="#fff">
+                  844 Morris Park avenue
+                </Text>
+              </div>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+              <IconSun size="2rem" color="white" />
+              <div style={{ textAlign: 'left' }}>
+                <Text fz="lg" fw={300} c="#fff">
+                  Working hours
+                </Text>
+                <Text fz="md" fw={500} c="#fff">
+                  8 AM - 11 PM
+                </Text>
+              </div>
             </div>
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-            <IconPhone size="2rem" color="white" />
-            <div style={{ textAlign: 'left' }}>
-              <Text fz="lg" fw={300} c="#fff">
-                Phone
-              </Text>
-              <Text fz="md" fw={500} c="#fff">
-                +49 (800) 335 35 35
-              </Text>
-            </div>
-          </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-            <IconMapPin size="2rem" color="white" />
-            <div style={{ textAlign: 'left' }}>
-              <Text fz="lg" fw={300} c="#fff">
-                Address
-              </Text>
-              <Text fz="md" fw={500} c="#fff">
-                844 Morris Park avenue
-              </Text>
-            </div>
-          </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-            <IconSun size="2rem" color="white" />
-            <div style={{ textAlign: 'left' }}>
-              <Text fz="lg" fw={300} c="#fff">
-                Working hours
-              </Text>
-              <Text fz="md" fw={500} c="#fff">
-                8 AM - 11 PM
-              </Text>
-            </div>
-          </div>
-        </div>
 
-        <form
-          className={classes.form}
-          onSubmit={event => event.preventDefault()}
-        >
-          <Text fz="lg" fw={700} className={classes.title}>
-            Get in touch
-          </Text>
+          <form
+            className={classes.form}
+            onSubmit={event => event.preventDefault()}
+          >
+            <Text fz="lg" fw={700} className={classes.title}>
+              Get in touch
+            </Text>
 
-          <div className={classes.fields}>
-            <SimpleGrid cols={2} breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
-              <TextInput label="Your name" placeholder="Your name" />
+            <div className={classes.fields}>
+              <SimpleGrid cols={2} breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
+                <TextInput label="Your name" placeholder="Your name" />
+                <TextInput
+                  label="Your email"
+                  placeholder="hello@vanventure.com"
+                  required
+                />
+              </SimpleGrid>
+
               <TextInput
-                label="Your email"
-                placeholder="hello@vanventure.com"
+                mt="md"
+                label="Subject"
+                placeholder="Subject"
                 required
               />
-            </SimpleGrid>
 
-            <TextInput mt="md" label="Subject" placeholder="Subject" required />
+              <Textarea
+                mt="md"
+                label="Your message"
+                placeholder="Please include all relevant information"
+                minRows={3}
+              />
 
-            <Textarea
-              mt="md"
-              label="Your message"
-              placeholder="Please include all relevant information"
-              minRows={3}
-            />
-
-            <Group position="right" mt="md">
-              <Button type="submit" className={classes.control}>
-                Send message
-              </Button>
-            </Group>
-          </div>
-        </form>
-      </div>
-    </Paper>
+              <Group position="right" mt="md">
+                <Button type="submit" className={classes.control}>
+                  Send message
+                </Button>
+              </Group>
+            </div>
+          </form>
+        </div>
+      </Paper>
+    </div>
   );
 }
