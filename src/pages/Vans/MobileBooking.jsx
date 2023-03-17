@@ -52,13 +52,19 @@ export default function VanDetailsBooking(props) {
 
   function featureUnavailable() {
     const btn = document.querySelector('.booking-reserve');
+    console.log(btn);
     btn.textContent = 'Sorry, this feature is currently under progress.';
     btn.disabled = true;
     btn.style.backgroundColor = '#4e5752';
     btn.style.cursor = 'default';
   }
   function closeBookingModal() {
-    document.querySelector('.mobile-booking-modal').style.display = 'none';
+    document.querySelector('.mobile-booking-modal').style.transform =
+      'translate3d(0,100%,0)';
+    setTimeout(() => {
+      document.querySelector('.mobile-booking-modal').style.display = 'none';
+    }, 300);
+
     document.querySelector('.mantine-1avyp1d').style.display = 'block';
     document.querySelector('body').classList.remove('body-hide-overflow');
     document.querySelector('.mobile-booking-container').style.display = 'flex';

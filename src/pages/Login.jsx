@@ -56,8 +56,8 @@ export default function AuthRequired() {
     const user = JSON.parse(localStorage.getItem('user'));
     if (!user) setLoginError(true);
     if (
-      user.email.toLowerCase() === form.values.email.toLowerCase() &&
-      user.password === form.values.password
+      user?.email.toLowerCase() === form.values.email.toLowerCase() &&
+      user?.password === form.values.password
     ) {
       setLoginState(true);
       localStorage.setItem('loggedin', true);
@@ -160,7 +160,10 @@ export default function AuthRequired() {
                   component="button"
                   type="button"
                   color="dimmed"
-                  onClick={() => toggle()}
+                  onClick={() => {
+                    toggle();
+                    setLoginError(false);
+                  }}
                   size="md"
                   disabled={loginState || registerState}
                 >

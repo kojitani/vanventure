@@ -13,15 +13,18 @@ export function loader({ params }) {
 }
 export default function VanDetails() {
   const loaderData = useLoaderData();
-  function showMobileBooking() {
-    console.log('clicked');
-  }
+
   function openMobileBooking() {
+    document.querySelector('.mobile-booking-modal').style.display = 'flex';
+    setTimeout(() => {
+      document.querySelector('.mobile-booking-modal').style.transform =
+        'translate3d(0,0,0)';
+    }, 11);
     document.querySelector('body').classList.add('body-hide-overflow');
     document.querySelector('.mantine-1avyp1d').style.display = 'none';
-    document.querySelector('.mobile-booking-modal').style.display = 'flex';
     document.querySelector('.mobile-booking-container').style.display = 'none';
   }
+
   return (
     <div className="fallback-container hidden" id="fallback-container">
       <div className="calendar-overlay"></div>
