@@ -15,6 +15,7 @@ export default function HostVansPhotos() {
       <img
         key={i}
         src={img}
+        alt={`Image ${i}`}
         onLoad={() => setImageLoaded(prevImageLoaded => prevImageLoaded + 1)}
       ></img>
     );

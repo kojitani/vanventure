@@ -16,10 +16,15 @@ export default function HostVansAmenities() {
   });
   return (
     <div>
-      <h1>Features:</h1>
-      {vanFeatures}
-      <h1>Amenities</h1>
-      {vanAmenities}
+      <h2 style={{ margin: '0.5rem 0' }}>Features:</h2>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
+        {vanFeatures}
+      </div>
+
+      <h2 style={{ margin: '0.5rem 0' }}>Amenities:</h2>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
+        {vanAmenities}
+      </div>
     </div>
   );
 }

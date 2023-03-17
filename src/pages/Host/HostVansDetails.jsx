@@ -1,14 +1,23 @@
 import React from 'react';
 import { useOutletContext } from 'react-router-dom';
+import { Text } from '@mantine/core';
 export default function HostVansDetails() {
   const van = useOutletContext();
   return (
-    <div>
-      <h1>Name: {van.name}</h1>
-      <h1>Class: {van.class}</h1>
-      <h1>Description: {van.description}</h1>
-      <h1>Pricing: ${van.price}</h1>
-      <h1>Visibility: public</h1>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+      <h2>
+        Name: <span style={{ fontWeight: 'lighter' }}>{van.name}</span>
+      </h2>
+      <h2>
+        Description:{' '}
+        <span style={{ fontWeight: 'lighter' }}>{van.description}</span>
+      </h2>
+      <h2>
+        Pricing: <span style={{ fontWeight: 'lighter' }}>{van.price}</span>
+      </h2>
+      <h2>
+        Visibility: <span style={{ fontWeight: 'lighter' }}>Public</span>
+      </h2>
     </div>
   );
 }
