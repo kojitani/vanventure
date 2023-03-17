@@ -50,11 +50,15 @@ export default function FooterSocial() {
           <p style={{ fontWeight: '600' }}>VanVenture</p>
         </div>
         <Group spacing={0} className={classes.links} position="right" noWrap>
-          <a href="https://github.com/kojitani/vanventure" target="_blank">
-            <ActionIcon size="lg">
-              <IconBrandGithub size="2rem" stroke={1.5} />
-            </ActionIcon>
-          </a>
+          <ActionIcon
+            title="Github link"
+            component="a"
+            href="https://github.com/kojitani/vanventure"
+            target="_blank"
+            size="lg"
+          >
+            <IconBrandGithub size="2rem" stroke={1.5} />
+          </ActionIcon>
         </Group>
       </Container>
     </div>

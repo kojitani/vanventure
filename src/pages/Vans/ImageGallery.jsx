@@ -139,6 +139,7 @@ export default function ImageGallery(props) {
         className={className}
         onClick={() => fullscreenImg(i)}
         src={img}
+        alt={`Image ${i}`}
       />
     );
   });
@@ -149,6 +150,7 @@ export default function ImageGallery(props) {
         id={`slide-${i}`}
         key={i}
         src={img}
+        alt={`Image ${i}`}
         onTouchStart={() => onTouchStart(event)}
         onTouchMove={() => onTouchMove(event)}
         onTouchEnd={() => onTouchEnd()}
