@@ -8,6 +8,7 @@ import VanDetailsReviews from './VanDetailsReviews';
 import ImageGallery from './ImageGallery';
 import { IconChevronLeft } from '@tabler/icons-react';
 import MobileBooking from './MobileBooking';
+import { Text } from '@mantine/core';
 export function loader({ params }) {
   return defer({ vanDetails: getVans(params.id) });
 }
@@ -49,10 +50,12 @@ export default function VanDetails() {
                 </div>
                 <div className="mobile-booking-container">
                   <div style={{ display: 'flex', alignItems: 'center' }}>
-                    <p style={{ fontSize: '1.5rem', fontWeight: 'bolder' }}>
+                    <p style={{ fontSize: '1.3rem', fontWeight: 'bolder' }}>
                       ${vanDetails.price}
                     </p>
-                    <span>/night</span>
+                    <Text fz="md" c="dimmed">
+                      /night
+                    </Text>
                   </div>
                   <button
                     className="mobile-bottom-btn"

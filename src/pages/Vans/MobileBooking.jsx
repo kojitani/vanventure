@@ -86,8 +86,8 @@ export default function VanDetailsBooking(props) {
             <div className="booking-price">
               <span style={{ fontWeight: 'bold', fontSize: '2rem' }}>
                 ${props.vanDetails.price}
-              </span>{' '}
-              <span>/night</span>
+              </span>
+              <span> /night</span>
             </div>
           </div>
         </div>
