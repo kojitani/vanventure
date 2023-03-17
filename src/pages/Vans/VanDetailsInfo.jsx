@@ -1,5 +1,5 @@
 import React from 'react';
-import { SimpleGrid } from '@mantine/core';
+import { Divider, SimpleGrid } from '@mantine/core';
 import VanDetailsBooking from './VanDetailsBooking';
 export default function VanDetailsInfo(props) {
   const vanDetails = props.vanDetails;
@@ -63,7 +63,9 @@ export default function VanDetailsInfo(props) {
         <button>20 ft. long</button>
         <button>Pet friendly</button>
       </div>
+      <Divider my="sm" />
       <p className="van-details-description">{vanDetails.description}</p>
+      <Divider my="sm" />
       <h2 className="feature-title">Features</h2>
       <SimpleGrid
         style={{ gridAutoRows: '1fr' }}
@@ -73,6 +75,7 @@ export default function VanDetailsInfo(props) {
       >
         {featureElements}
       </SimpleGrid>
+      <Divider my="sm" />
       <h2 className="amenity-title">Amenities</h2>
       <SimpleGrid
         style={{ gridAutoRows: '1fr' }}
@@ -82,6 +85,7 @@ export default function VanDetailsInfo(props) {
       >
         {amenityElements}
       </SimpleGrid>
+      <Divider my="sm" />
       <h1 className="rules-title">Rules and policies</h1>
       <SimpleGrid
         style={{ gridAutoRows: '1fr' }}

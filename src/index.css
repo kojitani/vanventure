@@ -606,8 +606,7 @@ nav > a {
 .feature-preview-container {
   display: flex;
   align-items: center;
-  border-bottom: 2px solid #b9b9b965;
-  /* padding: 1rem; */
+
   gap: 1rem;
   flex-wrap: wrap;
 }
@@ -624,15 +623,13 @@ nav > a {
 }
 .van-details-description {
   font-size: 1.3rem;
-  padding: 2rem 0;
-  border-bottom: 2px solid #b9b9b965;
 }
 .feature-title,
 .amenity-title,
 .rules-title,
 .availability-title {
   font-size: 2rem;
-  margin: 1rem 0;
+  margin-bottom: 1rem;
 }
 .feature-container,
 .amenity-container,
