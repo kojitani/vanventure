@@ -17,7 +17,7 @@ export default function HostVansListing() {
             <div className="host-listing-info">
               <p style={{ fontWeight: 'bold' }}>{van.name}</p>
               <p>${van.price}/night</p>
-              <p>Visibility: Public</p>
+              <p>Public</p>
             </div>
           </div>
         </Link>

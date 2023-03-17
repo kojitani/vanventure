@@ -151,7 +151,7 @@ export default function VanDetailsBooking(props) {
             </div>
             <div className="booking-cleaning">
               <p>Cleaning fee</p>
-              <p>$200</p>
+              <p>$100</p>
             </div>
             <div className="booking-insurance">
               <p>Insurance Coverage</p>
@@ -169,7 +169,7 @@ export default function VanDetailsBooking(props) {
                   numDays * props.vanDetails.price +
                   numDays * props.vanDetails.price * 0.21 +
                   numDays * props.vanDetails.price * 0.09 +
-                  200
+                  100
                 )
                   .toFixed(2)
                   .toLocaleString('en-US')}

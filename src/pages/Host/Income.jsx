@@ -1,5 +1,9 @@
-import React from 'react';
+import IncomeDetails from './IncomeDetails';
 
-export default function HostIncome() {
-  return <div>host income page</div>;
+export default function Income() {
+  return (
+    <div>
+      <IncomeDetails />
+    </div>
+  );
 }

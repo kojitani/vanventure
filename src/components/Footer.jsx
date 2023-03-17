@@ -52,7 +52,7 @@ export default function FooterSocial() {
         <Group spacing={0} className={classes.links} position="right" noWrap>
           <a href="https://github.com/kojitani/vanventure" target="_blank">
             <ActionIcon size="lg">
-              <IconBrandGithub size="1.05rem" stroke={1.5} />
+              <IconBrandGithub size="2rem" stroke={1.5} />
             </ActionIcon>
           </a>
         </Group>

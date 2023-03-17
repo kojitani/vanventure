@@ -48,7 +48,7 @@ export default function AuthRequired() {
     setRegisterState(true);
     setTimeout(() => {
       toggle();
-    }, 2000);
+    }, 1000);
     console.log('saved login details');
   }
   function checkLoginDetails() {
@@ -63,7 +63,7 @@ export default function AuthRequired() {
       localStorage.setItem('loggedin', true);
       setTimeout(() => {
         navigate(prevURL || '/host/dashboard', { replace: true });
-      }, 2000);
+      }, 1000);
     } else {
       setLoginError(true);
     }

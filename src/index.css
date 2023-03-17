@@ -766,7 +766,6 @@ nav > a {
 }
 .host-listing-info {
   display: flex;
-  justify-content: center;
   flex-direction: column;
 }
 .host-listing-info p {
