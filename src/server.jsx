@@ -13,7 +13,7 @@ createServer({
       price: 60,
       description:
         'The Modest Explorer is a van designed to get you out of the house and into nature. This beauty is equipped with solar panels, a composting toilet, a water tank and kitchenette. The idea is that you can pack up your home and escape for a weekend or even longer!',
-      class: '2020 Class B · 19ft',
+      class: '2020 Class B',
       imageUrl: [
         'https://res.cloudinary.com/dxwwpwlqc/image/upload/v1678472404/van-1/feg4kipnanbadvkqrdni_a4ig3s.webp',
         'https://res.cloudinary.com/dxwwpwlqc/image/upload/v1678472404/van-1/ekikcormfox0xlqygwjd_ous2ly.webp',
@@ -88,7 +88,7 @@ createServer({
       price: 80,
       description:
         "Beach Bum is a van inspired by surfers and travelers. It was created to be a portable home away from home, but with some cool features in it you won't find in an ordinary camper.",
-      class: '2015 Class B · 21ft',
+      class: '2015 Class B',
       imageUrl: [
         'https://res.cloudinary.com/dxwwpwlqc/image/upload/v1678473775/van-1/van-2/sxqxjp3vturqii4inlix_hnrd7d.webp',
         'https://res.cloudinary.com/dxwwpwlqc/image/upload/v1678473774/van-1/van-2/qxovhj9fhobj18dkzusb_eldl0c.webp',
@@ -171,7 +171,7 @@ createServer({
       price: 100,
       description:
         "Reliable Red is a van that was made for travelling. The inside is comfortable and cozy, with plenty of space to stretch out in. There's a small kitchen, so you can cook if you need to. You'll feel like home as soon as you step out of it.",
-      class: '2022 Class B · 21ft',
+      class: '2022 Class B',
       imageUrl: [
         'https://res.cloudinary.com/dxwwpwlqc/image/upload/v1678474077/van-3/deojj7p309mwg8n4ly1o_dlrtk8.webp',
         'https://res.cloudinary.com/dxwwpwlqc/image/upload/v1678474077/van-3/dvowcvtgxvsmswtxancm_p8nkam.webp',
@@ -247,7 +247,7 @@ createServer({
       price: 65,
       description:
         'Dreamfinder is the perfect van to travel in and experience. With a ceiling height of 2.1m, you can stand up in this van and there is great head room. The floor is a beautiful glass-reinforced plastic (GRP) which is easy to clean and very hard wearing. A large rear window and large side windows make it really light inside and keep it well ventilated.',
-      class: '2009 Class B · 18ft',
+      class: '2009 Class B',
       imageUrl: [
         'https://res.cloudinary.com/dxwwpwlqc/image/upload/v1678474209/van-4/ee392rx5yc4v1ci5d7sp_c8rsqe.webp',
         'https://res.cloudinary.com/dxwwpwlqc/image/upload/v1678474209/van-4/bsboisz0ialyl0ctagl0_rplwon.webp',
@@ -317,7 +317,7 @@ createServer({
       price: 120,
       description:
         'The Cruiser is a van for those who love to travel in comfort and luxury. With its many windows, spacious interior and ample storage space, the Cruiser offers a beautiful view wherever you go.',
-      class: '2021 Class B · 19ft',
+      class: '2021 Class B',
       imageUrl: [
         'https://res.cloudinary.com/dxwwpwlqc/image/upload/v1678474625/van-5/xwlsxjhn0buvsnj4jshp_nmnkoy.webp',
         'https://res.cloudinary.com/dxwwpwlqc/image/upload/v1678474625/van-5/avmudhhy55oq608ldkjb_xfnft4.webp',
@@ -390,7 +390,7 @@ createServer({
       price: 70,
       description:
         "With this van, you can take your travel life to the next level. The Green Wonder is a sustainable vehicle that's perfect for people who are looking for a stylish, eco-friendly mode of transport that can go anywhere.",
-      class: '2018 Class B · 20ft',
+      class: '2018 Class B',
       imageUrl: [
         'https://res.cloudinary.com/dxwwpwlqc/image/upload/v1678474783/van-6/i9zsqahmll1rga1uopo0_o18kjo.webp',
         'https://res.cloudinary.com/dxwwpwlqc/image/upload/v1678474783/van-6/eck31vieien8hrccc52w_q1sgfn.webp',

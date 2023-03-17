@@ -9,8 +9,10 @@ import {
   useNavigate,
   useLocation,
 } from 'react-router-dom';
-import { Tabs } from '@mantine/core';
+import { Tabs, Loader } from '@mantine/core';
 import { getHostVans } from '../../api';
+import { IconChevronLeft } from '@tabler/icons-react';
+
 export function loader({ params }) {
   return defer({ hostVan: getHostVans(params.id) });
 }
@@ -28,20 +30,36 @@ export default function HostVansLayout() {
     setActiveTab(location.pathname.slice(urlGetter + 1));
   }, [location]);
   return (
-    <div>
-      <Link to="/host/vans">go back to all vans</Link>
-      <Suspense fallback={<h1>LOADING VAN DETAILS ^^</h1>}>
+    <div
+      style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
+    >
+      <Link
+        to="/host/vans"
+        style={{
+          display: 'flex',
+          textDecoration: 'none',
+          color: 'black',
+          alignItems: 'center',
+          marginBottom: '1rem',
+          alignSelf: 'flex-start',
+        }}
+      >
+        <IconChevronLeft />
+        <p>Go back to all listings</p>
+      </Link>
+      <Suspense fallback={<Loader color="dark" variant="dots" size={48} />}>
         <Await resolve={vanDetails.hostVan}>
           {van => {
             return (
-              <div>
-                <Skeleton visible={loading} width={300}>
-                  <img
-                    src={van.imageUrl[0]}
-                    width={300}
-                    onLoad={() => setLoading(false)}
-                  ></img>{' '}
-                </Skeleton>
+              <div style={{ width: '100%' }}>
+                <div className="host-listing">
+                  <img src={van.imageUrl[0]}></img>
+                  <div className="host-listing-info">
+                    <p style={{ fontWeight: 'bold' }}>{van.name}</p>
+                    <p>${van.price}/night</p>
+                    <p>Visibility: Public</p>
+                  </div>
+                </div>
                 <Tabs
                   value={activeTab}
                   onTabChange={value => {
