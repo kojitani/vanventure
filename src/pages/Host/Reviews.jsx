@@ -24,6 +24,7 @@ export default function HostReviews() {
   const hostReviewsFilter = vanDetails
     .filter(data => data.host.id === 123)
     .flatMap(item => item.reviews);
+  console.log(hostReviewsFilter);
   const ratingArr = [];
   hostReviewsFilter.forEach(review => ratingArr.push(review.rating));
   const ratingTotal =

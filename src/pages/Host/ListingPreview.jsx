@@ -1,20 +1,14 @@
 import {
   Avatar,
-  Badge,
   Table,
   Group,
   Text,
   ActionIcon,
-  Anchor,
   ScrollArea,
-  useMantineTheme,
 } from '@mantine/core';
 import { IconPencil, IconTrash } from '@tabler/icons-react';
 import { Link } from 'react-router-dom';
 export default function UsersTable(props) {
-  const theme = useMantineTheme();
-  const data = [{ name: 'test', job: 'test', phone: 'test', email: 'test' }];
-
   const rows = props.vanDetails
     .filter(van => van.host.id === 123)
     .map((van, i) => {
@@ -29,39 +23,36 @@ export default function UsersTable(props) {
           <td>
             <Group spacing="sm">
               <Avatar size={50} src={van.imageUrl[0]} radius={30} />
-              <Text fz="md" fw={500}>
+              <Text fz="xl" fw={500}>
                 {van.name}
               </Text>
             </Group>
           </td>
 
           <td>
-            <Badge
-              color={'red'}
-              variant={theme.colorScheme === 'dark' ? 'light' : 'outline'}
-            >
-              {van.class}
-            </Badge>
-          </td>
-          <td>
-            <Text fz="md" fw={600}>
+            <Text fz="xl" fw={600}>
               ${van.price} /night
             </Text>
           </td>
           <td>
-            <Text fz="sm" fw={500}>
+            <Text fz="xl" fw={500}>
               ★ {vanRating}
+            </Text>
+          </td>
+          <td>
+            <Text fz="xl" fw={600}>
+              Public
             </Text>
           </td>
           <td>
             <Group spacing={0} position="right">
               <Link to={`/host/vans/${van.id}/details`}>
                 <ActionIcon>
-                  <IconPencil size="1rem" stroke={1.5} />
+                  <IconPencil size="2rem" stroke={1.5} />
                 </ActionIcon>
               </Link>
               <ActionIcon color="red">
-                <IconTrash size="1rem" stroke={1.5} />
+                <IconTrash size="2rem" stroke={1.5} />
               </ActionIcon>
             </Group>
           </td>
@@ -71,13 +62,14 @@ export default function UsersTable(props) {
 
   return (
     <ScrollArea>
-      <Table sx={{ minWidth: 800 }} verticalSpacing="sm">
+      <Table sx={{ minWidth: 800 }} verticalSpacing="sm" horizontalSpacing="sm">
         <thead>
           <tr>
             <th>Van name</th>
-            <th>Details</th>
+
             <th>Price</th>
             <th>Rating</th>
+            <th>Visibility</th>
             <th />
           </tr>
         </thead>
