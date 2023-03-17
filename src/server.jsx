@@ -10,7 +10,7 @@ createServer({
     server.create('van', {
       id: '1',
       name: 'Modest Explorer',
-      price: 60,
+      price: 100,
       description:
         'The Modest Explorer is a van designed to get you out of the house and into nature. This beauty is equipped with solar panels, a composting toilet, a water tank and kitchenette. The idea is that you can pack up your home and escape for a weekend or even longer!',
       class: '2020 Class B',
@@ -167,10 +167,10 @@ createServer({
     });
     server.create('van', {
       id: '3',
-      name: 'Reliable Red',
+      name: 'Black Wonder',
       price: 100,
       description:
-        "Reliable Red is a van that was made for travelling. The inside is comfortable and cozy, with plenty of space to stretch out in. There's a small kitchen, so you can cook if you need to. You'll feel like home as soon as you step out of it.",
+        "Black Wonder is a van that was made for travelling. The inside is comfortable and cozy, with plenty of space to stretch out in. There's a small kitchen, so you can cook if you need to. You'll feel like home as soon as you step out of it.",
       class: '2022 Class B',
       imageUrl: [
         'https://res.cloudinary.com/dxwwpwlqc/image/upload/v1678474077/van-3/deojj7p309mwg8n4ly1o_dlrtk8.webp',
@@ -386,10 +386,10 @@ createServer({
     });
     server.create('van', {
       id: '6',
-      name: 'Green Wonder',
-      price: 70,
+      name: 'Reliable Red',
+      price: 90,
       description:
-        "With this van, you can take your travel life to the next level. The Green Wonder is a sustainable vehicle that's perfect for people who are looking for a stylish, eco-friendly mode of transport that can go anywhere.",
+        "With this van, you can take your travel life to the next level. The Reliable Red is a sustainable vehicle that's perfect for people who are looking for a stylish, eco-friendly mode of transport that can go anywhere.",
       class: '2018 Class B',
       imageUrl: [
         'https://res.cloudinary.com/dxwwpwlqc/image/upload/v1678474783/van-6/i9zsqahmll1rga1uopo0_o18kjo.webp',

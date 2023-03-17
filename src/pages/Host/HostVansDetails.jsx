@@ -13,7 +13,7 @@ export default function HostVansDetails() {
         <span style={{ fontWeight: 'lighter' }}>{van.description}</span>
       </h2>
       <h2>
-        Pricing: <span style={{ fontWeight: 'lighter' }}>{van.price}</span>
+        Pricing: <span style={{ fontWeight: 'lighter' }}>${van.price}</span>
       </h2>
       <h2>
         Visibility: <span style={{ fontWeight: 'lighter' }}>Public</span>
