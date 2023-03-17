@@ -46,7 +46,7 @@ export default function FooterSocial() {
             alignItems: 'center',
           }}
         >
-          <img src="/logo.png" height={34}></img>
+          <img src="/logo.png" height={34} width={42} alt="Website logo"></img>
           <p style={{ fontWeight: '600' }}>VanVenture</p>
         </div>
         <Group spacing={0} className={classes.links} position="right" noWrap>

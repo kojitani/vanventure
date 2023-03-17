@@ -70,7 +70,7 @@ export default function HostOffer() {
           wheels.
         </Text>
       </div>
-      <Image src={image} className={classes.image} />
+      <Image src={image} alt="About section" className={classes.image} />
     </div>
   );
 }

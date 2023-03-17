@@ -15,6 +15,7 @@ export default function VanDetailsInfo(props) {
           src={`/svg/${Object.keys(feature)}.svg`}
           width="30px"
           height={30}
+          alt={feature}
         ></img>
         <p>{`${featureCase}: ${Object.values(feature)}`}</p>
       </div>
@@ -32,6 +33,7 @@ export default function VanDetailsInfo(props) {
           src={`/svg/${amenity}.svg`}
           width="30px"
           height={30}
+          alt={amenity}
         ></img>
         <p>{amenityCase}</p>
       </div>
@@ -44,6 +46,7 @@ export default function VanDetailsInfo(props) {
         <img
           className="features-svg"
           src={`/svg/${rule}.svg`}
+          alt={rule}
           width={32}
           height={32}
         ></img>

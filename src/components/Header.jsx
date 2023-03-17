@@ -112,7 +112,7 @@ export default function HeaderMegaMenu() {
                 alignItems: 'center',
               }}
             >
-              <img src="/logo.png" height={34} alt="Home.logo"></img>
+              <img src="/logo.png" height={34} width={42} alt="Home.logo"></img>
               <p>VanVenture</p>
             </div>
           </Link>

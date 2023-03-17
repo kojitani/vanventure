@@ -77,7 +77,11 @@ export default function HostOffer() {
           </Link>
         </div>
       </div>
-      <Image src={image} className={classes.image} />
+      <Image
+        src={image}
+        alt="Host your van section"
+        className={classes.image}
+      />
     </div>
   );
 }
