@@ -87,11 +87,20 @@ export default function AuthRequired() {
             weight={500}
             m="2rem 0rem"
           >
-            Welcome to VanVenture,{' '}
+            Welcome to VanVenture,
+          </Text>
+
+          <Text
+            style={{ textAlign: 'center', marginTop: '-2rem' }}
+            size="xl"
+            weight={500}
+          >
+            {' '}
             {type === 'login'
               ? 'sign in to continue.'
               : 'register your information below.'}
           </Text>
+
           {loginError && (
             <h4
               style={{ color: 'red', textAlign: 'center', margin: '0.5rem 0' }}
