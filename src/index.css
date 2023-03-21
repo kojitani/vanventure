@@ -106,7 +106,7 @@ body {
   padding: 2rem 0;
 }
 .vans-container {
-  padding: 5% 2rem;
+  padding: 5vh 2rem;
   min-height: calc(100svh - 120px);
   max-height: 100%;
   position: relative;
@@ -114,6 +114,7 @@ body {
   flex-direction: column;
   gap: 2rem;
 }
+
 .filter-container {
   display: flex;
   justify-content: center;
@@ -203,7 +204,7 @@ body {
   width: 80px;
   height: 80px;
   left: calc(50% - 40px);
-  top: 15%;
+  top: 15vh;
   margin: 2rem 0;
 }
 .lds-ellipsis div {
@@ -738,15 +739,20 @@ body {
 }
 .login-page {
   min-height: calc(100svh - 120px);
-  padding: 2rem 0;
-}
-.login-container {
+  padding: 2rem 1rem;
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+.login-container {
+  height: 100%;
 }
 .login-welcome {
   text-align: center;
-  font-size: clamp(1.3rem, 5vw, 1.8rem);
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+}
+.login-welcome:last-of-type {
+  margin-bottom: 1rem;
 }
 .login-img {
   border-radius: 1rem;
@@ -757,6 +763,7 @@ body {
 .reviews-container {
   display: flex;
   justify-content: space-between;
+
   position: relative;
   width: 100%;
   gap: 1rem;

@@ -11,7 +11,18 @@ export default function Vans() {
 
   return (
     <div className="vans-container">
-      <h1>Explore our van options</h1>
+      <div>
+        <h1
+          style={{
+            maxWidth: '1440px',
+            margin: '0 auto',
+            textAlign: 'left',
+            fontSize: 'clamp(1.6rem, 3vw, 3rem',
+          }}
+        >
+          Explore our van options
+        </h1>
+      </div>
       <SimpleGrid
         className="van-list"
         cols={5}

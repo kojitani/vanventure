@@ -74,11 +74,11 @@ export default function AuthRequired() {
         <Paper
           radius="md"
           p="xl"
-          shadow="lg"
           style={{
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
+            boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px',
           }}
         >
           <div style={{ display: 'flex', flexDirection: 'column' }}>
