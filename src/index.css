@@ -550,13 +550,13 @@ body {
 }
 
 .van-details-rating {
-  font-size: 1.5rem;
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
 }
 .van-details-rating a {
   color: black;
 }
 .van-details-name {
-  font-size: 3rem;
+  font-size: clamp(2rem, 3vw, 4rem);
   margin: 1.5rem 0;
   margin-top: 0;
 }
@@ -572,26 +572,25 @@ body {
   background-color: rgb(71, 71, 71);
   border-style: none;
   color: white;
-  font-size: 1.2rem;
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
   padding: 0.3rem 1rem;
   border-radius: 0.5rem;
   margin-bottom: 1rem;
   white-space: nowrap;
 }
 .van-details-description {
-  font-size: 1.3rem;
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
 }
 .feature-title,
 .amenity-title,
 .rules-title,
 .availability-title {
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 5vw, 2rem);
   margin-bottom: 1rem;
 }
 .feature-container,
 .amenity-container,
 .rules-container {
-  /* margin-top: 1rem; */
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
@@ -609,7 +608,7 @@ body {
 .amenity-item p,
 .rule-item p {
   line-height: 2rem;
-  font-size: 1.3rem;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
   margin-left: 0.3rem;
   white-space: nowrap;
 }
@@ -829,13 +828,6 @@ body {
   .small-gallery-img {
     display: none;
   }
-
-  .van-details-info-container {
-    width: 100%;
-  }
-  .container-seperator {
-    padding: 0;
-  }
   .van-details-name {
     font-size: 2.5rem;
   }
@@ -845,22 +837,6 @@ body {
   .nav-links > a {
     font-size: 1.5rem;
   }
-  .feature-title,
-  .amenity-title,
-  .rules-title,
-  .availability-title {
-    font-size: 1.7rem;
-  }
-  .feature-item p,
-  .amenity-item p,
-  .rule-item p {
-    font-size: 1.2rem;
-  }
-
-  .home-btn {
-    font-size: 1rem;
-  }
-
   .host-photos {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -896,7 +872,6 @@ body {
   .calendar-date {
     width: 100%;
   }
-
   .booking-calc,
   .booking-cleaning,
   .booking-insurance,
@@ -921,55 +896,26 @@ body {
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: 50%;
   }
-  .medium-gallery-img {
-    display: none;
-  }
+  .medium-gallery-img,
   .small-gallery-img {
     display: none;
   }
-  .nav-logo {
-    font-size: 1rem;
-  }
+
+  .nav-logo,
   .nav-links a {
     font-size: 1rem;
   }
+
   .van-details-info-container {
     width: 100%;
     flex-wrap: wrap;
   }
-  .van-details-name {
-    font-size: 2rem;
-  }
-  .van-details-description {
-    font-size: 1.2rem;
-  }
 
-  .feature-title,
-  .amenity-title,
-  .rules-title {
-    font-size: 1.5rem;
-  }
-  .feature-item p,
-  .amenity-item p,
-  .rule-item p {
-    font-size: 1.2rem;
-  }
-  .van-details-rating {
-    font-size: 1.2rem;
-  }
-
-  .feature-preview-container button {
-    font-size: 1rem;
-  }
   .show-gallery {
     font-size: 0.8rem;
     padding: 0.2rem 0.5rem;
     bottom: 1rem;
     right: 0.5rem;
-  }
-
-  .home-btn {
-    font-size: 0.8rem;
   }
   .host-listing {
     flex-direction: column;
