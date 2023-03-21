@@ -10,6 +10,7 @@ import {
   ScrollArea,
   rem,
   Menu,
+  Text,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { useLocation, Link, useNavigate } from 'react-router-dom';
@@ -101,7 +102,12 @@ export default function HeaderMegaMenu() {
               }}
             >
               <img src="/logo.png" height={34} width={42} alt="Home.logo"></img>
-              <p>VanVenture</p>
+              <Text
+                sx={{ fontFamily: 'Poppins, sans-serif', fontWeight: 'bold' }}
+                fz="md"
+              >
+                VanVenture
+              </Text>
             </div>
           </Link>
 

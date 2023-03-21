@@ -1,9 +1,8 @@
-import { createStyles, Container, Group, ActionIcon, rem } from '@mantine/core';
+import { createStyles, Container, Text, ActionIcon, rem } from '@mantine/core';
 import { IconBrandGithub } from '@tabler/icons-react';
 
 const useStyles = createStyles(theme => ({
   footer: {
-    marginTop: rem(120),
     borderTop: `${rem(1)} solid ${
       theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[2]
     }`,
@@ -45,7 +44,12 @@ export default function FooterSocial() {
           }}
         >
           <img src="/logo.png" height={34} width={42} alt="Website logo"></img>
-          <p style={{ fontWeight: '600' }}>VanVenture</p>
+          <Text
+            sx={{ fontFamily: 'Poppins, sans-serif', fontWeight: 'bold' }}
+            fz="md"
+          >
+            VanVenture
+          </Text>
         </div>
 
         <ActionIcon
