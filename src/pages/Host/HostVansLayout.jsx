@@ -47,7 +47,9 @@ export default function HostVansLayout() {
         <IconChevronLeft />
         <p>Go back to all listings</p>
       </Link>
-      <Suspense fallback={<Loader color="dark" variant="dots" size={48} />}>
+      <Suspense
+        fallback={<Loader color="dark" variant="dots" size={48} mt="3rem" />}
+      >
         <Await resolve={vanDetails.hostVan}>
           {van => {
             return (

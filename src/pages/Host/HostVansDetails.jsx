@@ -1,6 +1,6 @@
 import React from 'react';
 import { useOutletContext } from 'react-router-dom';
-import { Text } from '@mantine/core';
+
 export default function HostVansDetails() {
   const van = useOutletContext();
   return (

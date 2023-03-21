@@ -275,11 +275,11 @@ body {
 .mobile-booking-close {
   box-sizing: content-box;
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: 0.8rem;
+  right: 0.8rem;
   border-radius: 50%;
   background-color: rgb(192, 192, 192);
-  padding: 0.3rem;
+  padding: 0.2rem;
   z-index: 10;
 }
 .mobile-booking-availability,
@@ -322,11 +322,14 @@ body {
 }
 .mobile-booking-header {
   display: flex;
+  align-items: center;
   gap: 1rem;
 }
 
-.mobile-booking-header h1 {
+.mobile-booking-header p {
   font-size: clamp(1.5rem, 5vw, 2rem);
+  font-weight: bold;
+  line-height: 100%;
 }
 .mobile-booking-img {
   width: 50%;
@@ -963,9 +966,6 @@ body {
     padding: 0.2rem 0.5rem;
     bottom: 1rem;
     right: 0.5rem;
-  }
-  .mobile-booking-modal {
-    padding-top: 3rem;
   }
 
   .home-btn {

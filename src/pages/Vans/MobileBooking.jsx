@@ -82,16 +82,15 @@ export default function VanDetailsBooking(props) {
             src={props.vanDetails.imageUrl[0]}
           ></img>
           <div>
-            <h1>{props.vanDetails.name}</h1>{' '}
+            <p>{props.vanDetails.name}</p>{' '}
             <>
-              <span
+              <p
                 style={{
-                  fontWeight: 'bold',
-                  fontSize: 'clamp(1.5rem, 5vw, 2rem)',
+                  display: 'inline-block',
                 }}
               >
                 ${props.vanDetails.price}
-              </span>
+              </p>
               <span> /night</span>
             </>
           </div>
