@@ -1,6 +1,5 @@
 import React from 'react';
 import { Divider, SimpleGrid } from '@mantine/core';
-import VanDetailsBooking from './VanDetailsBooking';
 export default function VanDetailsInfo(props) {
   const vanDetails = props.vanDetails;
 
@@ -95,12 +94,6 @@ export default function VanDetailsInfo(props) {
       >
         {ruleElements}
       </SimpleGrid>
-
-      {/* <div className="availability-container" id="availability-container">
-        <h1 id="test" className="availability-title">
-          Availability and rates
-        </h1>
-      </div> */}
     </div>
   );
 }

@@ -1,14 +1,5 @@
-import React, { useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
-import {
-  createStyles,
-  Text,
-  Avatar,
-  Group,
-  rem,
-  Rating,
-  Divider,
-} from '@mantine/core';
+import React from 'react';
+import { createStyles, Text, Avatar, Group, rem, Rating } from '@mantine/core';
 
 const useStyles = createStyles(theme => ({
   body: {

@@ -8,9 +8,6 @@ import {
   SimpleGrid,
   createStyles,
   rem,
-  ThemeIcon,
-  Box,
-  Stack,
 } from '@mantine/core';
 import bg from '/contact-bg.svg';
 import { IconSun, IconPhone, IconMapPin, IconAt } from '@tabler/icons-react';
@@ -20,7 +17,6 @@ const useStyles = createStyles(theme => {
   return {
     wrapper: {
       display: 'flex',
-      maxWidth: '700px',
       backgroundColor:
         theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.white,
       borderRadius: theme.radius.lg,
@@ -114,7 +110,7 @@ export default function GetInTouch() {
   const { classes } = useStyles();
 
   return (
-    <div>
+    <>
       <Paper shadow="md" radius="lg">
         <div className={classes.wrapper}>
           <div className={classes.contacts}>
@@ -208,6 +204,6 @@ export default function GetInTouch() {
           </form>
         </div>
       </Paper>
-    </div>
+    </>
   );
 }

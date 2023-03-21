@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { Outlet } from 'react-router-dom';
-import ImageGallery from '../pages/Vans/ImageGallery';
+
 export function ImageSwipe(fullscreenImg) {
   const [touchStartX, setTouchStartX] = useState(null);
   const [touchStartY, setTouchStartY] = useState(null);
   const [touchEndX, setTouchEndX] = useState(null);
   const [touchEndY, setTouchEndY] = useState(null);
-  //   console.log(touchStartX, touchStartY, touchEndX, touchEndY);
   const minSwipeDistance = 100;
   function onTouchStart(e) {
     setTouchEndX(null);
