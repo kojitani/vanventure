@@ -51,7 +51,7 @@ export default function VanDetailsBooking(props) {
   window.addEventListener('click', calendarOverlayClose);
 
   function featureUnavailable() {
-    const btn = document.querySelector('.booking-reserve');
+    const btn = document.querySelector('.mobile-booking-reserve');
     console.log(btn);
     btn.textContent = 'Sorry, this feature is currently under progress.';
     btn.disabled = true;
@@ -83,12 +83,17 @@ export default function VanDetailsBooking(props) {
           ></img>
           <div>
             <h1>{props.vanDetails.name}</h1>{' '}
-            <div className="booking-price">
-              <span style={{ fontWeight: 'bold', fontSize: '2rem' }}>
+            <>
+              <span
+                style={{
+                  fontWeight: 'bold',
+                  fontSize: 'clamp(1.5rem, 5vw, 2rem)',
+                }}
+              >
                 ${props.vanDetails.price}
               </span>
               <span> /night</span>
-            </div>
+            </>
           </div>
         </div>
         <div onClick={() => showCalendar()} className="calendar-date">
@@ -124,7 +129,7 @@ export default function VanDetailsBooking(props) {
 
         {!dateValue[1] && (
           <button
-            className="booking-availability"
+            className="mobile-booking-availability"
             onClick={() => showCalendar()}
           >
             Check availability
@@ -134,7 +139,7 @@ export default function VanDetailsBooking(props) {
         {dateValue[1] && (
           <>
             <button
-              className="booking-reserve"
+              className="mobile-booking-reserve"
               onClick={() => featureUnavailable()}
             >
               Reserve

@@ -268,7 +268,6 @@ body {
   align-items: center;
   flex-direction: column;
   padding: 5% 5%;
-  gap: 1rem;
   overflow-y: auto;
   transition: all 0.3s ease;
   transform: translate3d(0, 100%, 0);
@@ -282,6 +281,20 @@ body {
   background-color: rgb(192, 192, 192);
   padding: 0.3rem;
   z-index: 10;
+}
+.mobile-booking-availability,
+.mobile-booking-reserve {
+  width: 100%;
+  font-size: 1.5rem;
+  border-radius: 0.5rem;
+  border-style: none;
+  padding: 0.3rem 1rem;
+  font-size: 1.3rem;
+  cursor: pointer;
+  background-color: #5c940d;
+  color: white;
+  font-weight: bold;
+  margin: 0.5rem 0;
 }
 .mobile-booking-container {
   display: none;
@@ -302,7 +315,6 @@ body {
   border-style: none;
   padding: 0.5rem;
   font-size: 1rem;
-
   cursor: pointer;
   background-color: #5c940d;
   color: white;
@@ -310,8 +322,11 @@ body {
 }
 .mobile-booking-header {
   display: flex;
-  /* justify-content: center; */
   gap: 1rem;
+}
+
+.mobile-booking-header h1 {
+  font-size: clamp(1.5rem, 5vw, 2rem);
 }
 .mobile-booking-img {
   width: 50%;
