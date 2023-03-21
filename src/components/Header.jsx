@@ -10,21 +10,11 @@ import {
   ScrollArea,
   rem,
   Menu,
-  Text,
 } from '@mantine/core';
-import {
-  IconSettings,
-  IconSearch,
-  IconPhoto,
-  IconMessageCircle,
-  IconTrash,
-  IconArrowsLeftRight,
-} from '@tabler/icons-react';
-import { MantineLogo } from '@mantine/ds';
 import { useDisclosure } from '@mantine/hooks';
 import { useLocation, Link, useNavigate } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
-import { Avatar, Tooltip } from '@mantine/core';
+import { Avatar } from '@mantine/core';
 
 const useStyles = createStyles(theme => ({
   link: {
@@ -36,13 +26,14 @@ const useStyles = createStyles(theme => ({
     textDecoration: 'none',
     color: theme.colorScheme === 'dark' ? theme.white : theme.black,
     fontWeight: 600,
-    fontSize: theme.fontSizes.md,
+    fontSize: theme.fontSizes.lg,
 
     [theme.fn.smallerThan('sm')]: {
       height: rem(42),
       display: 'flex',
       alignItems: 'center',
       width: '100%',
+      fontSize: theme.fontSizes.md,
     },
 
     ...theme.fn.hover({
@@ -64,10 +55,12 @@ const useStyles = createStyles(theme => ({
       display: 'none',
     },
   },
-  headerMargin: {
-    [theme.fn.smallerThan('2000')]: {
-      padding: '0 10%',
-    },
+  headerContainer: {
+    margin: '0 auto',
+    display: 'flex',
+    justifyContent: 'space-between',
+    height: '100%',
+    maxWidth: '1440px',
   },
 }));
 
@@ -89,13 +82,8 @@ export default function HeaderMegaMenu() {
   }
   return (
     <Box>
-      <Header height={60} px="md">
-        <Group
-          position="apart"
-          sx={{ height: '100%' }}
-          px={'15%'}
-          className={classes.headerMargin}
-        >
+      <Header height={60} p="0 2rem">
+        <Group position="apart" className={classes.headerContainer}>
           <Link
             style={{
               textDecoration: 'none',
@@ -174,6 +162,7 @@ export default function HeaderMegaMenu() {
           </Group>
 
           <Burger
+            size="sm"
             opened={drawerOpened}
             onClick={toggleDrawer}
             className={classes.hiddenDesktop}

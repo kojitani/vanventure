@@ -11,17 +11,16 @@ const useStyles = createStyles(theme => ({
   },
 
   inner: {
+    height: '60px',
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
     paddingTop: theme.spacing.xl,
     paddingBottom: theme.spacing.xl,
-
+    maxWidth: '1440px',
+    padding: '2rem',
     [theme.fn.smallerThan('xs')]: {
-      flexDirection: 'column',
-    },
-    [theme.fn.smallerThan('2000')]: {
-      margin: '0 10%',
+      padding: '0 2rem',
     },
   },
 
@@ -30,7 +29,6 @@ const useStyles = createStyles(theme => ({
       marginTop: theme.spacing.md,
     },
   },
-  headerMargin: {},
 }));
 
 export default function FooterSocial() {
@@ -38,7 +36,7 @@ export default function FooterSocial() {
 
   return (
     <div className={classes.footer}>
-      <Container className={classes.inner} m="0 15%" size={'100%'}>
+      <Container className={classes.inner}>
         <div
           style={{
             display: 'flex',
@@ -49,17 +47,16 @@ export default function FooterSocial() {
           <img src="/logo.png" height={34} width={42} alt="Website logo"></img>
           <p style={{ fontWeight: '600' }}>VanVenture</p>
         </div>
-        <Group spacing={0} className={classes.links} position="right" noWrap>
-          <ActionIcon
-            title="Github link"
-            component="a"
-            href="https://github.com/kojitani/vanventure"
-            target="_blank"
-            size="lg"
-          >
-            <IconBrandGithub size="2rem" stroke={1.5} />
-          </ActionIcon>
-        </Group>
+
+        <ActionIcon
+          title="Github link"
+          component="a"
+          href="https://github.com/kojitani/vanventure"
+          target="_blank"
+          size="lg"
+        >
+          <IconBrandGithub size="2rem" stroke={1.5} />
+        </ActionIcon>
       </Container>
     </div>
   );

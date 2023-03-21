@@ -12,7 +12,7 @@ import {
   Box,
   Stack,
 } from '@mantine/core';
-import bg from '/public/contact-bg.svg';
+import bg from '/contact-bg.svg';
 import { IconSun, IconPhone, IconMapPin, IconAt } from '@tabler/icons-react';
 const useStyles = createStyles(theme => {
   const BREAKPOINT = theme.fn.smallerThan('sm');
@@ -20,7 +20,7 @@ const useStyles = createStyles(theme => {
   return {
     wrapper: {
       display: 'flex',
-
+      maxWidth: '700px',
       backgroundColor:
         theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.white,
       borderRadius: theme.radius.lg,
@@ -114,7 +114,7 @@ export default function GetInTouch() {
   const { classes } = useStyles();
 
   return (
-    <div style={{ width: '100%' }}>
+    <div>
       <Paper shadow="md" radius="lg">
         <div className={classes.wrapper}>
           <div className={classes.contacts}>
