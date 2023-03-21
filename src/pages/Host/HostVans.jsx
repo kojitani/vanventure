@@ -24,5 +24,5 @@ export default function HostVansListing() {
       );
     });
 
-  return <div>{vanElements}</div>;
+  return <>{vanElements}</>;
 }

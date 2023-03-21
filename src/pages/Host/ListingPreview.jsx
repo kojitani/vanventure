@@ -19,28 +19,28 @@ export default function UsersTable(props) {
         ratingArr.length;
 
       return (
-        <tr key={i}>
+        <tr key={i} style={{ whiteSpace: 'nowrap' }}>
           <td>
-            <Group spacing="sm">
+            <Group spacing="sm" style={{ flexWrap: 'nowrap' }}>
               <Avatar size={50} src={van.imageUrl[0]} radius={30} />
-              <Text fz="xl" fw={500}>
+              <Text fz="lg" fw={500}>
                 {van.name}
               </Text>
             </Group>
           </td>
 
           <td>
-            <Text fz="xl" fw={600}>
+            <Text fz="lg" fw={600}>
               ${van.price} /night
             </Text>
           </td>
           <td>
-            <Text fz="xl" fw={500}>
+            <Text fz="lg" fw={500}>
               ★ {vanRating}
             </Text>
           </td>
           <td>
-            <Text fz="xl" fw={600}>
+            <Text fz="lg" fw={600}>
               Public
             </Text>
           </td>
@@ -61,8 +61,13 @@ export default function UsersTable(props) {
     });
 
   return (
-    <ScrollArea>
-      <Table sx={{ minWidth: 800 }} verticalSpacing="sm" horizontalSpacing="sm">
+    <ScrollArea type="auto">
+      <Table
+        highlightOnHover
+        withBorder
+        verticalSpacing="sm"
+        horizontalSpacing="sm"
+      >
         <thead>
           <tr>
             <th>Van name</th>

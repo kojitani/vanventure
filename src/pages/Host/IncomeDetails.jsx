@@ -76,10 +76,10 @@ export default function Income() {
   });
 
   return (
-    <div>
+    <>
       <SimpleGrid cols={3} breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
         {stats}
       </SimpleGrid>
-    </div>
+    </>
   );
 }

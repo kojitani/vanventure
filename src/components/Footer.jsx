@@ -3,24 +3,20 @@ import { IconBrandGithub } from '@tabler/icons-react';
 
 const useStyles = createStyles(theme => ({
   footer: {
+    height: '60px',
     borderTop: `${rem(1)} solid ${
       theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[2]
     }`,
     backgroundColor: 'white',
+    padding: '0 2rem',
   },
 
   inner: {
-    height: '60px',
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingTop: theme.spacing.xl,
-    paddingBottom: theme.spacing.xl,
     maxWidth: '1440px',
-    padding: '2rem',
-    [theme.fn.smallerThan('xs')]: {
-      padding: '0 2rem',
-    },
+    height: '100%',
   },
 
   links: {
@@ -35,7 +31,7 @@ export default function FooterSocial() {
 
   return (
     <div className={classes.footer}>
-      <Container className={classes.inner}>
+      <Container className={classes.inner} p={0}>
         <div
           style={{
             display: 'flex',

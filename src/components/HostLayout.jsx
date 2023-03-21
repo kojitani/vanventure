@@ -29,7 +29,7 @@ export default function HostLayout() {
           setActiveTab(value);
           navigate(`${value}`);
         }}
-        m="2rem 0rem"
+        style={{ margin: '0 auto', marginBottom: '2rem' }}
       >
         <Tabs.List grow position="center">
           <Tabs.Tab

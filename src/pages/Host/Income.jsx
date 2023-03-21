@@ -3,7 +3,9 @@ import IncomeDetails from './IncomeDetails';
 export default function Income() {
   return (
     <div>
-      <IncomeDetails />
+      <div className="host-income">
+        <IncomeDetails />
+      </div>
     </div>
   );
 }
