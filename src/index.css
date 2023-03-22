@@ -780,7 +780,7 @@ body {
 .reviews-container {
   display: flex;
   justify-content: space-between;
-
+  border-top: 2px solid #b9b9b965;
   position: relative;
   width: 100%;
   gap: 1rem;
