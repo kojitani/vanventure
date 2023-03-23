@@ -9,7 +9,7 @@ import {
   useNavigate,
   useLocation,
 } from 'react-router-dom';
-import { Tabs, Loader } from '@mantine/core';
+import { Tabs, Loader, Text } from '@mantine/core';
 import { getHostVans } from '../../api';
 import { IconChevronLeft } from '@tabler/icons-react';
 
@@ -25,35 +25,55 @@ export default function HostVansLayout() {
   const [activeTab, setActiveTab] = useState(
     location.pathname.slice(urlGetter + 1)
   );
-  const [loading, setLoading] = useState(true);
   useEffect(() => {
     setActiveTab(location.pathname.slice(urlGetter + 1));
   }, [location]);
   return (
     <div
-      style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '1rem',
+      }}
     >
-      <Link
-        to="/host/vans"
-        style={{
-          display: 'flex',
-          textDecoration: 'none',
-          color: 'black',
-          alignItems: 'center',
-          marginBottom: '1rem',
-          alignSelf: 'flex-start',
-        }}
-      >
-        <IconChevronLeft />
-        <p>Go back to all listings</p>
-      </Link>
+      <div>
+        <Link
+          to="/host/vans"
+          style={{
+            textDecoration: 'none',
+            display: 'flex',
+            alignItems: 'center',
+            color: 'black',
+            maxWidth: '1440px',
+            margin: '0 auto',
+          }}
+        >
+          <IconChevronLeft />
+          <Text fz="lg" inherit>
+            Go back to all listings
+          </Text>
+        </Link>
+      </div>
       <Suspense
-        fallback={<Loader color="dark" variant="dots" size={48} mt="3rem" />}
+        fallback={
+          <Loader
+            color="dark"
+            variant="dots"
+            size={48}
+            mt="3rem"
+            style={{ alignSelf: 'center' }}
+          />
+        }
       >
         <Await resolve={vanDetails.hostVan}>
           {van => {
             return (
-              <div style={{ width: '100%' }}>
+              <div
+                style={{
+                  width: '1440px',
+                  margin: ' 0 auto',
+                }}
+              >
                 <div className="host-listing">
                   <img src={van.imageUrl[0]}></img>
                   <div className="host-listing-info">
@@ -82,7 +102,9 @@ export default function HostVansLayout() {
                     </Tabs.Tab>
                   </Tabs.List>
                 </Tabs>
-                <Outlet context={van} />
+                <div className="host-van-info-container">
+                  <Outlet context={van} />
+                </div>
               </div>
             );
           }}
