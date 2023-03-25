@@ -7,7 +7,7 @@ import {
   Image,
   rem,
 } from '@mantine/core';
-import image from '/public/hostvan.jpg';
+import image from '/hostvan.jpg';
 import { Link } from 'react-router-dom';
 const useStyles = createStyles(theme => ({
   wrapper: {

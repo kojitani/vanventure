@@ -204,7 +204,7 @@ body {
   width: 80px;
   height: 80px;
   left: calc(50% - 40px);
-  top: 15vh;
+  top: 10vh;
   margin: 2rem 0;
 }
 .lds-ellipsis div {
@@ -722,12 +722,12 @@ body {
   background-color: rgba(228, 228, 228, 0.616);
   padding: 1rem;
   border-radius: 0.3rem;
-  max-width: 1440px;
   margin: 0 auto;
 }
 .host-listing img {
   border-radius: 0.5rem;
-  width: 300px;
+  max-height: 250px;
+  aspect-ratio: 4/3;
 }
 .host-listing-info {
   display: flex;

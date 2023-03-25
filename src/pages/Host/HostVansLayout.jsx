@@ -70,7 +70,7 @@ export default function HostVansLayout() {
             return (
               <div
                 style={{
-                  width: '1440px',
+                  maxWidth: '1440px',
                   margin: ' 0 auto',
                 }}
               >
