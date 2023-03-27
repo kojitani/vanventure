@@ -68,42 +68,44 @@ export default function HostVansLayout() {
         <Await resolve={vanDetails.hostVan}>
           {van => {
             return (
-              <div
-                style={{
-                  maxWidth: '1440px',
-                  margin: ' 0 auto',
-                }}
-              >
-                <div className="host-listing">
-                  <img src={van.imageUrl[0]}></img>
-                  <div className="host-listing-info">
-                    <p style={{ fontWeight: 'bold' }}>{van.name}</p>
-                    <p>${van.price}/night</p>
-                    <p>Public</p>
-                  </div>
-                </div>
-                <Tabs
-                  value={activeTab}
-                  onTabChange={value => {
-                    setActiveTab(value);
-                    navigate(value);
+              <div>
+                <div
+                  style={{
+                    maxWidth: '1440px',
+                    margin: ' 0 auto',
                   }}
-                  m={'2rem 0'}
                 >
-                  <Tabs.List>
-                    <Tabs.Tab value="details" style={{ fontSize: '1.2rem' }}>
-                      Details
-                    </Tabs.Tab>
-                    <Tabs.Tab value="features" style={{ fontSize: '1.2rem' }}>
-                      Features & Amenities
-                    </Tabs.Tab>
-                    <Tabs.Tab value="photos" style={{ fontSize: '1.2rem' }}>
-                      Photos
-                    </Tabs.Tab>
-                  </Tabs.List>
-                </Tabs>
-                <div className="host-van-info-container">
-                  <Outlet context={van} />
+                  <div className="host-listing">
+                    <img src={van.imageUrl[0]}></img>
+                    <div className="host-listing-info">
+                      <p style={{ fontWeight: 'bold' }}>{van.name}</p>
+                      <p>${van.price}/night</p>
+                      <p>Public</p>
+                    </div>
+                  </div>
+                  <Tabs
+                    value={activeTab}
+                    onTabChange={value => {
+                      setActiveTab(value);
+                      navigate(value);
+                    }}
+                    m={'2rem 0'}
+                  >
+                    <Tabs.List>
+                      <Tabs.Tab value="details" style={{ fontSize: '1.2rem' }}>
+                        Details
+                      </Tabs.Tab>
+                      <Tabs.Tab value="features" style={{ fontSize: '1.2rem' }}>
+                        Features & Amenities
+                      </Tabs.Tab>
+                      <Tabs.Tab value="photos" style={{ fontSize: '1.2rem' }}>
+                        Photos
+                      </Tabs.Tab>
+                    </Tabs.List>
+                  </Tabs>
+                  <div className="host-van-info-container">
+                    <Outlet context={van} />
+                  </div>
                 </div>
               </div>
             );
