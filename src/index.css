@@ -370,6 +370,7 @@ body {
   font-size: 1.2rem;
   display: flex;
   padding-top: 0.3rem;
+  align-items: center;
 }
 .booking-reviews {
   text-decoration: underline;
@@ -429,7 +430,7 @@ body {
   height: 100%;
   overflow: hidden;
   background-color: rgba(0, 0, 0, 0.637);
-  z-index: 111;
+  z-index: 11;
   position: fixed;
   top: 0;
   left: 0;
@@ -443,8 +444,8 @@ body {
   display: block;
   object-fit: contain;
   object-position: center;
-  height: 90%;
-  width: 100%;
+  height: 85vh;
+  width: 100vw;
   border-radius: 1rem;
   transition: all 0.5s ease 0s;
   -webkit-transition: all 0.5s ease 0s;
@@ -827,9 +828,6 @@ body {
   }
   .small-gallery-img {
     display: none;
-  }
-  .van-details-name {
-    font-size: 2.5rem;
   }
   .nav-logo {
     font-size: 2rem;
